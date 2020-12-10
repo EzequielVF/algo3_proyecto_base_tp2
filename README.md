@@ -13,7 +13,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Ezequiel Vilardo** - [EzequielVF](https://github.com/EzequielVF)
 * **Francisco Watson** - [FranciscoWatson](https://github.com/FranciscoWatson)
 
-Corrector: **{Corrector}**
+Corrector: **Eugenio Yolis**
 
 ### Pre-requisitos
 
