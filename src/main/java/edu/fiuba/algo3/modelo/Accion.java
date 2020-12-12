@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface Accion {
 
-    public void aplicarAccion(Personaje personaje, List Celda);
+    public void aplicarAccion(Personaje personaje);
 }

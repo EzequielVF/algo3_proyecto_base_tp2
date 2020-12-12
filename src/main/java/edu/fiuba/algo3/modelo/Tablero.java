@@ -8,20 +8,17 @@ import java.util.ArrayList;
 
 public class Tablero {
     public List<Accion> accionesElegidas = new ArrayList<Accion>();
-    public List<Celda> terreno = new ArrayList<Celda>();
     public Personaje personaje = new Personaje();
 
-    public void incializarTerreno(){
-        for(int i = 0; i<25; i++){
-            terreno.add (new CeldaSinPintar());
+    public void procesarMovimientos(){
+        personaje.incializarTerreno();
+        for(Accion accion : accionesElegidas)
+        {
+            accion.aplicarAccion(personaje);
         }
     }
 
-    public void procesarMovimiento(){
-        for(Accion accion : accionesElegidas)
-        {
-            accion.aplicarAccion(personaje, terreno);
-
-        }
+    public void guardarMovimiento(Accion accion){
+        accionesElegidas.add(accion);
     }
 }

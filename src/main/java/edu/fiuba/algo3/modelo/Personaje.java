@@ -7,11 +7,20 @@ public class Personaje {
 
     public PosicionPincel pincel = new PincelArriba();
     public Posicion posicion = new Posicion();
+    public List<Celda> terreno = new ArrayList<Celda>();
 
-    public int devolverCeldaActual(){
-        return (posicion.devolverPosicion());
+    public void incializarTerreno(){
+        for(int i = 0; i<25; i++){
+            terreno.add (new CeldaSinPintar());
+        }
     }
-    public Celda pasoCeldaOcupadaPorPersonaje(Celda celda){
-        return (pincel pasoPincelSobre(celda));
+    public void dibujar(){
+        terreno.add(posicion.devolverPosicion(), pincel.usarSobreCelda(terreno.get(posicion.devolverPosicion())));
+    }
+    public void moverALaDerecha(){
+        posicion.sumarAColumna();
+    }
+    public void moverALaIzquierda(){
+        posicion.restarAColumna();
     }
 }
