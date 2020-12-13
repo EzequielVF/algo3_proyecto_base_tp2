@@ -23,4 +23,12 @@ public class Personaje {
             accion.aplicarAccion(posicion, pincel, tablero);
         }
     }
+
+    public EstadoPincel devolverEstadoPincel(){
+        return pincel.devolverEstadoPincel();
+    }
+
+    public int posicionActual(){
+        return posicion.devolverPosicion();
+    }
 }

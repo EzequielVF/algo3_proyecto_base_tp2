@@ -7,6 +7,10 @@ public class Pincel {
         return (estado.aplicarA(celda));
     }
 
+    public EstadoPincel devolverEstadoPincel(){
+        return estado;
+    }
+
     public void subirLapiz(){
         estado = new PincelArriba();
     }

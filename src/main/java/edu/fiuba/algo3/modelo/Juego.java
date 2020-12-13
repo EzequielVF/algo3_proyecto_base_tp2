@@ -13,8 +13,8 @@ public class Juego {
         posiblesAcciones.add(new MoverArriba());
         posiblesAcciones.add(new MoverALaDerecha());
         posiblesAcciones.add(new MoverALaIzquierda());
-        posiblesAcciones.add(new SubirLapiz());
-        posiblesAcciones.add(new BajarLapiz());
+        posiblesAcciones.add(new SubirPincel());
+        posiblesAcciones.add(new BajarPincel());
     }
     public void mostrarPosiblesAcciones(){
         int i = 1;
@@ -47,7 +47,13 @@ public class Juego {
         personaje.realizarMovimientos();
     }
 
-    public int devovlerCeldasPintadas(){
+    public int devolverPosicionActualPersonaje() { return personaje.posicionActual(); }
+
+    public EstadoPincel devolverEstadoPincel(){
+        return personaje.devolverEstadoPincel();
+    }
+
+    public int devolverCeldasPintadas(){
         return personaje.devolverCantidadCeldasPintadas();
     }
 }
