@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface Accion {
 
-    public void aplicarAccion(Personaje personaje);
+    public void aplicarAccion(Posicion posicion, Pincel pincel, Tablero tablero);
+    public String nombre();
 }

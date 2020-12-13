@@ -4,10 +4,14 @@ import java.util.List;
 
 public class MoverALaIzquierda implements Accion{
 
-    public void aplicarAccion(Personaje personaje){
-        personaje.dibujar();
-        personaje.moverALaIzquierda();
-        personaje.dibujar();
+    public void aplicarAccion(Posicion posicion, Pincel pincel, Tablero tablero){
+        tablero.dibujar(posicion, pincel);
+        posicion.restarAColumna();
+        tablero.dibujar(posicion, pincel);
+    }
+
+    public String nombre(){
+        return "Mover a la izquierda.";
     }
 
 }
