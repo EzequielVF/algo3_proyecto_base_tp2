@@ -47,7 +47,7 @@ public class JuegoTest {
     public void PruebaBajarPincel() {
         Juego juego = new Juego();
         EstadoPincel aux = new PincelAbajo();
-        juego.bajarLapiz();
+        juego.bajarPincel();
         juego.ejecutar();
         assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
@@ -55,15 +55,15 @@ public class JuegoTest {
     public void PruebaBajarYSubirPincel() {
         Juego juego = new Juego();
         EstadoPincel aux = new PincelArriba();
-        juego.bajarLapiz();
-        juego.subirLapiz();
+        juego.bajarPincel();
+        juego.subirPincel();
         juego.ejecutar();
         assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaCantidadDeCeldasPintadasCorrecta() {
         Juego juego = new Juego();
-        juego.bajarLapiz();
+        juego.bajarPincel();
         juego.moverDerecha();
         juego.moverDerecha();
         juego.ejecutar();

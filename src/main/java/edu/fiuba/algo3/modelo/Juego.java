@@ -35,10 +35,10 @@ public class Juego {
     public void moverIzquierda(){
         algoritmo.agregarAccion(posiblesAcciones.get(3));
     }
-    public void subirLapiz(){
+    public void subirPincel(){
         algoritmo.agregarAccion(posiblesAcciones.get(4));
     }
-    public void bajarLapiz(){
+    public void bajarPincel(){
         algoritmo.agregarAccion(posiblesAcciones.get(5));
     }
 

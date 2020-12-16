@@ -19,9 +19,6 @@ public class Tablero {
     }
 
     public void dibujar(Posicion posicion, Pincel pincel){
-
         pincel.usarSobre(terreno.get(posicion.devolverPosicion()));
-        //terreno.remove(posicion.devolverPosicion());
-        //terreno.add(posicion.devolverPosicion(), aux);
     }
 }
