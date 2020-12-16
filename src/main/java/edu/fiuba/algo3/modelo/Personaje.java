@@ -5,23 +5,12 @@ import java.util.List;
 
 public class Personaje {
 
-    public List<Accion> accionesElegidas = new ArrayList();
     public Pincel pincel = new Pincel();
     public Posicion posicion = new Posicion();
     public Tablero tablero = new Tablero();
 
-    public void agregarAccion(Accion accion){
-        accionesElegidas.add(accion);
-    }
-
     public int devolverCantidadCeldasPintadas(){
         return (tablero.celdasPintadas());
-    }
-
-    public void realizarMovimientos(){
-        for(Accion accion: accionesElegidas){
-            accion.aplicarAccion(posicion, pincel, tablero);
-        }
     }
 
     public EstadoPincel devolverEstadoPincel(){
@@ -30,5 +19,34 @@ public class Personaje {
 
     public int posicionActual(){
         return posicion.devolverPosicion();
+    }
+
+    public void moverAbajo(){
+        posicion.sumarAFila();
+        tablero.dibujar(posicion, pincel);
+    }
+
+    public void moverArriba(){
+        posicion.restarAFila();
+        tablero.dibujar(posicion, pincel);
+    }
+
+    public void moverDerecha(){
+        posicion.sumarAColumna();
+        tablero.dibujar(posicion, pincel);
+    }
+
+    public void moverIzquierda(){
+        posicion.restarAColumna();
+        tablero.dibujar(posicion, pincel);
+    }
+
+    public void bajarPincel(){
+        pincel.bajarPincel();
+        tablero.dibujar(posicion, pincel);
+    }
+
+    public void subirPincel(){
+        pincel.subirPincel();
     }
 }

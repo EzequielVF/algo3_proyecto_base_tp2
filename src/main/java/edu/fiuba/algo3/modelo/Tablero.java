@@ -9,18 +9,19 @@ public class Tablero {
 
     public Tablero(){
             for(int i = 0; i<25; i++){
-                terreno.add (new CeldaSinPintar());
+                terreno.add (new Celda());
             }
     }
 
     public int celdasPintadas(){
-        List<Celda> celdasPintadas = terreno.stream().filter(a -> a.estaPintada()).collect(Collectors.toList());
+        List<Celda> celdasPintadas = terreno.stream().filter(a -> a.devolverEstado()).collect(Collectors.toList());
         return (celdasPintadas.size());
     }
 
     public void dibujar(Posicion posicion, Pincel pincel){
-        Celda aux = pincel.usarSobre(terreno.get(posicion.devolverPosicion()));
-        terreno.remove(posicion.devolverPosicion());
-        terreno.add(posicion.devolverPosicion(), aux);
+
+        pincel.usarSobre(terreno.get(posicion.devolverPosicion()));
+        //terreno.remove(posicion.devolverPosicion());
+        //terreno.add(posicion.devolverPosicion(), aux);
     }
 }

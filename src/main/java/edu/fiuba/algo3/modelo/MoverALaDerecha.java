@@ -4,10 +4,8 @@ import java.util.List;
 
 public class MoverALaDerecha implements Accion{
 
-    public void aplicarAccion(Posicion posicion, Pincel pincel, Tablero tablero){
-        tablero.dibujar(posicion, pincel);
-        posicion.sumarAColumna();
-        tablero.dibujar(posicion, pincel);
+    public void aplicarAccion(Personaje personaje){
+        personaje.moverDerecha();
     }
 
     public String nombre(){

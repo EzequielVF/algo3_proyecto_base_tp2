@@ -60,4 +60,13 @@ public class JuegoTest {
         juego.ejecutar();
         assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
+    @Test
+    public void PruebaCantidadDeCeldasPintadasCorrecta() {
+        Juego juego = new Juego();
+        juego.bajarLapiz();
+        juego.moverDerecha();
+        juego.moverDerecha();
+        juego.ejecutar();
+        assertEquals(3,(juego.devolverCeldasPintadas()));
+    }
 }

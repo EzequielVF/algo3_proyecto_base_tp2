@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Juego {
     public Personaje personaje = new Personaje();
+    public Algoritmo algoritmo = new Algoritmo();
     public ArrayList<Accion> posiblesAcciones = new ArrayList();
     {
         posiblesAcciones.add(new MoverAbajo());
@@ -25,26 +26,24 @@ public class Juego {
     }
 
     public void moverAbajo(){
-        personaje.agregarAccion(posiblesAcciones.get(0));
+        algoritmo.agregarAccion(posiblesAcciones.get(0));
     }
     public void moverArriba(){
-        personaje.agregarAccion(posiblesAcciones.get(1));
+        algoritmo.agregarAccion(posiblesAcciones.get(1));
     }
-    public void moverDerecha(){
-        personaje.agregarAccion(posiblesAcciones.get(2));
-    }
+    public void moverDerecha(){ algoritmo.agregarAccion(posiblesAcciones.get(2)); }
     public void moverIzquierda(){
-        personaje.agregarAccion(posiblesAcciones.get(3));
+        algoritmo.agregarAccion(posiblesAcciones.get(3));
     }
     public void subirLapiz(){
-        personaje.agregarAccion(posiblesAcciones.get(4));
+        algoritmo.agregarAccion(posiblesAcciones.get(4));
     }
     public void bajarLapiz(){
-        personaje.agregarAccion(posiblesAcciones.get(5));
+        algoritmo.agregarAccion(posiblesAcciones.get(5));
     }
 
     public void ejecutar(){
-        personaje.realizarMovimientos();
+        algoritmo.ejecutar(personaje);
     }
 
     public int devolverPosicionActualPersonaje() { return personaje.posicionActual(); }
