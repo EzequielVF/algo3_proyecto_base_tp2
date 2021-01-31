@@ -9,16 +9,16 @@ public class Personaje {
     public Posicion posicion = new Posicion();
     public Tablero tablero = new Tablero();
 
-    public int devolverCantidadCeldasPintadas(){
+    /*public int devolverCantidadCeldasPintadas(){
         return (tablero.celdasPintadas());
-    }
+    }*/
 
     public EstadoPincel devolverEstadoPincel(){
         return pincel.devolverEstadoPincel();
     }
 
-    public int posicionActual(){
-        return posicion.devolverPosicion();
+    public Posicion posicionActual(){
+        return posicion;
     }
 
     public void moverAbajo(){

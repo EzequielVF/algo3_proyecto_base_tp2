@@ -4,9 +4,9 @@ public class Posicion {
     public int fila = 3;
     public int columna = 3;
 
-    public int devolverPosicion(){
+    /*public int devolverPosicion(){
         return (((fila-1) * 5)+ columna);
-    }
+    }*/
 
     public void sumarAColumna(){
         columna++;

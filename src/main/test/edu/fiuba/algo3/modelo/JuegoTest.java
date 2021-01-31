@@ -2,22 +2,27 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JuegoTest {
     @Test
     public void PruebaMoverALaderecha() {
         Juego juego = new Juego();
-        assertEquals(13,juego.devolverPosicionActualPersonaje());
-        juego.moverDerecha();
+        Posicion posicion_aux = new Posicion();
+        assertEquals(posicion_aux,juego.devolverPosicionActualPersonaje());
+        juego.agregarAccion(new MoverALaDerecha());
         juego.ejecutar();
-        assertEquals(14, juego.devolverPosicionActualPersonaje());
+        posicion_aux.sumarAColumna();
+        assertEquals(posicion_aux, juego.devolverPosicionActualPersonaje());
     }
     @Test
     public void PruebaMoverALaIzquierda() {
         Juego juego = new Juego();
         assertEquals(13,juego.devolverPosicionActualPersonaje());
-        juego.moverIzquierda();
+        juego.agregarAccion(new MoverALaIzquierda());
         juego.ejecutar();
         assertEquals(12, juego.devolverPosicionActualPersonaje());
     }
@@ -25,7 +30,7 @@ public class JuegoTest {
     public void PruebaMoverArriba() {
         Juego juego = new Juego();
         assertEquals(13,juego.devolverPosicionActualPersonaje());
-        juego.moverArriba();
+        juego.agregarAccion(new MoverArriba());
         juego.ejecutar();
         assertEquals(8, juego.devolverPosicionActualPersonaje());
     }
@@ -33,7 +38,7 @@ public class JuegoTest {
     public void PruebaMoverAbajo() {
         Juego juego = new Juego();
         assertEquals(13,juego.devolverPosicionActualPersonaje());
-        juego.moverAbajo();
+        juego.agregarAccion(new MoverAbajo());
         juego.ejecutar();
         assertEquals(18, juego.devolverPosicionActualPersonaje());
     }
@@ -47,7 +52,7 @@ public class JuegoTest {
     public void PruebaBajarPincel() {
         Juego juego = new Juego();
         EstadoPincel aux = new PincelAbajo();
-        juego.bajarPincel();
+        juego.agregarAccion(new BajarPincel());
         juego.ejecutar();
         assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
@@ -55,18 +60,28 @@ public class JuegoTest {
     public void PruebaBajarYSubirPincel() {
         Juego juego = new Juego();
         EstadoPincel aux = new PincelArriba();
-        juego.bajarPincel();
-        juego.subirPincel();
+        juego.agregarAccion(new BajarPincel());
+        juego.agregarAccion(new SubirPincel());
         juego.ejecutar();
         assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
-    }
+    }/*
     @Test
     public void PruebaCantidadDeCeldasPintadasCorrecta() {
         Juego juego = new Juego();
-        juego.bajarPincel();
-        juego.moverDerecha();
-        juego.moverDerecha();
+        juego.agregarAccion(new BajarPincel());
+        juego.agregarAccion(new MoverALaDerecha());
+        juego.agregarAccion(new MoverALaDerecha());
         juego.ejecutar();
         assertEquals(3,(juego.devolverCeldasPintadas()));
+    }*/
+
+    @Test
+    public void PruebaRepetirPorDos() {
+        Juego juego = new Juego();
+        RepetirPorDos repetirPorDos = new RepetirPorDos();
+        repetirPorDos.almacenarAccion(new MoverALaDerecha());
+        juego.agregarAccion(repetirPorDos);
+        juego.ejecutar();
+        assertEquals(15, juego.devolverPosicionActualPersonaje());
     }
 }

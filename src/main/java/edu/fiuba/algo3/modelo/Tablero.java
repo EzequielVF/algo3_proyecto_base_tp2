@@ -5,7 +5,8 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class Tablero {
-    public List<Celda> terreno = new ArrayList<Celda>();
+    public Dictionary<Posicion, Celda> terreno = new Hashtable();
+    /*public List<Celda> terreno2 = new ArrayList<Celda>();
 
     public Tablero(){
             for(int i = 0; i<25; i++){
@@ -16,9 +17,14 @@ public class Tablero {
     public int celdasPintadas(){
         List<Celda> celdasPintadas = terreno.stream().filter(a -> a.devolverEstado()).collect(Collectors.toList());
         return (celdasPintadas.size());
-    }
+    }*/
 
     public void dibujar(Posicion posicion, Pincel pincel){
-        pincel.usarSobre(terreno.get(posicion.devolverPosicion()));
+        Celda celda = terreno.get(posicion);
+        if (celda == null){
+            celda = new Celda();
+        }
+        pincel.usarSobre(celda);
+        terreno.put(posicion, celda);
     }
 }
