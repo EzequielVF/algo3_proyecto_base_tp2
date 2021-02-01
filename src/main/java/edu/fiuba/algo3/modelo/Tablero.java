@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
-import java.util.stream.Collectors;
 import java.util.*;
-import java.util.ArrayList;
 
 public class Tablero {
-    public Dictionary<Posicion, Celda> terreno = new Hashtable();
+    public HashMap<Posicion, Celda> terreno = new HashMap<>();
     /*public List<Celda> terreno2 = new ArrayList<Celda>();
 
     public Tablero(){
@@ -20,11 +18,8 @@ public class Tablero {
     }*/
 
     public void dibujar(Posicion posicion, Pincel pincel){
+        terreno.putIfAbsent(posicion,new Celda());
         Celda celda = terreno.get(posicion);
-        if (celda == null){
-            celda = new Celda();
-        }
         pincel.usarSobre(celda);
-        terreno.put(posicion, celda);
     }
 }
