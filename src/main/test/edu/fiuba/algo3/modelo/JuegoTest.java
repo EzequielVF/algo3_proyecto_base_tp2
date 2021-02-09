@@ -11,12 +11,10 @@ public class JuegoTest {
     @Test
     public void PruebaMoverALaderecha() {
         Juego juego = new Juego();
-        Posicion posicion_aux = new Posicion();
-        assertEquals(posicion_aux,juego.devolverPosicionActualPersonaje());
+        assertEquals(13,juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverALaDerecha());
         juego.ejecutar();
-        posicion_aux.sumarAColumna();
-        assertEquals(posicion_aux, juego.devolverPosicionActualPersonaje());
+        assertEquals(14, juego.devolverPosicionActualPersonaje());
     }
     @Test
     public void PruebaMoverALaIzquierda() {
@@ -64,7 +62,7 @@ public class JuegoTest {
         juego.agregarAccion(new SubirPincel());
         juego.ejecutar();
         assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
-    }/*
+    }
     @Test
     public void PruebaCantidadDeCeldasPintadasCorrecta() {
         Juego juego = new Juego();
@@ -73,7 +71,7 @@ public class JuegoTest {
         juego.agregarAccion(new MoverALaDerecha());
         juego.ejecutar();
         assertEquals(3,(juego.devolverCeldasPintadas()));
-    }*/
+    }
 
     @Test
     public void PruebaRepetirPorDos() {
@@ -83,5 +81,37 @@ public class JuegoTest {
         juego.agregarAccion(repetirPorDos);
         juego.ejecutar();
         assertEquals(15, juego.devolverPosicionActualPersonaje());
+    }
+
+    @Test
+    public void PruebaRepetirPorTres() {
+        Juego juego = new Juego();
+        RepetirPorTres repetirPorTres = new RepetirPorTres();
+        repetirPorTres.almacenarAccion(new MoverALaDerecha());
+        juego.agregarAccion(repetirPorTres);
+        juego.ejecutar();
+        assertEquals(16, juego.devolverPosicionActualPersonaje());
+    }
+
+    @Test
+    public void PruebaAccionInversa(){
+        Juego juego = new Juego();
+        InvertirComportamiento invertircomportamiento = new InvertirComportamiento();
+        invertircomportamiento.almacenarAccion(new MoverALaDerecha());
+        juego.agregarAccion(invertircomportamiento);
+        juego.ejecutar();
+        assertEquals(12, juego.devolverPosicionActualPersonaje());
+    }
+
+    @Test
+    public void PruebaAlgoritmoPersonalizado(){
+        Juego juego = new Juego();
+        String nombre = "Mover a la derecha 2 veces";
+        juego.agregarAccion(new MoverALaDerecha());
+        juego.agregarAccion(new MoverALaDerecha());
+        juego.crearAlgoritmoPersonalizado(nombre);
+        juego.usarAlgoritmoPersonalizado(nombre);
+        juego.ejecutar();
+        assertEquals(17, juego.devolverPosicionActualPersonaje());
     }
 }

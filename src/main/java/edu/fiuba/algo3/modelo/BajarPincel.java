@@ -6,7 +6,5 @@ public class BajarPincel implements Accion{
        personaje.bajarPincel();
     }
 
-    public String nombre(){
-        return "Bajar pincel.";
-    }
+    public void aplicarAccionInversa(Personaje personaje) { personaje.subirPincel(); }
 }

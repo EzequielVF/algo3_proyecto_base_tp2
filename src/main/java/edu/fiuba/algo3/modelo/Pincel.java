@@ -4,7 +4,7 @@ public class Pincel {
     public EstadoPincel estado = new PincelArriba();
 
     public void usarSobre(Celda celda){
-         estado.aplicarA(celda);
+        estado.aplicarA(celda);
     }
 
     public EstadoPincel devolverEstadoPincel(){

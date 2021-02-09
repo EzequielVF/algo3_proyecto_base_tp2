@@ -8,8 +8,5 @@ public class MoverALaDerecha implements Accion{
         personaje.moverDerecha();
     }
 
-    public String nombre(){
-        return "Mover a la derecha.";
-    }
-
+    public void aplicarAccionInversa(Personaje personaje) { personaje.moverIzquierda(); }
 }
