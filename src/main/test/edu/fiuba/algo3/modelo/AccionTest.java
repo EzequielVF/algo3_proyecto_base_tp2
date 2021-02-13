@@ -9,33 +9,41 @@ public class AccionTest {
     public void PruebaMoverALaderechaModificaCorrectamenteLaPosicion() {
         Personaje personaje = new Personaje();
         Accion accion = new MoverALaDerecha();
-        assertEquals(13,personaje.posicionActual());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
         accion.aplicarAccion(personaje);
-        assertEquals(14,personaje.posicionActual());
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
     }
     @Test
     public void PruebaMoverALaIzquierdaModificaCorrectamenteLaPosicion() {
         Personaje personaje = new Personaje();
         Accion accion = new MoverALaIzquierda();
-        assertEquals(13,personaje.posicionActual());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
         accion.aplicarAccion(personaje);
-        assertEquals(12,personaje.posicionActual());
+        posicion.restarAColumna();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
     }
     @Test
     public void PruebaMoverArribaModificaCorrectamenteLaPosicion() {
         Personaje personaje = new Personaje();
         Accion accion = new MoverArriba();
-        assertEquals(13,personaje.posicionActual());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
         accion.aplicarAccion(personaje);
-        assertEquals(8,personaje.posicionActual());
+        posicion.restarAFila();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
     }
     @Test
     public void PruebaMoverAbajoModificaCorrectamenteLaPosicion() {
         Personaje personaje = new Personaje();
         Accion accion = new MoverAbajo();
-        assertEquals(13,personaje.posicionActual());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
         accion.aplicarAccion(personaje);
-        assertEquals(18,personaje.posicionActual());
+        posicion.sumarAFila();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
     }
     @Test
     public void PruebaBajarPincelCambiaCorrectamenteElEstadoDelPincel() {

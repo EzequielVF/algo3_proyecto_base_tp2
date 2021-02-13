@@ -5,14 +5,7 @@ import java.util.stream.Collectors;
 
 public class Tablero {
     public HashMap<Integer, Celda> terreno = new HashMap<>();
-    /*public List<Celda> terreno2 = new ArrayList<Celda>();
 
-    public Tablero(){
-            for(int i = 0; i<25; i++){
-                terreno.add (new Celda());
-            }
-    }
-    */
     public int celdasPintadas(){
         List<Celda> celdas = new ArrayList<Celda>(terreno.values());
         List<Celda> celdasPintadas = celdas.stream().filter(a -> a.devolverEstado()).collect(Collectors.toList());
@@ -20,8 +13,12 @@ public class Tablero {
     }
 
     public void dibujar(Posicion posicion, Pincel pincel){
-        terreno.putIfAbsent(posicion.devolverPosicion(), new Celda());
-        Celda celda = terreno.get(posicion.devolverPosicion());
+        terreno.putIfAbsent(posicion.hashCode(), new Celda());
+        Celda celda = terreno.get(posicion.hashCode());
         pincel.usarSobre(celda);
+    }
+
+    public boolean posicionPintada(Posicion posicion){
+        return ((terreno.get(posicion.hashCode())).devolverEstado());
     }
 }

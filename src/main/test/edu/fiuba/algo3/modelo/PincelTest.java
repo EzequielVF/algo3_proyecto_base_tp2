@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PincelTest {
     @Test
@@ -26,7 +26,7 @@ public class PincelTest {
         pincel.bajarPincel();
         assertEquals(aux.getClass(),(pincel.devolverEstadoPincel().getClass()));
         pincel.usarSobre(celda);
-        assertEquals(true,celda.devolverEstado());
+        assertTrue(celda.devolverEstado());
     }
     @Test
     public void PincelArribaNoPintaCelda() {
@@ -35,6 +35,6 @@ public class PincelTest {
         EstadoPincel aux = new PincelArriba();
         assertEquals(aux.getClass(),(pincel.devolverEstadoPincel().getClass()));
         pincel.usarSobre(celda);
-        assertEquals(false,celda.devolverEstado());
+        assertFalse(celda.devolverEstado());
     }
 }

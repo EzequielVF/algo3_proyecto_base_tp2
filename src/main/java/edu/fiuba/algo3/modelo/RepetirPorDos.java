@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RepetirPorDos extends Repetible implements Accion{
+public class RepetirPorDos extends Repetible{
 
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
@@ -11,6 +11,8 @@ public class RepetirPorDos extends Repetible implements Accion{
             accion.aplicarAccion(personaje);
         }
     }
-    public void aplicarAccionInversa(Personaje personaje) { }
+    public void aplicarAccionInversa(Personaje personaje) {
+        this.aplicarAccion(personaje);
+    }
 }
 

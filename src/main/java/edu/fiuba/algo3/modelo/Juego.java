@@ -36,4 +36,8 @@ public class Juego {
     public int devolverCeldasPintadas(){
         return personaje.devolverCantidadCeldasPintadas();
     }
+
+    public boolean posicionPintada(Posicion posicion){
+        return personaje.posicionPintada(posicion);
+    }
 }

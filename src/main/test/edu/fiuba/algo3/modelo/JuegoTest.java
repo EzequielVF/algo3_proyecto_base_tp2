@@ -2,43 +2,50 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JuegoTest {
     @Test
     public void PruebaMoverALaderecha() {
         Juego juego = new Juego();
-        assertEquals(13,juego.devolverPosicionActualPersonaje());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverALaDerecha());
         juego.ejecutar();
-        assertEquals(14, juego.devolverPosicionActualPersonaje());
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
     @Test
     public void PruebaMoverALaIzquierda() {
         Juego juego = new Juego();
-        assertEquals(13,juego.devolverPosicionActualPersonaje());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverALaIzquierda());
         juego.ejecutar();
-        assertEquals(12, juego.devolverPosicionActualPersonaje());
+        posicion.restarAColumna();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
     @Test
     public void PruebaMoverArriba() {
         Juego juego = new Juego();
-        assertEquals(13,juego.devolverPosicionActualPersonaje());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverArriba());
         juego.ejecutar();
-        assertEquals(8, juego.devolverPosicionActualPersonaje());
+        posicion.restarAFila();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
     @Test
     public void PruebaMoverAbajo() {
         Juego juego = new Juego();
-        assertEquals(13,juego.devolverPosicionActualPersonaje());
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverAbajo());
         juego.ejecutar();
-        assertEquals(18, juego.devolverPosicionActualPersonaje());
+        posicion.sumarAFila();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
     @Test
     public void PruebaEstadoInicialPincelArriba() {
@@ -76,42 +83,75 @@ public class JuegoTest {
     @Test
     public void PruebaRepetirPorDos() {
         Juego juego = new Juego();
+        Posicion posicion = new Posicion();
         RepetirPorDos repetirPorDos = new RepetirPorDos();
         repetirPorDos.almacenarAccion(new MoverALaDerecha());
         juego.agregarAccion(repetirPorDos);
         juego.ejecutar();
-        assertEquals(15, juego.devolverPosicionActualPersonaje());
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
 
     @Test
     public void PruebaRepetirPorTres() {
         Juego juego = new Juego();
+        Posicion posicion = new Posicion();
         RepetirPorTres repetirPorTres = new RepetirPorTres();
         repetirPorTres.almacenarAccion(new MoverALaDerecha());
         juego.agregarAccion(repetirPorTres);
         juego.ejecutar();
-        assertEquals(16, juego.devolverPosicionActualPersonaje());
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
 
     @Test
     public void PruebaAccionInversa(){
         Juego juego = new Juego();
+        Posicion posicion = new Posicion();
         InvertirComportamiento invertircomportamiento = new InvertirComportamiento();
         invertircomportamiento.almacenarAccion(new MoverALaDerecha());
         juego.agregarAccion(invertircomportamiento);
         juego.ejecutar();
-        assertEquals(12, juego.devolverPosicionActualPersonaje());
+        posicion.restarAColumna();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
 
     @Test
     public void PruebaAlgoritmoPersonalizado(){
         Juego juego = new Juego();
+        Posicion posicion = new Posicion();
         String nombre = "Mover a la derecha 2 veces";
         juego.agregarAccion(new MoverALaDerecha());
         juego.agregarAccion(new MoverALaDerecha());
         juego.crearAlgoritmoPersonalizado(nombre);
         juego.usarAlgoritmoPersonalizado(nombre);
         juego.ejecutar();
-        assertEquals(17, juego.devolverPosicionActualPersonaje());
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+    }
+
+    @Test
+    public void PruebaDibujarCorrectamenteUnCuadrado(){
+        Juego juego = new Juego();
+        Posicion aux = new Posicion();
+        juego.agregarAccion(new BajarPincel());
+        juego.agregarAccion(new MoverALaDerecha());
+        juego.agregarAccion(new MoverAbajo());
+        juego.agregarAccion(new MoverALaIzquierda());
+        juego.agregarAccion(new MoverArriba());
+        juego.ejecutar();
+        assertTrue(juego.posicionPintada(aux));
+        aux.sumarAColumna();
+        assertTrue(juego.posicionPintada(aux));
+        aux.sumarAFila();
+        assertTrue(juego.posicionPintada(aux));
+        aux.restarAColumna();
+        assertTrue(juego.posicionPintada(aux));
     }
 }

@@ -13,12 +13,16 @@ public class Personaje {
         return (tablero.celdasPintadas());
     }
 
+    public boolean posicionPintada(Posicion posicion){
+        return tablero.posicionPintada(posicion);
+    }
+
     public EstadoPincel devolverEstadoPincel(){
         return pincel.devolverEstadoPincel();
     }
 
     public int posicionActual(){
-        return posicion.devolverPosicion();
+        return posicion.hashCode();
     }
 
     public void moverAbajo(){

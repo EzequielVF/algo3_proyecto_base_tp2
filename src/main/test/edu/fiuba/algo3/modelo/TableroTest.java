@@ -2,10 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -28,17 +25,16 @@ public class TableroTest {
 
     @Test
     public void pruebahash() {
-        Tablero tablero = new Tablero();
         Posicion posicion_a = new Posicion();
         Posicion posicion_b = new Posicion();
         Posicion posicion_c = new Posicion();
         posicion_b.sumarAFila();
         posicion_a.restarAFila();
         posicion_c.restarAFila();
-        HashMap hash = new HashMap<Integer, Integer>();
-        hash.put(posicion_a.devolverPosicion(), 1);
-        hash.put(posicion_b.devolverPosicion(), 2);
+        HashMap dictionary = new HashMap<Integer, Integer>();
+        dictionary.put(posicion_a.hashCode(), 1);
+        dictionary.put(posicion_b.hashCode(), 2);
 
-        assertEquals(1,hash.get(posicion_c.devolverPosicion()));
+        assertEquals(1,dictionary.get(posicion_c.hashCode()));
     }
 }

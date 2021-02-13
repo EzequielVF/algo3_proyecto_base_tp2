@@ -6,8 +6,12 @@ public class Posicion {
     public int fila = 3;
     public int columna = 3;
 
-    public int devolverPosicion(){
-        return (((fila-1) * 5)+ columna);
+    public int devolverColumna(){
+        return columna;
+    }
+
+    public int devolverFila(){
+        return fila;
     }
 
     @Override
