@@ -1,11 +1,26 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.Objects;
+
 public class Posicion {
     public int fila = 3;
     public int columna = 3;
 
     public int devolverPosicion(){
         return (((fila-1) * 5)+ columna);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Posicion posicion = (Posicion) o;
+        return fila == posicion.fila && columna == posicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
     }
 
     public void sumarAColumna(){
