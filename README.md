@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/EzequielVF/algo3_tp2_AlgoBlocks.svg?branch=master)](https://travis-ci.org/EzequielVF/algo3_tp2_AlgoBlocks) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
-
-
+[![Build Status](https://travis-ci.org/EzequielVF/algo3_tp2_AlgoBlocks.svg?branch=master)](https://travis-ci.org/EzequielVF/algo3_tp2_AlgoBlocks) [![codecov](https://codecov.io/gh/EzequielVF/algo3_tp2_AlgoBlocks/branch/master/graph/badge.svg)](https://codecov.io/gh/EzequielVF/algo3_tp2_AlgoBlocks)
 
 # TP2 Algoritmos 3: {AlgoBlocks}
 
