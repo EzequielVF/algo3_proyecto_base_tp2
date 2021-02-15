@@ -7,4 +7,8 @@ public class MoverArriba implements Accion{
     }
 
     public void aplicarAccionInversa(Personaje personaje) { personaje.moverAbajo(); }
+
+    public String devolverNombre(){
+        return " Mover arriba";
+    }
 }
