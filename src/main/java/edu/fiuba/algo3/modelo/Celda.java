@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.campodejuego;
+package edu.fiuba.algo3.modelo;
 
 public class Celda {
 

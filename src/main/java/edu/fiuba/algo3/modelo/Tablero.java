@@ -1,6 +1,4 @@
-package edu.fiuba.algo3.modelo.campodejuego;
-
-import edu.fiuba.algo3.modelo.pincel.Pincel;
+package edu.fiuba.algo3.modelo;
 
 import java.util.*;
 import java.util.stream.Collectors;
