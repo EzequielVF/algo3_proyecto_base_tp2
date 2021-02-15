@@ -1,9 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.campodejuego.Posicion;
-import edu.fiuba.algo3.modelo.campodejuego.Tablero;
-import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
-import edu.fiuba.algo3.modelo.pincel.Pincel;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Personaje {
 

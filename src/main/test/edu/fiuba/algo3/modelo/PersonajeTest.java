@@ -1,9 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.campodejuego.Posicion;
-import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
-import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
-import edu.fiuba.algo3.modelo.pincel.PincelArriba;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,9 +13,9 @@ public class PersonajeTest {
     }
     @Test
     public void personajeSeIniciaConPincelArriba() {
-        EstadoPincel pincelArriba = new PincelArriba();
+        EstadoPincel aux = new PincelArriba();
         Personaje personaje = new Personaje();
-        assertTrue(pincelArriba.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertTrue(aux.getClass() == personaje.devolverEstadoPincel().getClass());
     }
     @Test
     public void personajeMoverAbajoModificaCorrectamentePosicion() {
@@ -55,17 +51,17 @@ public class PersonajeTest {
     }
     @Test
     public void personajeBajaCorrectamenteElPincel() {
-        EstadoPincel pincelAbajo = new PincelAbajo();
+        EstadoPincel aux = new PincelAbajo();
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
-        assertTrue(pincelAbajo.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertTrue(aux.getClass() == personaje.devolverEstadoPincel().getClass());
     }
     @Test
     public void personajeSubeCorrectamenteElPincel() {
-        EstadoPincel pincelArriba = new PincelArriba();
+        EstadoPincel aux = new PincelArriba();
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
         personaje.subirPincel();
-        assertTrue(pincelArriba.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertTrue(aux.getClass() == personaje.devolverEstadoPincel().getClass());
     }
 }
