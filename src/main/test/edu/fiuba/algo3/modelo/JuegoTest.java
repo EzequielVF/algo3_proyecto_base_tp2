@@ -1,5 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.acciones.*;
+import edu.fiuba.algo3.modelo.acciones.repetibles.InvertirComportamiento;
+import edu.fiuba.algo3.modelo.acciones.repetibles.RepetirPorDos;
+import edu.fiuba.algo3.modelo.acciones.repetibles.RepetirPorTres;
+import edu.fiuba.algo3.modelo.acciones.SubirPincel;
+import edu.fiuba.algo3.modelo.campodejuego.Posicion;
+import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
+import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
+import edu.fiuba.algo3.modelo.pincel.PincelArriba;
 import org.junit.jupiter.api.Test;
 
 
@@ -50,25 +59,25 @@ public class JuegoTest {
     @Test
     public void PruebaEstadoInicialPincelArriba() {
         Juego juego = new Juego();
-        EstadoPincel aux = new PincelArriba();
-        assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
+        EstadoPincel pincelArriba = new PincelArriba();
+        assertEquals(pincelArriba.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaBajarPincel() {
         Juego juego = new Juego();
-        EstadoPincel aux = new PincelAbajo();
+        EstadoPincel pincelAbajo = new PincelAbajo();
         juego.agregarAccion(new BajarPincel());
         juego.ejecutar();
-        assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
+        assertEquals(pincelAbajo.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaBajarYSubirPincel() {
         Juego juego = new Juego();
-        EstadoPincel aux = new PincelArriba();
+        EstadoPincel pincelArriba = new PincelArriba();
         juego.agregarAccion(new BajarPincel());
         juego.agregarAccion(new SubirPincel());
         juego.ejecutar();
-        assertEquals(aux.getClass(),(juego.devolverEstadoPincel().getClass()));
+        assertEquals(pincelArriba.getClass(),(juego.devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaCantidadDeCeldasPintadasCorrecta() {
@@ -139,19 +148,19 @@ public class JuegoTest {
     @Test
     public void PruebaDibujarCorrectamenteUnCuadrado(){
         Juego juego = new Juego();
-        Posicion aux = new Posicion();
+        Posicion posicion = new Posicion();
         juego.agregarAccion(new BajarPincel());
         juego.agregarAccion(new MoverALaDerecha());
         juego.agregarAccion(new MoverAbajo());
         juego.agregarAccion(new MoverALaIzquierda());
         juego.agregarAccion(new MoverArriba());
         juego.ejecutar();
-        assertTrue(juego.posicionPintada(aux));
-        aux.sumarAColumna();
-        assertTrue(juego.posicionPintada(aux));
-        aux.sumarAFila();
-        assertTrue(juego.posicionPintada(aux));
-        aux.restarAColumna();
-        assertTrue(juego.posicionPintada(aux));
+        assertTrue(juego.posicionPintada(posicion));
+        posicion.sumarAColumna();
+        assertTrue(juego.posicionPintada(posicion));
+        posicion.sumarAFila();
+        assertTrue(juego.posicionPintada(posicion));
+        posicion.restarAColumna();
+        assertTrue(juego.posicionPintada(posicion));
     }
 }
