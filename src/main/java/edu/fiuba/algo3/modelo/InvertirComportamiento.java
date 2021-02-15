@@ -11,4 +11,8 @@ public class InvertirComportamiento extends Repetible{
             accion.aplicarAccion(personaje);
         }
     }
+
+    public String devolverNombre(){
+        return " Invertir comportamiento";
+    }
 }
