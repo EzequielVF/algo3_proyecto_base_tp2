@@ -13,9 +13,9 @@ public class Juego {
     public void agregarAccion(Accion accion){algoritmo.almacenarAccion(accion); }
 
     public void crearAlgoritmoPersonalizado(String nombre){
-        Algoritmo aux = new Algoritmo();
-        algoritmo.transferirAcciones(aux);
-        algoritmosGuardados.put(nombre, aux);
+        Algoritmo AlgoritmoPersonalizado = new Algoritmo();
+        algoritmo.transferirAcciones(AlgoritmoPersonalizado);
+        algoritmosGuardados.put(nombre, AlgoritmoPersonalizado);
     }
 
     public void usarAlgoritmoPersonalizado(String nombre){

@@ -13,9 +13,9 @@ public class PersonajeTest {
     }
     @Test
     public void personajeSeIniciaConPincelArriba() {
-        EstadoPincel aux = new PincelArriba();
+        EstadoPincel pincelArriba = new PincelArriba();
         Personaje personaje = new Personaje();
-        assertTrue(aux.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertTrue(pincelArriba.getClass() == personaje.devolverEstadoPincel().getClass());
     }
     @Test
     public void personajeMoverAbajoModificaCorrectamentePosicion() {
@@ -51,17 +51,17 @@ public class PersonajeTest {
     }
     @Test
     public void personajeBajaCorrectamenteElPincel() {
-        EstadoPincel aux = new PincelAbajo();
+        EstadoPincel pincelAbajo = new PincelAbajo();
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
-        assertTrue(aux.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertTrue(pincelAbajo.getClass() == personaje.devolverEstadoPincel().getClass());
     }
     @Test
     public void personajeSubeCorrectamenteElPincel() {
-        EstadoPincel aux = new PincelArriba();
+        EstadoPincel pincelArriba = new PincelArriba();
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
         personaje.subirPincel();
-        assertTrue(aux.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertTrue(pincelArriba.getClass() == personaje.devolverEstadoPincel().getClass());
     }
 }

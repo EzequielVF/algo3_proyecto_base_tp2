@@ -8,23 +8,23 @@ public class PincelTest {
     @Test
     public void PincelSeIniciaConEstadoPincelArriba() {
         Pincel pincel = new Pincel();
-        EstadoPincel aux = new PincelArriba();
-        assertEquals(aux.getClass(),(pincel.devolverEstadoPincel().getClass()));
+        EstadoPincel pincelArriba = new PincelArriba();
+        assertEquals(pincelArriba.getClass(),(pincel.devolverEstadoPincel().getClass()));
     }
     @Test
     public void PincelActualizoSuEstado() {
         Pincel pincel = new Pincel();
-        EstadoPincel aux = new PincelAbajo();
+        EstadoPincel pincelAbajo = new PincelAbajo();
         pincel.bajarPincel();
-        assertEquals(aux.getClass(),(pincel.devolverEstadoPincel().getClass()));
+        assertEquals(pincelAbajo.getClass(),(pincel.devolverEstadoPincel().getClass()));
     }
     @Test
     public void PincelAbajoPintaCelda() {
         Pincel pincel = new Pincel();
         Celda celda = new Celda();
-        EstadoPincel aux = new PincelAbajo();
+        EstadoPincel pincelAbajo = new PincelAbajo();
         pincel.bajarPincel();
-        assertEquals(aux.getClass(),(pincel.devolverEstadoPincel().getClass()));
+        assertEquals(pincelAbajo.getClass(),(pincel.devolverEstadoPincel().getClass()));
         pincel.usarSobre(celda);
         assertTrue(celda.devolverEstado());
     }
@@ -32,8 +32,8 @@ public class PincelTest {
     public void PincelArribaNoPintaCelda() {
         Pincel pincel = new Pincel();
         Celda celda = new Celda();
-        EstadoPincel aux = new PincelArriba();
-        assertEquals(aux.getClass(),(pincel.devolverEstadoPincel().getClass()));
+        EstadoPincel pincelArriba = new PincelArriba();
+        assertEquals(pincelArriba.getClass(),(pincel.devolverEstadoPincel().getClass()));
         pincel.usarSobre(celda);
         assertFalse(celda.devolverEstado());
     }
