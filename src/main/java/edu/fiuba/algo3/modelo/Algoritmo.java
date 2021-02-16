@@ -18,4 +18,8 @@ public class Algoritmo extends Repetible{
             aux.almacenarAccion(accion);
         }
     }
+
+    public String devolverNombre(){
+        return " Algoritmo personalizado";
+    }
 }
