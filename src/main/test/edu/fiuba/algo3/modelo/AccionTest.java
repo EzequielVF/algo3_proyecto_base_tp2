@@ -117,4 +117,128 @@ public class AccionTest {
         posicion.restarAColumna();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
+
+    @Test
+    public void PruebaMoverALaderechaInversaModificaCorrectamenteLaPosicion() {
+        Personaje personaje = new Personaje();
+        Accion accion = new MoverALaDerecha();
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamiento.aplicarAccion(personaje);
+        posicion.restarAColumna();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+    }
+
+    @Test
+    public void PruebaMoverALaIzquierdaInversaModificaCorrectamenteLaPosicion() {
+        Personaje personaje = new Personaje();
+        Accion accion = new MoverALaIzquierda();
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamiento.aplicarAccion(personaje);
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+    }
+
+    @Test
+    public void PruebaMoverAbajoInversaModificaCorrectamenteLaPosicion() {
+        Personaje personaje = new Personaje();
+        Accion accion = new MoverAbajo();
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamiento.aplicarAccion(personaje);
+        posicion.restarAFila();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+    }
+
+    @Test
+    public void PruebaMoverArribaInversaModificaCorrectamenteLaPosicion() {
+        Personaje personaje = new Personaje();
+        Accion accion = new MoverArriba();
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamiento.aplicarAccion(personaje);
+        posicion.sumarAFila();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+    }
+
+    @Test
+    public void PruebaRepetirPorDosInversaModificaCorrectamenteLaPosicionDelPersonaje() {
+        Personaje personaje = new Personaje();
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+        RepetirPorDos repetirPorDos = new RepetirPorDos();
+        repetirPorDos.almacenarAccion(new MoverALaDerecha());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(repetirPorDos);
+        invertirComportamiento.aplicarAccion(personaje);
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+    }
+
+    @Test
+    public void PruebaRepetirPorTresInversaModificaCorrectamenteLaPosicionDelPersonaje() {
+        Personaje personaje = new Personaje();
+        Posicion posicion = new Posicion();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+        RepetirPorTres repetirPorTres = new RepetirPorTres();
+        repetirPorTres.almacenarAccion(new MoverALaDerecha());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(repetirPorTres);
+        invertirComportamiento.aplicarAccion(personaje);
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        posicion.sumarAColumna();
+        assertEquals(posicion.hashCode(), personaje.posicionActual());
+    }
+
+    @Test
+    public void PruebaBajarPincelInversaCambiaCorrectamenteElEstadoDelPincel() {
+        Personaje personaje = new Personaje();
+        Accion accion = new BajarPincel();
+        EstadoPincel pincelAbajo = new PincelAbajo();
+        EstadoPincel pincelArriba = new PincelArriba();
+        assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamiento.aplicarAccion(personaje);
+        assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
+    }
+
+    @Test
+    public void PruebaSubirPincelInversaCambiaCorrectamenteElEstadoDelPincel() {
+        Personaje personaje = new Personaje();
+        Accion accion = new SubirPincel();
+        EstadoPincel pincelAbajo = new PincelAbajo();
+        EstadoPincel pincelArriba = new PincelArriba();
+        assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamiento.aplicarAccion(personaje);
+        assertEquals(pincelAbajo.getClass(), personaje.devolverEstadoPincel().getClass());
+    }
+
+    @Test
+    public void PruebaInvertirComportamientoInversaNoCambiaElEstadoDelPincel() {
+        Personaje personaje = new Personaje();
+        Accion accion = new SubirPincel();
+        EstadoPincel pincelAbajo = new PincelAbajo();
+        EstadoPincel pincelArriba = new PincelArriba();
+        assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
+        InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
+        InvertirComportamiento invertirComportamientoAuxiliar = new InvertirComportamiento();
+        invertirComportamiento.almacenarAccion(accion);
+        invertirComportamientoAuxiliar.almacenarAccion(invertirComportamiento);
+        invertirComportamientoAuxiliar.aplicarAccion(personaje);
+        assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
+    }
 }
