@@ -11,4 +11,8 @@ public class RepetirPorTres extends Repetible{
     public void aplicarAccionInversa(Personaje personaje) {
         this.aplicarAccion(personaje);
     }
+
+    public String devolverNombre(){
+        return " Repetir por 3";
+    }
 }

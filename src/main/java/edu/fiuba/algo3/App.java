@@ -19,11 +19,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
-
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
         stage.setTitle("AlgoBlocks");
         Juego juego = new Juego();
 
@@ -80,9 +75,9 @@ public class App extends Application {
         botonDevolverCeldasPintadas.setOnAction(botonDevolverCeldasPintadasHandler);
 
 
-        /*Scene scene = new Scene(contenedorPrincipal, 600, 600);
+        Scene scene = new Scene(contenedorPrincipal, 600, 600);
         stage.setScene(scene);
-        stage.show();*/
+        stage.show();
     }
 
     public static void main(String[] args) {
