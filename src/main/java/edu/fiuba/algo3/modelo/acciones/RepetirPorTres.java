@@ -1,6 +1,9 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.acciones;
 
-public class RepetirPorTres extends Repetible{
+import edu.fiuba.algo3.modelo.Personaje;
+
+public class RepetirPorTres extends Repetible {
+
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);

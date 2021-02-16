@@ -1,13 +1,14 @@
 package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.acciones.*;
+import edu.fiuba.algo3.modelo.botones.BotonAccionEventhandler;
+import edu.fiuba.algo3.modelo.botones.BotonDevolverCeldasPintadasEventhandler;
+import edu.fiuba.algo3.modelo.botones.BotonEjecutarEventhandler;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -22,7 +23,6 @@ public class App extends Application {
         stage.setTitle("AlgoBlocks");
         Juego juego = new Juego();
 
-        TextArea textArea = new TextArea();
         Label consola = new Label();
 
         Button botonMoverALaDerecha = new Button();
@@ -45,7 +45,7 @@ public class App extends Application {
 
 
         HBox contenedorHorizontal = new HBox(botonMoverALaDerecha, botonMoverALaIzquierda, botonMoverArriba, botonMoverAbajo, botonSubirPincel, botonBajarPincel, botonEjecutar, botonDevolverCeldasPintadas);
-        contenedorHorizontal.setSpacing(20);
+        contenedorHorizontal.setSpacing(10);
 
         VBox contenedorPrincipal = new VBox(contenedorHorizontal, consola);
         contenedorPrincipal.setSpacing(10);
@@ -74,8 +74,7 @@ public class App extends Application {
         BotonDevolverCeldasPintadasEventhandler botonDevolverCeldasPintadasHandler = new BotonDevolverCeldasPintadasEventhandler(juego);
         botonDevolverCeldasPintadas.setOnAction(botonDevolverCeldasPintadasHandler);
 
-
-        Scene scene = new Scene(contenedorPrincipal, 600, 600);
+        Scene scene = new Scene(contenedorPrincipal, 1000, 1000);
         stage.setScene(scene);
         stage.show();
     }

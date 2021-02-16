@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.campodejuego;
+
+import edu.fiuba.algo3.modelo.pincel.Pincel;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -7,7 +9,7 @@ public class Tablero {
     public HashMap<Integer, Celda> terreno = new HashMap<>();
 
     public int celdasPintadas(){
-        List<Celda> celdas = new ArrayList<Celda>(terreno.values());
+        List<Celda> celdas = new ArrayList<>(terreno.values());
         List<Celda> celdasPintadas = celdas.stream().filter(a -> a.devolverEstado()).collect(Collectors.toList());
         return (celdasPintadas.size());
     }

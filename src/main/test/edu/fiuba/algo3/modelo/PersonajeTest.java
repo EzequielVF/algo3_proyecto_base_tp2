@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.campodejuego.Posicion;
+import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
+import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
+import edu.fiuba.algo3.modelo.pincel.PincelArriba;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,6 +1,9 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.acciones;
 
-public class MoverAbajo implements Accion{
+import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.acciones.Accion;
+
+public class MoverAbajo implements Accion {
 
     public void aplicarAccion(Personaje personaje){
         personaje.moverAbajo();

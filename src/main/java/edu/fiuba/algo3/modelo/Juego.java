@@ -1,9 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.acciones.Accion;
+import edu.fiuba.algo3.modelo.acciones.Algoritmo;
+import edu.fiuba.algo3.modelo.campodejuego.Posicion;
+import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
+
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Juego {
     public Personaje personaje = new Personaje();

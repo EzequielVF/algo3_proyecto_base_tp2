@@ -1,6 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.acciones;
 
-public class InvertirComportamiento extends Repetible{
+import edu.fiuba.algo3.modelo.Personaje;
+
+public class InvertirComportamiento extends Repetible {
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccionInversa(personaje);

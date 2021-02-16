@@ -1,9 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.acciones;
 
-import java.util.ArrayList;
-import java.util.List;
+import edu.fiuba.algo3.modelo.Personaje;
 
-public class Algoritmo extends Repetible{
+public class Algoritmo extends Repetible {
 
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){

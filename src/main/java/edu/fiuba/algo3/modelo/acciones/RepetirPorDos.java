@@ -1,9 +1,8 @@
-package edu.fiuba.algo3.modelo;
-import java.util.ArrayList;
-import java.util.List;
+package edu.fiuba.algo3.modelo.acciones;
 
+import edu.fiuba.algo3.modelo.Personaje;
 
-public class RepetirPorDos extends Repetible{
+public class RepetirPorDos extends Repetible {
 
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
