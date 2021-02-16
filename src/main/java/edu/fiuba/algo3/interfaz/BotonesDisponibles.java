@@ -54,10 +54,6 @@ public class BotonesDisponibles extends VBox {
         MenuButton repetirPorTres = new MenuButton("Repetir Por Tres");
         MenuButton invertirComportamiento = new MenuButton("Invertir Comportamiento");
 
-        /*BotonOpcionesHandler botonOpcionesHandler = new BotonOpcionesHandler();
-        repetirPorDos.setOnAction(botonOpcionesHandler);
-        repetirPorTres.setOnAction(botonOpcionesHandler);
-        invertirComportamiento.setOnAction(botonOpcionesHandler);*/
 
         RepetirPorDos repetirPorDosBloque = new RepetirPorDos();
         RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
