@@ -13,6 +13,10 @@ public abstract class Repetible implements Accion {
         public void almacenarAccion(Accion accion){
             accionesAEjecutar.add(accion);
         }
+
+        public void limpiar(){
+            accionesAEjecutar = new ArrayList<>();
+        }
 }
 
 

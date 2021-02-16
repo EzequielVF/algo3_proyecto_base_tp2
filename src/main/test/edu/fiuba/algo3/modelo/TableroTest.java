@@ -37,7 +37,7 @@ public class TableroTest {
         HashMap dictionary = new HashMap<Integer, Integer>();
         dictionary.put(posicion_a.hashCode(), 1);
         dictionary.put(posicion_b.hashCode(), 2);
-
+        System.out.println(posicion_a.hashCode());
         assertEquals(1,dictionary.get(posicion_c.hashCode()));
     }
 }
