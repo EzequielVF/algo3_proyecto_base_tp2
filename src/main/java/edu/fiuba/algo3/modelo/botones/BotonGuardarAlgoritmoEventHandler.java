@@ -4,7 +4,6 @@ import edu.fiuba.algo3.interfaz.Consola;
 import edu.fiuba.algo3.modelo.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
@@ -26,8 +25,6 @@ public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEve
     public void handle(ActionEvent actionEvent){
         juego.crearAlgoritmoPersonalizado(nombreAlgoritmo.getText());
         consola.display(nombreAlgoritmo.getText());
-       // String historialDeConsola = consola.getText();
-        //consola.setText(historialDeConsola+"\n"+"Un Algoritmo Personalizado con nombre "+nombreAlgoritmo.getText()+" ha sido agregado");
         MenuItem algoritmoPersonalizado = new MenuItem(nombreAlgoritmo.getText());
         BotonUsarAlgoritmoEventHandler botonUsardarHandler = new BotonUsarAlgoritmoEventHandler(juego, consola, nombreAlgoritmo.getText());
         algoritmoPersonalizado.setOnAction(botonUsardarHandler);

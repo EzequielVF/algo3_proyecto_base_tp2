@@ -8,6 +8,7 @@ public class RepetirPorDos extends Repetible {
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);
             accion.aplicarAccion(personaje);
+            accion.limpiar();
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {

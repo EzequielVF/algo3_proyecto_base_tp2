@@ -14,4 +14,6 @@ public class MoverArriba implements Accion {
     public String devolverNombre(){
         return " Mover arriba";
     }
+
+    public void limpiar(){};
 }

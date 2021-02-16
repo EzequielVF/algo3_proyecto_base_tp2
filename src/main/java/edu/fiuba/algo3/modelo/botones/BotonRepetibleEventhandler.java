@@ -6,7 +6,6 @@ import edu.fiuba.algo3.modelo.acciones.Accion;
 import edu.fiuba.algo3.modelo.acciones.Repetible;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Label;
 
 public class BotonRepetibleEventhandler implements EventHandler<ActionEvent> {
 

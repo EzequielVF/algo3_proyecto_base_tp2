@@ -4,7 +4,6 @@ import edu.fiuba.algo3.interfaz.Consola;
 import edu.fiuba.algo3.modelo.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.*;
 
 public class BotonUsarAlgoritmoEventHandler implements EventHandler<ActionEvent> {
     private Juego juego;
@@ -20,8 +19,6 @@ public class BotonUsarAlgoritmoEventHandler implements EventHandler<ActionEvent>
     @Override
     public void handle(ActionEvent actionEvent){
         juego.usarAlgoritmoPersonalizado(nombre);
-        //String historialDeConsola = consola.getText();
-        //consola.setText(historialDeConsola+"\n"+"Se ha utilizado un Algoritmo Personalizado con nombre "+nombre);
         consola.display(nombre);
     }
 }

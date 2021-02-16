@@ -6,11 +6,13 @@ public class InvertirComportamiento extends Repetible {
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccionInversa(personaje);
+            accion.limpiar();
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);
+            accion.limpiar();
         }
     }
 

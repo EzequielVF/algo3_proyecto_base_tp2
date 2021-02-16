@@ -15,4 +15,6 @@ public class SubirPincel implements Accion {
         return " Subir pincel";
     }
 
+    public void limpiar(){};
+
 }

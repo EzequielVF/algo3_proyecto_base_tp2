@@ -4,9 +4,7 @@ import edu.fiuba.algo3.interfaz.*;
 import edu.fiuba.algo3.modelo.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Label;
 
 public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
 
@@ -23,6 +21,7 @@ public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         this.juego.ejecutar();
+        System.out.println(this.juego.devolverCeldasPintadas());
         XYChart.Series dataSeries1 = new XYChart.Series();
 
         dataSeries1.getData().add(new XYChart.Data( 0, 0));
@@ -31,5 +30,6 @@ public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
         dataSeries1.getData().add(new XYChart.Data(2, 1));
 
         this.lineChart.agregar(dataSeries1);
+        this.juego.limpiar();
     }
 }

@@ -9,6 +9,7 @@ public class RepetirPorTres extends Repetible {
             accion.aplicarAccion(personaje);
             accion.aplicarAccion(personaje);
             accion.aplicarAccion(personaje);
+            accion.limpiar();
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
