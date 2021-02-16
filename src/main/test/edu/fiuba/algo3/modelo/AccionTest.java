@@ -82,7 +82,6 @@ public class AccionTest {
     @Test
     public void PruebaRepetirPorDosModificaCorrectamenteLaPosicionDelPersonaje() {
         Personaje personaje = new Personaje();
-        Accion accion = new MoverALaDerecha();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
         RepetirPorDos repetirPorDos = new RepetirPorDos();
@@ -96,7 +95,6 @@ public class AccionTest {
     @Test
     public void PruebaRepetirPorTresModificaCorrectamenteLaPosicionDelPersonaje() {
         Personaje personaje = new Personaje();
-        Accion accion = new MoverALaDerecha();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
         RepetirPorTres repetirPorTres = new RepetirPorTres();
@@ -111,7 +109,6 @@ public class AccionTest {
     @Test
     public void PruebaInvertirComportamientoModificaCorrectamenteLaPosicionDelPersonaje() {
         Personaje personaje = new Personaje();
-        Accion accion = new MoverALaDerecha();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
