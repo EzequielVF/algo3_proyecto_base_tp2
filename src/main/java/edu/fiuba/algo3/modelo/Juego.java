@@ -4,6 +4,8 @@ import edu.fiuba.algo3.modelo.acciones.Accion;
 import edu.fiuba.algo3.modelo.acciones.Algoritmo;
 import edu.fiuba.algo3.modelo.acciones.*;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
+import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
+import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
 
 import java.util.*;
@@ -30,6 +32,7 @@ public class Juego {
 
     public void crearAlgoritmoPersonalizado(String nombre){
         Algoritmo AlgoritmoPersonalizado = new Algoritmo();
+        if(nombre == "") {throw new NombreNoValidoParaAlgoritmoExcepcion();}
         algoritmo.transferirAcciones(AlgoritmoPersonalizado);
         algoritmosGuardados.put(nombre, AlgoritmoPersonalizado);
     }
@@ -41,7 +44,6 @@ public class Juego {
 
     public void limpiar(){
         algoritmo = new Algoritmo();
-        //personaje = new Personaje();
     }
 
     public void ejecutar(){

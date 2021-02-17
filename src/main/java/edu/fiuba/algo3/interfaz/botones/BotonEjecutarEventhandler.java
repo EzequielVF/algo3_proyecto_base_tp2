@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.botones;
+package edu.fiuba.algo3.interfaz.botones;
 
 import edu.fiuba.algo3.interfaz.*;
 import edu.fiuba.algo3.modelo.Juego;
@@ -21,7 +21,10 @@ public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         this.juego.ejecutar();
+        consola.escribir("Algoritmo ejecutado");
         System.out.println(this.juego.devolverCeldasPintadas());
+
+
         XYChart.Series dataSeries1 = new XYChart.Series();
 
         dataSeries1.getData().add(new XYChart.Data( 0, 0));

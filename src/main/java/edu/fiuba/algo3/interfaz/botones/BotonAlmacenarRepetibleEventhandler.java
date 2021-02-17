@@ -1,12 +1,10 @@
-package edu.fiuba.algo3.modelo.botones;
+package edu.fiuba.algo3.interfaz.botones;
 
 import edu.fiuba.algo3.interfaz.Consola;
 import edu.fiuba.algo3.modelo.Juego;
-import edu.fiuba.algo3.modelo.acciones.Accion;
 import edu.fiuba.algo3.modelo.acciones.Repetible;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Label;
 
 public class BotonAlmacenarRepetibleEventhandler implements EventHandler<ActionEvent> {
 

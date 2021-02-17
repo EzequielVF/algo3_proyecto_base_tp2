@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.botones;
+package edu.fiuba.algo3.interfaz.botones;
 
 import edu.fiuba.algo3.interfaz.Consola;
 import edu.fiuba.algo3.modelo.Juego;

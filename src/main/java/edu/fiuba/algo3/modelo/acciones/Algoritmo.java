@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.acciones;
 
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
 
 public class Algoritmo extends Repetible {
 
@@ -14,6 +15,8 @@ public class Algoritmo extends Repetible {
         this.aplicarAccion(personaje);
     }
     public void transferirAcciones(Algoritmo aux){
+
+        if(accionesAEjecutar.isEmpty()){ throw new AlgoritmoNoTieneAccionesTodaviaExcepcion();}
         for(Accion accion: accionesAEjecutar){
             aux.almacenarAccion(accion);
         }

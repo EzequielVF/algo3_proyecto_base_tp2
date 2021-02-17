@@ -14,4 +14,9 @@ public class Consola extends Pane {
         String aux = consola.getText();
         consola.setText(aux+"\n"+ "Bloque de "+nombreBloque+" ha sido agregado");
     }
+
+    public void escribir(String texto){
+        String aux = consola.getText();
+        consola.setText(aux+"\n"+ texto);
+    }
 }

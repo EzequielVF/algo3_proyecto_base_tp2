@@ -2,10 +2,8 @@ package edu.fiuba.algo3.interfaz;
 
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.acciones.*;
-import edu.fiuba.algo3.modelo.botones.*;
+import edu.fiuba.algo3.interfaz.botones.*;
 import javafx.geometry.Pos;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
@@ -25,21 +23,13 @@ public class BotonesDisponibles extends VBox {
 
         ArrayList<Accion> AccionesDisponibles = juego.DevolverAcciones();
 
-
-
-
         Button botonEjecutar = new Button();
         botonEjecutar.setText("Ejecutar");
 
         BotonEjecutarEventhandler botonEjecutarHandler = new BotonEjecutarEventhandler(juego, consola,areaDeDibujado);
         botonEjecutar.setOnAction(botonEjecutarHandler);
 
-        Button botonDevolverCeldasPintadas = new Button();
-        botonDevolverCeldasPintadas.setText("devolverCeldasPintadas");
-
-        BotonDevolverCeldasPintadasEventhandler botonDevolverCeldasPintadasHandler = new BotonDevolverCeldasPintadasEventhandler(juego);
-        botonDevolverCeldasPintadas.setOnAction(botonDevolverCeldasPintadasHandler);
-
+        //Configuracion Boton Algoritmo personalizado//
         Button botonGuardarAlgoritmo = new Button();
         botonGuardarAlgoritmo.setText("Guardar este Algoritmo");
 
@@ -49,16 +39,16 @@ public class BotonesDisponibles extends VBox {
         BotonGuardarAlgoritmoEventHandler botonGuardarHandler = new BotonGuardarAlgoritmoEventHandler(juego, consola, NombreAlgoritmo, AlgoritmosGuardados);
         botonGuardarAlgoritmo.setOnAction(botonGuardarHandler);
 
-
+        //-----------------------------------------------------------//
         MenuButton repetirPorDos = new MenuButton("Repetir Por Dos");
         MenuButton repetirPorTres = new MenuButton("Repetir Por Tres");
         MenuButton invertirComportamiento = new MenuButton("Invertir Comportamiento");
-
 
         RepetirPorDos repetirPorDosBloque = new RepetirPorDos();
         RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
         InvertirComportamiento invertirComportamientoBloque = new InvertirComportamiento();
 
+        //Meto los items dentro del Boton menu//
         for (Accion accion :AccionesDisponibles) {
             MenuItem acciones = new MenuItem(accion.devolverNombre());
             BotonRepetibleEventhandler botonUsardarHandler = new BotonRepetibleEventhandler(juego, accion, consola,repetirPorTresBloque);
@@ -96,9 +86,9 @@ public class BotonesDisponibles extends VBox {
         guardarRepetibleInvertir.setOnAction(botonAlmacenarRepetibleInvertirEventhandler);
         invertirComportamiento.getItems().add(guardarRepetibleInvertir);
 
+        VBox botonera = new VBox(titulo, botonEjecutar,AlgoritmosGuardados,NombreAlgoritmo,botonGuardarAlgoritmo,repetirPorDos,repetirPorTres,invertirComportamiento);
 
-        VBox botonera = new VBox(titulo, botonEjecutar, botonDevolverCeldasPintadas,AlgoritmosGuardados,NombreAlgoritmo,botonGuardarAlgoritmo,repetirPorDos,repetirPorTres,invertirComportamiento);
-
+        //Agrega los bostones de acciones simples//
         for (Accion accion :AccionesDisponibles) {
             Button button = new Button();
             button.setText(accion.devolverNombre());
@@ -106,9 +96,9 @@ public class BotonesDisponibles extends VBox {
             button.setOnAction(eventHandler);
             botonera.getChildren().add(button);
         }
+
         botonera.setAlignment( Pos.CENTER );
         botonera.setSpacing( 10 );
         this.getChildren().add(botonera);
     }
-
 }
