@@ -2,14 +2,14 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.acciones.*;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
+import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
 import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
 import edu.fiuba.algo3.modelo.pincel.PincelArriba;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JuegoTest {
     @Test
@@ -158,5 +158,13 @@ public class JuegoTest {
         assertTrue(juego.posicionPintada(posicion));
         posicion.restarAColumna();
         assertTrue(juego.posicionPintada(posicion));
+    }
+
+    @Test
+    public void PruebaCrearAlgoritmoPersonalizadoTextoVacio(){
+        Juego juego = new Juego();
+        assertThrows(NombreNoValidoParaAlgoritmoExcepcion.class, () -> {
+            juego.crearAlgoritmoPersonalizado("");
+        });
     }
 }
