@@ -25,14 +25,14 @@ public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
         System.out.println(this.juego.devolverCeldasPintadas());
 
 
-        XYChart.Series dataSeries1 = new XYChart.Series();
+        /*XYChart.Series dataSeries1 = new XYChart.Series();
 
         dataSeries1.getData().add(new XYChart.Data( 0, 0));
         dataSeries1.getData().add(new XYChart.Data( 1, 0));
         dataSeries1.getData().add(new XYChart.Data(1, 1));
         dataSeries1.getData().add(new XYChart.Data(2, 1));
 
-        this.lineChart.agregar(dataSeries1);
+        this.lineChart.agregar(dataSeries1);*/
         this.juego.limpiar();
     }
 }

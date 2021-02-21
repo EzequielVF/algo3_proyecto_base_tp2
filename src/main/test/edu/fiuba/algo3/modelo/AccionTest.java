@@ -39,7 +39,7 @@ public class AccionTest {
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
         accion.aplicarAccion(personaje);
-        posicion.restarAFila();
+        posicion.sumarAFila();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
 
@@ -50,7 +50,7 @@ public class AccionTest {
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
         accion.aplicarAccion(personaje);
-        posicion.sumarAFila();
+        posicion.restarAFila();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
 
@@ -153,7 +153,7 @@ public class AccionTest {
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
         invertirComportamiento.almacenarAccion(accion);
         invertirComportamiento.aplicarAccion(personaje);
-        posicion.restarAFila();
+        posicion.sumarAFila();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
 
@@ -166,7 +166,7 @@ public class AccionTest {
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
         invertirComportamiento.almacenarAccion(accion);
         invertirComportamiento.aplicarAccion(personaje);
-        posicion.sumarAFila();
+        posicion.restarAFila();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
 

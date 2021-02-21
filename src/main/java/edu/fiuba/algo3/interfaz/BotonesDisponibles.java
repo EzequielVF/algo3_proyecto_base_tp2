@@ -12,12 +12,13 @@ import java.util.ArrayList;
 public class BotonesDisponibles extends VBox {
     private Consola consola;
     private AreaDeDibujado areaDeDibujado;
-    private Juego juego = new Juego();
+    private Juego juego;
 
-    public BotonesDisponibles(Consola consola,AreaDeDibujado areaDeDibujado) {
+    public BotonesDisponibles(Consola consola,AreaDeDibujado areaDeDibujado,Juego juego) {
 
         this.consola = consola;
         this.areaDeDibujado = areaDeDibujado;
+        this.juego = juego;
 
         Label titulo = new Label("Acciones Disponibles");
 

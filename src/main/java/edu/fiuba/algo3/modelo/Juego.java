@@ -54,6 +54,8 @@ public class Juego {
 
     public Integer devolverPosicionActualPersonaje() { return personaje.posicionActual(); }
 
+    public Posicion devolverReferenciaPosicion() { return personaje.devolverPosicion(); }
+
     public EstadoPincel devolverEstadoPincel(){
         return personaje.devolverEstadoPincel();
     }

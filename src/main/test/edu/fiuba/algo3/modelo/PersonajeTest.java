@@ -26,7 +26,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         personaje.moverAbajo();
         Posicion posicion = new Posicion();
-        posicion.sumarAFila();
+        posicion.restarAFila();
         assertTrue(posicion.hashCode() == personaje.posicionActual());
     }
     @Test
@@ -50,7 +50,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         personaje.moverArriba();
         Posicion posicion = new Posicion();
-        posicion.restarAFila();
+        posicion.sumarAFila();
         assertTrue(posicion.hashCode() == personaje.posicionActual());
     }
     @Test

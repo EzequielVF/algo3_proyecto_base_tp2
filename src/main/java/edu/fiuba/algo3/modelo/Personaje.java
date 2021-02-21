@@ -27,13 +27,17 @@ public class Personaje {
         return posicion.hashCode();
     }
 
+    public Posicion devolverPosicion(){
+        return posicion;
+    }
+
     public void moverAbajo(){
-        posicion.sumarAFila();
+        posicion.restarAFila();
         tablero.dibujar(posicion, pincel);
     }
 
     public void moverArriba(){
-        posicion.restarAFila();
+        posicion.sumarAFila();
         tablero.dibujar(posicion, pincel);
     }
 

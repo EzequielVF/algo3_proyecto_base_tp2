@@ -4,20 +4,24 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import javafx.geometry.*;
 import javafx.scene.layout.BorderPane;
-import java.util.Observable;
 
 public class CampoDeJuego extends BorderPane {
-        AreaDeDibujado areaDeDibujado = new AreaDeDibujado();
+
         Consola consola = new Consola();
-        BotonesDisponibles botonesDisponibles = new BotonesDisponibles(consola,areaDeDibujado);
+
+        Juego juego = new Juego();
+
+        AreaDeDibujado areaDeDibujado = new AreaDeDibujado(juego);
+        BotonesDisponibles botonesDisponibles = new BotonesDisponibles(consola, areaDeDibujado, juego);
 
 
 
 
         public CampoDeJuego() {
 
-            Posicion posicionPersonaje = new Posicion();
-            //posicionPersonaje.addObserver(areaDeDibujado);
+            //posicionPersonaje = new Posicion();
+            //posicionPersonaje.addObserver((Observer) observadorGrafico);
+            //observadorGrafico.agregarObservable(posicionPersonaje);
 
             posicionarSectores();
 

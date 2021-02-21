@@ -39,7 +39,7 @@ public class JuegoTest {
         assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverArriba());
         juego.ejecutar();
-        posicion.restarAFila();
+        posicion.sumarAFila();
         assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
     @Test
@@ -49,7 +49,7 @@ public class JuegoTest {
         assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
         juego.agregarAccion(new MoverAbajo());
         juego.ejecutar();
-        posicion.sumarAFila();
+        posicion.restarAFila();
         assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
     }
     @Test
@@ -154,7 +154,7 @@ public class JuegoTest {
         assertTrue(juego.posicionPintada(posicion));
         posicion.sumarAColumna();
         assertTrue(juego.posicionPintada(posicion));
-        posicion.sumarAFila();
+        posicion.restarAFila();
         assertTrue(juego.posicionPintada(posicion));
         posicion.restarAColumna();
         assertTrue(juego.posicionPintada(posicion));
