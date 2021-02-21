@@ -7,6 +7,8 @@ import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
 import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 
 import java.util.*;
 

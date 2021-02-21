@@ -14,6 +14,4 @@ public class MoverALaIzquierda implements Accion {
     public String devolverNombre(){
         return " Mover a la izquierda";
     }
-
-    public void limpiar(){};
 }

@@ -7,5 +7,4 @@ public interface Accion {
     void aplicarAccion(Personaje personaje);
     void aplicarAccionInversa(Personaje personaje);
     String devolverNombre();
-    void limpiar();
 }

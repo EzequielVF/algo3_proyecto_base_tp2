@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.modelo.campodejuego;
 
 import java.util.Objects;
+import java.util.Observable;
 
-public class Posicion {
+public class Posicion extends Observable {
     public int fila = 3;
     public int columna = 3;
 
@@ -29,10 +30,18 @@ public class Posicion {
 
     public void sumarAColumna(){
         columna++;
+        //notifyObservers();
     }
     public void restarAColumna(){
         columna--;
+        //notifyObservers();
     }
-    public void sumarAFila(){ fila ++;}
-    public void restarAFila(){ fila --;}
+    public void sumarAFila(){
+        fila ++;
+        //notifyObservers();
+    }
+    public void restarAFila(){
+        fila --;
+        //notifyObservers();
+    }
 }

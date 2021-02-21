@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.interfaz;
 
+import javafx.geometry.Orientation;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.layout.*;
 
 public class Consola extends Pane {
@@ -8,6 +10,7 @@ public class Consola extends Pane {
 
     public Consola(){
         this.getChildren().add(consola);
+
     }
 
     public void display(String nombreBloque){

@@ -6,17 +6,22 @@ public class InvertirComportamiento extends Repetible {
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccionInversa(personaje);
-            accion.limpiar();
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);
-            accion.limpiar();
         }
     }
 
     public String devolverNombre(){
         return " Invertir comportamiento";
+    }
+
+    public Repetible copiar(){
+        InvertirComportamiento copia = new InvertirComportamiento();
+        transferirAcciones(copia);
+        accionesAEjecutar.clear();
+        return copia;
     }
 }

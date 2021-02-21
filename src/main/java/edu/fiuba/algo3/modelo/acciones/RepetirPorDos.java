@@ -8,7 +8,6 @@ public class RepetirPorDos extends Repetible {
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);
             accion.aplicarAccion(personaje);
-            accion.limpiar();
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
@@ -17,6 +16,14 @@ public class RepetirPorDos extends Repetible {
 
     public String devolverNombre(){
         return " Repetir por 2";
+    }
+
+
+    public Repetible copiar(){
+        RepetirPorDos copia = new RepetirPorDos();
+        transferirAcciones(copia);
+        accionesAEjecutar.clear();
+        return copia;
     }
 }
 

@@ -9,7 +9,6 @@ public class RepetirPorTres extends Repetible {
             accion.aplicarAccion(personaje);
             accion.aplicarAccion(personaje);
             accion.aplicarAccion(personaje);
-            accion.limpiar();
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
@@ -18,5 +17,12 @@ public class RepetirPorTres extends Repetible {
 
     public String devolverNombre(){
         return " Repetir por 3";
+    }
+
+    public Repetible copiar(){
+        RepetirPorTres copia = new RepetirPorTres();
+        transferirAcciones(copia);
+        accionesAEjecutar.clear();
+        return copia;
     }
 }

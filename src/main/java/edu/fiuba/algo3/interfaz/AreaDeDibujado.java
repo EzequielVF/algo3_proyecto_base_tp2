@@ -6,7 +6,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.GridPane;
 
-public class AreaDeDibujado extends GridPane{
+public class AreaDeDibujado extends GridPane {
     private NumberAxis xAxis = new NumberAxis(-5,5,1);
     private NumberAxis yAxis = new NumberAxis(-5,5,1);
     private LineChart lineChart = new LineChart(xAxis,yAxis);

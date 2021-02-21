@@ -14,6 +14,4 @@ public class BajarPincel implements Accion {
     public String devolverNombre(){
         return " Bajar pincel";
     }
-
-    public void limpiar(){};
 }
