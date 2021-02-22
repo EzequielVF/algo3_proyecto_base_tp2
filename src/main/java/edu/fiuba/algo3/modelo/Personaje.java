@@ -23,6 +23,10 @@ public class Personaje {
         return pincel.devolverEstadoPincel();
     }
 
+    public Pincel devolverPincel(){
+        return pincel;
+    }
+
     public int posicionActual(){
         return posicion.hashCode();
     }

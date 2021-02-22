@@ -6,7 +6,7 @@ import edu.fiuba.algo3.modelo.acciones.*;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
 import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
-import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
+import edu.fiuba.algo3.modelo.pincel.*;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
@@ -58,6 +58,10 @@ public class Juego {
 
     public EstadoPincel devolverEstadoPincel(){
         return personaje.devolverEstadoPincel();
+    }
+
+    public Pincel devolverPincel(){
+        return personaje.devolverPincel();
     }
 
     public int devolverCeldasPintadas(){

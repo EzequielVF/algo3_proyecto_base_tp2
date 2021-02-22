@@ -4,7 +4,7 @@ import edu.fiuba.algo3.interfaz.Observable;
 
 import java.util.Objects;
 
-public class Posicion extends Observable {
+public class Posicion {
     public int fila = 0;
     public int columna = 0;
 
@@ -31,19 +31,19 @@ public class Posicion extends Observable {
 
     public void sumarAColumna(){
         columna++;
-        notifyObservers();
+        //notifyObservers();
     }
     public void restarAColumna(){
         columna--;
-        notifyObservers();
+        //notifyObservers();
     }
     public void sumarAFila(){
         fila ++;
-        notifyObservers();
+        //notifyObservers();
     }
     public void restarAFila(){
         fila --;
-        notifyObservers();
+        //notifyObservers();
     }
 
 }

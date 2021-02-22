@@ -1,9 +1,10 @@
 package edu.fiuba.algo3.modelo.pincel;
 
+import edu.fiuba.algo3.interfaz.Observable;
 import edu.fiuba.algo3.interfaz.Observer;
 import edu.fiuba.algo3.modelo.campodejuego.Celda;
 
-public interface EstadoPincel {
+public abstract class EstadoPincel extends Observable {
 
-    void aplicarA(Celda celda);
+    abstract void aplicarA(Celda celda);
 }
