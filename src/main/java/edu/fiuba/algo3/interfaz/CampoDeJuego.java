@@ -1,9 +1,12 @@
 package edu.fiuba.algo3.interfaz;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import javafx.geometry.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 public class CampoDeJuego extends BorderPane {
 
@@ -19,9 +22,7 @@ public class CampoDeJuego extends BorderPane {
 
         public CampoDeJuego() {
 
-            //posicionPersonaje = new Posicion();
-            //posicionPersonaje.addObserver((Observer) observadorGrafico);
-            //observadorGrafico.agregarObservable(posicionPersonaje);
+            this.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 
             posicionarSectores();
 
@@ -29,7 +30,6 @@ public class CampoDeJuego extends BorderPane {
             BorderPane.setMargin(botonesDisponibles, new Insets(20,50,50,30));
             BorderPane.setMargin(consola, new Insets(20,50,50,30));
         }
-        //Separator separator = new Separator(Orientation.VERTICAL);
         private void posicionarSectores() {
             this.setRight(botonesDisponibles);
             this.setCenter(consola);

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfaz;
+package edu.fiuba.algo3.Controlador;
 
 import java.util.ArrayList;
 

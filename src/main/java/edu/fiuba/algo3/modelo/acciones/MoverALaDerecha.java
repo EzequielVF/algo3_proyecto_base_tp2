@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.acciones;
 
 import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.acciones.Accion;
 
 public class MoverALaDerecha implements Accion {
 

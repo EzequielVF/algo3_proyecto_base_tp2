@@ -3,9 +3,12 @@ package edu.fiuba.algo3.interfaz;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.acciones.*;
 import edu.fiuba.algo3.interfaz.botones.*;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
@@ -19,6 +22,8 @@ public class BotonesDisponibles extends VBox {
         this.consola = consola;
         this.areaDeDibujado = areaDeDibujado;
         this.juego = juego;
+
+        this.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(78), new Insets(-5.0))));
 
         Label titulo = new Label("Acciones Disponibles");
 

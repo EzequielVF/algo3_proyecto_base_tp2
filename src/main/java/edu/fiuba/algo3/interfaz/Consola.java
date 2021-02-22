@@ -1,15 +1,16 @@
 package edu.fiuba.algo3.interfaz;
 
-import javafx.geometry.Orientation;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 public class Consola extends Pane {
     private Label consola = new Label();
 
     public Consola(){
         this.getChildren().add(consola);
+        this.setBackground(new Background(new BackgroundFill(Color.AQUAMARINE, CornerRadii.EMPTY, new Insets(-2.0))));
 
     }
 

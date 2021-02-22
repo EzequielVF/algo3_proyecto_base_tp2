@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo.campodejuego;
 
-import edu.fiuba.algo3.interfaz.Observable;
-
 import java.util.Objects;
 
 public class Posicion {

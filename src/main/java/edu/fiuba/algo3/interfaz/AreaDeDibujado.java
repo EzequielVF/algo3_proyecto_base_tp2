@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.interfaz;
 
+import edu.fiuba.algo3.Controlador.ObservadorPincel;
+import edu.fiuba.algo3.Controlador.Observer;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
@@ -19,19 +21,13 @@ public class AreaDeDibujado extends GridPane implements Observer {
 
     private final NumberAxis xAxis = new NumberAxis(-5,5,1);
     private final NumberAxis yAxis = new NumberAxis(-5,5,1);
-    private ArrayList<XYChart.Series> seriePosiciones = new ArrayList<>();// = new XYChart.Series();
+    private ArrayList<XYChart.Series> seriePosiciones = new ArrayList<>();
 
     private LineChart lineChart = new LineChart(xAxis,yAxis);
-    //private XYChart.Series seriePosicionesActual;
     private ObservadorPincel observadorPincel;
 
     public AreaDeDibujado(Juego juego){
-        //seriePosicionesActual = new XYChart.Series();
-        //seriePosicionesActual.getData().add(new XYChart.Data(0, 0));
-        /*xAxis.setForceZeroInRange(true);
-        yAxis.setForceZeroInRange(true);
-        xAxis.setAutoRanging(true);
-        yAxis.setAutoRanging(true);*/
+        //this.getStylesheets().add("LineChart.css");
         seriePosiciones.add(new XYChart.Series());
         this.getChildren().add(lineChart);
         this.juego = juego;
@@ -40,7 +36,7 @@ public class AreaDeDibujado extends GridPane implements Observer {
         this.pincel = observadorPincel.devolverEstadoPincel();
 
         this.lineChart.getData().add(seriePosiciones.get(seriePosiciones.size()-1));
-        seriePosiciones.get(seriePosiciones.size()-1).getData().add(new XYChart.Data(0, 0));
+        this.lineChart.setTitle("Tablero");
         this.lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
     }
 
@@ -50,10 +46,6 @@ public class AreaDeDibujado extends GridPane implements Observer {
     }
 
     public void change(){
-        //seriePosiciones = new XYChart.Series();
-        //ObservableList<XYChart.Series> observableListPosiciones = seriePosiciones.getData();
-        //XYChart.Series seriePosiciones2 = new XYChart.Series();
-        //seriePosiciones2.setData(observableListPosiciones);
         seriePosiciones.get(seriePosiciones.size()-1).getData().add(new XYChart.Data(posicion.devolverColumna(), posicion.devolverFila()));
         columnas.add(posicion.devolverColumna());
         filas.add(posicion.devolverFila());

@@ -1,6 +1,4 @@
-package edu.fiuba.algo3.interfaz;
-
-import edu.fiuba.algo3.modelo.campodejuego.Posicion;
+package edu.fiuba.algo3.Controlador;
 
 public interface Observer {
     public void change();
