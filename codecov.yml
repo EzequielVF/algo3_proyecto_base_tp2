@@ -7,9 +7,9 @@ coverage:
   range: "70...100"
 
 ignore:
-    - "src/main/java/edu/fiuba/algo3/interfaz"
-    - "src/main/java/edu/fiuba/algo3/Controlador"
-    - "src/main/java/edu/fiuba/algo3/App.java"
+  - "src/main/java/edu/fiuba/algo3/interfaz"
+  - "src/main/java/edu/fiuba/algo3/Controlador"
+  - "src/main/java/edu/fiuba/algo3/App.java"
 
 status:
     project: yes
