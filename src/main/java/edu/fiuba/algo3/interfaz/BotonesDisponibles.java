@@ -27,7 +27,7 @@ public class BotonesDisponibles extends VBox {
 
         Label titulo = new Label("Acciones Disponibles");
 
-        ArrayList<Accion> AccionesDisponibles = juego.DevolverAcciones();
+        ArrayList<Accion> AccionesDisponibles = juego.devolverAcciones();
 
         Button botonEjecutar = new Button();
         botonEjecutar.setText("Ejecutar");

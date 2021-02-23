@@ -27,7 +27,7 @@ public class AreaDeDibujado extends GridPane implements Observer {
     private ObservadorPincel observadorPincel;
 
     public AreaDeDibujado(Juego juego){
-        //this.getStylesheets().add("LineChart.css");
+        this.getStylesheets().add(getClass().getResource("/edu.fiuba.algo3/LineChart.css").toExternalForm());
         seriePosiciones.add(new XYChart.Series());
         this.getChildren().add(lineChart);
         this.juego = juego;
@@ -38,6 +38,7 @@ public class AreaDeDibujado extends GridPane implements Observer {
         this.lineChart.getData().add(seriePosiciones.get(seriePosiciones.size()-1));
         this.lineChart.setTitle("Tablero");
         this.lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
+        this.lineChart.setLegendVisible(false);
     }
 
     public void nuevaSerie(){

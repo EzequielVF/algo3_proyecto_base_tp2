@@ -9,8 +9,9 @@ coverage:
   ignore:
     - "src/main/java/edu/fiuba/algo3/interfaz"
     - "src/main/java/edu/fiuba/algo3/Controlador"
+    - "src/main/java/edu/fiuba/algo3/App.java"
   status:
-    project: yes
+    project: true
     patch: yes
     changes: no
 

@@ -6,7 +6,6 @@ import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
 import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
 import edu.fiuba.algo3.modelo.pincel.PincelArriba;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,47 +15,47 @@ public class JuegoTest {
     public void PruebaMoverALaderecha() {
         Juego juego = new Juego();
         Posicion posicion = new Posicion();
-        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(),juego.devolverReferenciaPosicion().hashCode());
         juego.agregarAccion(new MoverALaDerecha());
         juego.ejecutar();
         posicion.sumarAColumna();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
     @Test
     public void PruebaMoverALaIzquierda() {
         Juego juego = new Juego();
         Posicion posicion = new Posicion();
-        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(),juego.devolverReferenciaPosicion().hashCode());
         juego.agregarAccion(new MoverALaIzquierda());
         juego.ejecutar();
         posicion.restarAColumna();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
     @Test
     public void PruebaMoverArriba() {
         Juego juego = new Juego();
         Posicion posicion = new Posicion();
-        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
         juego.agregarAccion(new MoverArriba());
         juego.ejecutar();
         posicion.sumarAFila();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
     @Test
     public void PruebaMoverAbajo() {
         Juego juego = new Juego();
         Posicion posicion = new Posicion();
-        assertEquals(posicion.hashCode(),juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
         juego.agregarAccion(new MoverAbajo());
         juego.ejecutar();
         posicion.restarAFila();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
     @Test
     public void PruebaEstadoInicialPincelArriba() {
         Juego juego = new Juego();
         EstadoPincel pincelArriba = new PincelArriba();
-        assertEquals(pincelArriba.getClass(),(juego.devolverEstadoPincel().getClass()));
+        assertEquals(pincelArriba.getClass(),(juego.devolverPincel().devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaBajarPincel() {
@@ -64,7 +63,7 @@ public class JuegoTest {
         EstadoPincel pincelAbajo = new PincelAbajo();
         juego.agregarAccion(new BajarPincel());
         juego.ejecutar();
-        assertEquals(pincelAbajo.getClass(),(juego.devolverEstadoPincel().getClass()));
+        assertEquals(pincelAbajo.getClass(),(juego.devolverPincel().devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaBajarYSubirPincel() {
@@ -73,7 +72,7 @@ public class JuegoTest {
         juego.agregarAccion(new BajarPincel());
         juego.agregarAccion(new SubirPincel());
         juego.ejecutar();
-        assertEquals(pincelArriba.getClass(),(juego.devolverEstadoPincel().getClass()));
+        assertEquals(pincelArriba.getClass(),(juego.devolverPincel().devolverEstadoPincel().getClass()));
     }
     @Test
     public void PruebaCantidadDeCeldasPintadasCorrecta() {
@@ -95,7 +94,7 @@ public class JuegoTest {
         juego.ejecutar();
         posicion.sumarAColumna();
         posicion.sumarAColumna();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
 
     @Test
@@ -109,7 +108,7 @@ public class JuegoTest {
         posicion.sumarAColumna();
         posicion.sumarAColumna();
         posicion.sumarAColumna();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
 
     @Test
@@ -121,7 +120,7 @@ public class JuegoTest {
         juego.agregarAccion(invertircomportamiento);
         juego.ejecutar();
         posicion.restarAColumna();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
 
     @Test
@@ -138,7 +137,7 @@ public class JuegoTest {
         posicion.sumarAColumna();
         posicion.sumarAColumna();
         posicion.sumarAColumna();
-        assertEquals(posicion.hashCode(), juego.devolverPosicionActualPersonaje());
+        assertEquals(posicion.hashCode(), juego.devolverReferenciaPosicion().hashCode());
     }
 
     @Test
@@ -163,8 +162,19 @@ public class JuegoTest {
     @Test
     public void PruebaCrearAlgoritmoPersonalizadoTextoVacio(){
         Juego juego = new Juego();
-        assertThrows(NombreNoValidoParaAlgoritmoExcepcion.class, () -> {
-            juego.crearAlgoritmoPersonalizado("");
-        });
+        assertThrows(NombreNoValidoParaAlgoritmoExcepcion.class, () -> juego.crearAlgoritmoPersonalizado(""));
+    }
+
+    @Test
+    public void PruebaJuegoDevolverPosiblesAccionesDevuelveAccionesCorrectamente(){
+        Juego juego = new Juego();
+        ArrayListTest<Accion> posiblesAcciones = new ArrayListTest<>();
+        posiblesAcciones.add(new MoverAbajo());
+        posiblesAcciones.add(new MoverArriba());
+        posiblesAcciones.add(new MoverALaDerecha());
+        posiblesAcciones.add(new MoverALaIzquierda());
+        posiblesAcciones.add(new SubirPincel());
+        posiblesAcciones.add(new BajarPincel());
+        assertTrue(posiblesAcciones.equals(juego.devolverAcciones()));
     }
 }

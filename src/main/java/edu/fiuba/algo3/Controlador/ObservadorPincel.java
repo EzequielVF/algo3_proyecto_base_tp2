@@ -15,16 +15,16 @@ public class ObservadorPincel implements Observer {
     public ObservadorPincel(Juego juego,AreaDeDibujado areaDeDibujado){
         this.juego = juego;
         this.areaDeDibujado = areaDeDibujado;
-        this.estadoPincel = juego.devolverEstadoPincel();
+        this.estadoPincel = juego.devolverPincel().devolverEstadoPincel();
         this.pincel = juego.devolverPincel();
-        pincel.addObserver((Observer) this);
+        pincel.addObserver(this);
     }
 
     @Override
     public void change() {
 
-        estadoPincel = juego.devolverEstadoPincel();
-        estadoPincel.addObserver((Observer) areaDeDibujado);
+        estadoPincel = juego.devolverPincel().devolverEstadoPincel();
+        estadoPincel.addObserver(areaDeDibujado);
         areaDeDibujado.nuevaSerie();
     }
 

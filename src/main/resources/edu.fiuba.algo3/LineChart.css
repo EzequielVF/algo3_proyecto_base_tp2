@@ -1,6 +1,6 @@
 .chart {
     -fx-padding: 10px;
-    -fx-background-color: #010101;
+    -fx-background-color: transparent;
     -fx-legend-visible: false;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .chart-plot-background {
-    -fx-background-color:transparent;
+    -fx-background-color:cyan;
 }
 
 .chart-vertical-grid-lines {

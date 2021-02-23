@@ -17,7 +17,7 @@ public class Juego {
     public Algoritmo algoritmo = new Algoritmo();
     public HashMap<String, Algoritmo> algoritmosGuardados = new HashMap<>();
 
-    public ArrayList<Accion> posiblesAcciones = new ArrayList();
+    public ArrayList<Accion> posiblesAcciones = new ArrayList<>();
     {
         posiblesAcciones.add(new MoverAbajo());
         posiblesAcciones.add(new MoverArriba());
@@ -27,14 +27,14 @@ public class Juego {
         posiblesAcciones.add(new BajarPincel());
     }
 
-    public ArrayList<Accion> DevolverAcciones(){
+    public ArrayList<Accion> devolverAcciones(){
         return posiblesAcciones;
     }
     public void agregarAccion(Accion accion){algoritmo.almacenarAccion(accion); }
 
     public void crearAlgoritmoPersonalizado(String nombre){
         Algoritmo AlgoritmoPersonalizado = new Algoritmo();
-        if(nombre == "") {throw new NombreNoValidoParaAlgoritmoExcepcion();}
+        if(nombre.equals("")) {throw new NombreNoValidoParaAlgoritmoExcepcion();}
         algoritmo.transferirAcciones(AlgoritmoPersonalizado);
         algoritmosGuardados.put(nombre, AlgoritmoPersonalizado);
     }
@@ -52,13 +52,13 @@ public class Juego {
         algoritmo.aplicarAccion(personaje);
     }
 
-    public Integer devolverPosicionActualPersonaje() { return personaje.posicionActual(); }
+    //public Integer devolverPosicionActualPersonaje() { return personaje.posicionActual(); }
 
     public Posicion devolverReferenciaPosicion() { return personaje.devolverPosicion(); }
 
-    public EstadoPincel devolverEstadoPincel(){
+    /*public EstadoPincel devolverEstadoPincel(){
         return personaje.devolverEstadoPincel();
-    }
+    }*/
 
     public Pincel devolverPincel(){
         return personaje.devolverPincel();
