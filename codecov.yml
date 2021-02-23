@@ -1,5 +1,5 @@
 codecov:
-    require_ci_to_pass: yes
+  require_ci_to_pass: yes
 
 coverage:
   precision: 2
@@ -10,11 +10,6 @@ ignore:
   - "src/main/java/edu/fiuba/algo3/interfaz"
   - "src/main/java/edu/fiuba/algo3/Controlador"
   - "src/main/java/edu/fiuba/algo3/App.java"
-
-status:
-    project: yes
-    patch: yes
-    changes: no
 
 parsers:
   gcov:
