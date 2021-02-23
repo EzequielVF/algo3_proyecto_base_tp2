@@ -11,7 +11,7 @@ coverage:
     - "src/main/java/edu/fiuba/algo3/Controlador"
     - "src/main/java/edu/fiuba/algo3/App.java"
   status:
-    project: true
+    project: yes
     patch: yes
     changes: no
 
