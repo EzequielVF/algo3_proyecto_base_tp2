@@ -33,7 +33,10 @@ public class AreaDeDibujado extends GridPane implements Observer {
         this.juego = juego;
         observadorPincel = new ObservadorPincel(this.juego,this);
         this.posicion = juego.devolverReferenciaPosicion();
-        this.pincel = observadorPincel.devolverEstadoPincel();
+        //this.pincel = observadorPincel.devolverEstadoPincel();
+
+        this.pincel = juego.devolverPincel().devolverEstadoPincelAbajo();
+        pincel.addObserver(this);
 
         this.lineChart.getData().add(seriePosiciones.get(seriePosiciones.size()-1));
         this.lineChart.setTitle("Tablero");

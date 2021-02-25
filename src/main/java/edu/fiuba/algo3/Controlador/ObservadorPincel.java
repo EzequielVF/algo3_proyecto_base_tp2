@@ -7,7 +7,7 @@ import edu.fiuba.algo3.modelo.pincel.Pincel;
 
 public class ObservadorPincel implements Observer {
 
-    private EstadoPincel estadoPincel;
+    //private EstadoPincel estadoPincel;
     private Juego juego;
     private Pincel pincel;
     private AreaDeDibujado areaDeDibujado;
@@ -15,7 +15,7 @@ public class ObservadorPincel implements Observer {
     public ObservadorPincel(Juego juego,AreaDeDibujado areaDeDibujado){
         this.juego = juego;
         this.areaDeDibujado = areaDeDibujado;
-        this.estadoPincel = juego.devolverPincel().devolverEstadoPincel();
+        //this.estadoPincel = juego.devolverPincel().devolverEstadoPincel();
         this.pincel = juego.devolverPincel();
         pincel.addObserver(this);
     }
@@ -23,12 +23,12 @@ public class ObservadorPincel implements Observer {
     @Override
     public void change() {
 
-        estadoPincel = juego.devolverPincel().devolverEstadoPincel();
-        estadoPincel.addObserver(areaDeDibujado);
+        //estadoPincel = juego.devolverPincel().devolverEstadoPincel();
+        //estadoPincel.addObserver(areaDeDibujado);
         areaDeDibujado.nuevaSerie();
     }
 
-    public EstadoPincel devolverEstadoPincel() {
+    /*public EstadoPincel devolverEstadoPincel() {
         return estadoPincel;
-    }
+    }*/
 }
