@@ -2,6 +2,7 @@ package edu.fiuba.algo3.interfaz;
 
 import edu.fiuba.algo3.modelo.*;
 import javafx.geometry.*;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -18,7 +19,12 @@ public class CampoDeJuego extends BorderPane {
 
         public CampoDeJuego() {
 
-            this.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+            //this.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+            ScrollPane scroll = new ScrollPane(botonesDisponibles);
+            scroll.setMinWidth(150);
+            this.setRight(scroll);
+
+
 
             posicionarSectores();
 

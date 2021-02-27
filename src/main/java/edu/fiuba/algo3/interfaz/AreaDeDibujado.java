@@ -30,7 +30,6 @@ public class AreaDeDibujado extends GridPane implements Observer {
 
         this.lineChart.getData().add(seriePosiciones.get(seriePosiciones.size()-1));
         this.lineChart.setTitle("Tablero");
-        //this.lineChart.setStyle(".default-color0.chart-series-line { -fx-stroke: #e9967a; }");
         this.lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
         this.lineChart.setLegendVisible(false);
     }

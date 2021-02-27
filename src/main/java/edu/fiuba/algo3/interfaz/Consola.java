@@ -1,17 +1,18 @@
 package edu.fiuba.algo3.interfaz;
 
+import javafx.application.Platform;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
-public class Consola extends Pane {
+public class Consola extends VBox {
     private Label consola = new Label();
 
     public Consola(){
         this.getChildren().add(consola);
         this.setBackground(new Background(new BackgroundFill(Color.AQUAMARINE, CornerRadii.EMPTY, new Insets(-2.0))));
-
     }
 
     public void display(String nombreBloque){

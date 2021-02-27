@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class VentanaPresentacion extends VBox {
@@ -27,22 +28,26 @@ public class VentanaPresentacion extends VBox {
         botonSalir.setText("Salir");
         botonJugar.setText("Jugar");
 
+
        BotonJugarEventHandler botonJugarEventHandler  = new BotonJugarEventHandler(stage);
        botonJugar.setOnAction(botonJugarEventHandler);
 
+       botonSalir.setStyle(("-fx-background-color: rgb(252,3,3)"));
+       botonSalir.setTextFill(Color.WHITE);
        botonSalir.setOnAction(actionEvent -> Platform.exit());
 
         HBox botonera = new HBox(botonJugar, botonSalir);
         botonera.setAlignment(Pos.CENTER);
+        botonera.setSpacing( 20 );
 
-        /*Image imagen = new Image(RUTA_ICONO);
+        Image imagen = new Image(RUTA_ICONO);
         ImageView vistaDeImagen = new ImageView(imagen);
         vistaDeImagen.setFitWidth(ANCHO);
-        vistaDeImagen.setFitHeight(ALTO);*/
+        vistaDeImagen.setFitHeight(ALTO);
 
         Label etiqueta = new Label("Bienvenidos a AlgoBlocks!");
         //etiqueta.getStyleClass().add("titulo");
 
-        this.getChildren().addAll(etiqueta,botonera);
+        this.getChildren().addAll(etiqueta, vistaDeImagen, botonera);
     }
 }

@@ -14,10 +14,9 @@ import java.io.InputStream;
  * JavaFX App
  */
 public class App extends Application {
-    private static final String RUTA_ICONO = "/edu.fiuba.algo3/logo.png";
-    //private InputStream stream = new FileInputStream("C:\\Users\\Vilardo\\Documents\\GitHub\\algo3_tp2_AlgoBlocks\\src\\main\\resources\\edu.fiuba.algo3");
-    private static final int ANCHO = 1500;
-    private static final int ALTO = 600;
+    private static final String RUTA_ICONO = "logo.png";
+    private static final int ANCHO = 500;
+    private static final int ALTO = 500;
     private static final String nombreVentana = "Tp2 - AlgoBlocks - Grupo 6";
 
 
@@ -26,10 +25,6 @@ public class App extends Application {
     }
     @Override
     public void start(Stage stage) {
-
-        /*CampoDeJuego tablero = new CampoDeJuego();*/
-
-
         VentanaPresentacion ventanaPresentacion = new VentanaPresentacion(stage);
         Scene presentacion = new Scene(ventanaPresentacion, ANCHO, ALTO);
 
