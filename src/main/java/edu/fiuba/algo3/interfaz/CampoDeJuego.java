@@ -11,7 +11,6 @@ import javafx.scene.paint.Color;
 public class CampoDeJuego extends BorderPane {
 
         Consola consola = new Consola();
-
         Juego juego = new Juego();
 
         AreaDeDibujado areaDeDibujado = new AreaDeDibujado(juego.devolverPersonaje());

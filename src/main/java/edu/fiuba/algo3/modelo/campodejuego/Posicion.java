@@ -29,19 +29,15 @@ public class Posicion {
 
     public void sumarAColumna(){
         columna++;
-        //notifyObservers();
     }
     public void restarAColumna(){
         columna--;
-        //notifyObservers();
     }
     public void sumarAFila(){
         fila ++;
-        //notifyObservers();
     }
     public void restarAFila(){
         fila --;
-        //notifyObservers();
     }
 
 }

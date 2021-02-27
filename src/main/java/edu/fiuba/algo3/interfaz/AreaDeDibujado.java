@@ -19,24 +19,13 @@ public class AreaDeDibujado extends GridPane implements Observer {
     private ArrayList<XYChart.Series> seriePosiciones = new ArrayList<>();
 
     private LineChart lineChart = new LineChart(xAxis,yAxis);
-    //private ObservadorPincel observadorPincel;
 
     public AreaDeDibujado(Personaje personaje){
         this.getStylesheets().add(getClass().getResource("/edu.fiuba.algo3/LineChart.css").toExternalForm());
         seriePosiciones.add(new XYChart.Series());
         this.getChildren().add(lineChart);
         this.personaje = personaje;
-        //observadorPincel = new ObservadorPincel(this.juego,this);
 
-
-        //this.posicion = juego.devolverReferenciaPosicion();
-
-        //this.pincel = observadorPincel.devolverEstadoPincel();
-
-       // this.pincel = juego.devolverPincel().devolverEstadoPincelAbajo();
-       // pincel.addObserver(this);
-
-        //this.personaje = personaje;
         personaje.addObserver(this);
 
         this.lineChart.getData().add(seriePosiciones.get(seriePosiciones.size()-1));
@@ -62,7 +51,6 @@ public class AreaDeDibujado extends GridPane implements Observer {
         xAxis.setUpperBound(Math.max(xAxis.getUpperBound(),Collections.max(columnas) +1));
         yAxis.setLowerBound(Math.min(yAxis.getLowerBound(),Collections.min(filas) -1));
         yAxis.setUpperBound(Math.max(yAxis.getUpperBound(),Collections.max(filas) +1));
-
     }
 
     private ArrayList<Integer> columnas = new ArrayList<>();
