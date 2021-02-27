@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo.pincel;
 import edu.fiuba.algo3.Controlador.Observable;
 import edu.fiuba.algo3.modelo.campodejuego.Celda;
 
-public class Pincel extends Observable {
+public class Pincel {
 
     public EstadoPincel estadoArriba = new PincelArriba();
 
@@ -25,12 +25,10 @@ public class Pincel extends Observable {
 
     public void subirPincel(){
         estado = estadoArriba;
-        notifyObservers();
     }
 
     public void bajarPincel(){
         estado = estadoAbajo;
-        notifyObservers();
     }
 
 }

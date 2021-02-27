@@ -16,8 +16,8 @@ public class ObservadorPincel implements Observer {
         this.juego = juego;
         this.areaDeDibujado = areaDeDibujado;
         //this.estadoPincel = juego.devolverPincel().devolverEstadoPincel();
-        this.pincel = juego.devolverPincel();
-        pincel.addObserver(this);
+        //this.pincel = juego.devolverPincel();
+        //pincel.addObserver(this);
     }
 
     @Override

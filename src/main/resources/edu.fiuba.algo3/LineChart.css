@@ -34,10 +34,7 @@
     -fx-stroke: transparent;
 }
 
-.default-color0.chart-series-line {
-    -fx-stroke: #0000ff;
-}
-
-.default-color0.chart-line-symbol {
-    -fx-background-color: #0000ff, white;
+.chart-series-line {
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
 }

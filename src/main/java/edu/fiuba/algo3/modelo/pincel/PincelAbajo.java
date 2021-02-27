@@ -6,6 +6,5 @@ public class PincelAbajo extends EstadoPincel {
 
     public void aplicarA(Celda celda){
         celda.pintar();
-        notifyObservers();
     }
 }

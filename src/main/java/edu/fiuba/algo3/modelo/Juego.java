@@ -52,16 +52,8 @@ public class Juego {
         algoritmo.aplicarAccion(personaje);
     }
 
-    //public Integer devolverPosicionActualPersonaje() { return personaje.posicionActual(); }
-
-    public Posicion devolverReferenciaPosicion() { return personaje.devolverPosicion(); }
-
-    /*public EstadoPincel devolverEstadoPincel(){
-        return personaje.devolverEstadoPincel();
-    }*/
-
-    public Pincel devolverPincel(){
-        return personaje.devolverPincel();
+    public Personaje devolverPersonaje(){
+        return personaje;
     }
 
     public int devolverCeldasPintadas(){

@@ -14,13 +14,11 @@ import java.util.ArrayList;
 
 public class BotonesDisponibles extends VBox {
     private Consola consola;
-    private AreaDeDibujado areaDeDibujado;
     private Juego juego;
 
-    public BotonesDisponibles(Consola consola,AreaDeDibujado areaDeDibujado,Juego juego) {
+    public BotonesDisponibles(Consola consola, Juego juego) {
 
         this.consola = consola;
-        this.areaDeDibujado = areaDeDibujado;
         this.juego = juego;
 
         this.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(78), new Insets(-5.0))));
@@ -32,7 +30,7 @@ public class BotonesDisponibles extends VBox {
         Button botonEjecutar = new Button();
         botonEjecutar.setText("Ejecutar");
 
-        BotonEjecutarEventhandler botonEjecutarHandler = new BotonEjecutarEventhandler(juego, consola,areaDeDibujado);
+        BotonEjecutarEventhandler botonEjecutarHandler = new BotonEjecutarEventhandler(juego, consola);
         botonEjecutar.setOnAction(botonEjecutarHandler);
 
         //Configuracion Boton Algoritmo personalizado//
@@ -54,28 +52,9 @@ public class BotonesDisponibles extends VBox {
         RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
         InvertirComportamiento invertirComportamientoBloque = new InvertirComportamiento();
 
-        //Meto los items dentro del Boton menu//
-        for (Accion accion :AccionesDisponibles) {
-            MenuItem acciones = new MenuItem(accion.devolverNombre());
-            BotonRepetibleEventhandler botonUsardarHandler = new BotonRepetibleEventhandler(juego, accion, consola,repetirPorTresBloque);
-            acciones.setOnAction(botonUsardarHandler);
-
-            repetirPorTres.getItems().add(acciones);
-        }
-        for (Accion accion :AccionesDisponibles) {
-            MenuItem acciones = new MenuItem(accion.devolverNombre());
-            BotonRepetibleEventhandler botonAccionEventhandler = new BotonRepetibleEventhandler(juego, accion, consola,invertirComportamientoBloque);
-            acciones.setOnAction(botonAccionEventhandler);
-
-            invertirComportamiento.getItems().add(acciones);
-        }
-        for (Accion accion :AccionesDisponibles) {
-            MenuItem acciones = new MenuItem(accion.devolverNombre());
-            BotonRepetibleEventhandler botonRepetibleEventhandler = new BotonRepetibleEventhandler(juego, accion, consola,repetirPorDosBloque);
-            acciones.setOnAction(botonRepetibleEventhandler);
-
-            repetirPorDos.getItems().add(acciones);
-        }
+        crearBloquerepetible(AccionesDisponibles,repetirPorDosBloque,repetirPorDos);
+        crearBloquerepetible(AccionesDisponibles,repetirPorTresBloque,repetirPorTres);
+        crearBloquerepetible(AccionesDisponibles,invertirComportamientoBloque,invertirComportamiento);
 
         MenuItem guardarRepetiblePorDos = new MenuItem("Almacenar");
         BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetiblePorDosEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,repetirPorDosBloque);
@@ -106,5 +85,16 @@ public class BotonesDisponibles extends VBox {
         botonera.setAlignment( Pos.CENTER );
         botonera.setSpacing( 10 );
         this.getChildren().add(botonera);
+    }
+
+    private void crearBloquerepetible(ArrayList<Accion> AccionesDisponibles, Repetible repetible, MenuButton repetibleButton) {
+        //Meto los items dentro del Boton menu//
+        for (Accion accion :AccionesDisponibles) {
+            MenuItem acciones = new MenuItem(accion.devolverNombre());
+            BotonRepetibleEventhandler botonUsardarHandler = new BotonRepetibleEventhandler(accion, consola,repetible);
+            acciones.setOnAction(botonUsardarHandler);
+
+            repetibleButton.getItems().add(acciones);
+        }
     }
 }

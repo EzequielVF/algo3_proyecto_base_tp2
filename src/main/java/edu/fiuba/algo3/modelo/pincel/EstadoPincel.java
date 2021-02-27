@@ -4,7 +4,7 @@ import edu.fiuba.algo3.Controlador.Observable;
 import edu.fiuba.algo3.Controlador.Observer;
 import edu.fiuba.algo3.modelo.campodejuego.Celda;
 
-public abstract class EstadoPincel extends Observable {
+public abstract class EstadoPincel {
 
     abstract void aplicarA(Celda celda);
 }

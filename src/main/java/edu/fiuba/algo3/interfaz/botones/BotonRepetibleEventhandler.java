@@ -9,13 +9,11 @@ import javafx.event.EventHandler;
 
 public class BotonRepetibleEventhandler implements EventHandler<ActionEvent> {
 
-    private Juego juego;
     private Accion accion;
     private Consola consola;
     private Repetible repetible;
 
-    public BotonRepetibleEventhandler(Juego juego, Accion accion, Consola consola,Repetible repetible){
-        this.juego = juego;
+    public BotonRepetibleEventhandler(Accion accion, Consola consola,Repetible repetible){
         this.accion = accion;
         this.consola = consola;
         this.repetible = repetible;

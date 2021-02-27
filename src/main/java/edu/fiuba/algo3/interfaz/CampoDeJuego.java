@@ -14,11 +14,8 @@ public class CampoDeJuego extends BorderPane {
 
         Juego juego = new Juego();
 
-        AreaDeDibujado areaDeDibujado = new AreaDeDibujado(juego);
-        BotonesDisponibles botonesDisponibles = new BotonesDisponibles(consola, areaDeDibujado, juego);
-
-
-
+        AreaDeDibujado areaDeDibujado = new AreaDeDibujado(juego.devolverPersonaje());
+        BotonesDisponibles botonesDisponibles = new BotonesDisponibles(consola, juego);
 
         public CampoDeJuego() {
 
