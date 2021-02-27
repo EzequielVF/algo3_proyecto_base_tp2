@@ -11,6 +11,6 @@ public class MoverALaDerecha implements Accion {
     public void aplicarAccionInversa(Personaje personaje) { personaje.moverIzquierda(); }
 
     public String devolverNombre(){
-        return " Mover a la derecha";
+        return "Mover a la derecha";
     }
 }

@@ -19,10 +19,6 @@ public class Pincel {
         return estado;
     }
 
-    public EstadoPincel devolverEstadoPincelAbajo(){
-        return estadoAbajo;
-    }
-
     public void subirPincel(){
         estado = estadoArriba;
     }

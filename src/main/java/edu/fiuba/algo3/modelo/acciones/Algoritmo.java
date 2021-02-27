@@ -30,6 +30,6 @@ public class Algoritmo extends Repetible {
     }
 
     public String devolverNombre(){
-        return " Algoritmo personalizado";
+        return "Algoritmo personalizado";
     }
 }

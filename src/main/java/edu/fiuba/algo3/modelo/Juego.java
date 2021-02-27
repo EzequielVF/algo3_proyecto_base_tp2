@@ -4,11 +4,7 @@ import edu.fiuba.algo3.modelo.acciones.Accion;
 import edu.fiuba.algo3.modelo.acciones.Algoritmo;
 import edu.fiuba.algo3.modelo.acciones.*;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
-import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
 import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
-import edu.fiuba.algo3.modelo.pincel.*;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 
 import java.util.*;
 

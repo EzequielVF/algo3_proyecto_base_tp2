@@ -11,6 +11,6 @@ public class MoverAbajo implements Accion {
     public void aplicarAccionInversa(Personaje personaje) { personaje.moverArriba(); }
 
     public String devolverNombre(){
-        return " Mover abajo";
+        return "Mover abajo";
     }
 }

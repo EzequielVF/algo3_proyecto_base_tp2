@@ -16,7 +16,7 @@ public class RepetirPorTres extends Repetible {
     }
 
     public String devolverNombre(){
-        return " Repetir por 3";
+        return "Repetir por 3";
     }
 
     public Repetible copiar(){

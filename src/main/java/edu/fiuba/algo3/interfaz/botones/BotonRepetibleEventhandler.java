@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.interfaz.botones;
 
 import edu.fiuba.algo3.interfaz.Consola;
-import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.acciones.Accion;
 import edu.fiuba.algo3.modelo.acciones.Repetible;
 import javafx.event.ActionEvent;
@@ -22,6 +21,6 @@ public class BotonRepetibleEventhandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         this.repetible.almacenarAccion(accion);
-        consola.display(accion.devolverNombre());
+        consola.displayRepetible(repetible,accion.devolverNombre()+".png");
     }
 }

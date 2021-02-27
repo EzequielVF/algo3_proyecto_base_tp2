@@ -21,6 +21,6 @@ public class BotonAccionEventhandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         this.juego.agregarAccion(accion);
-        consola.display(accion.devolverNombre());
+        consola.display(accion.devolverNombre()+".png");
     }
 }

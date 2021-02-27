@@ -19,6 +19,6 @@ public class BotonUsarAlgoritmoEventHandler implements EventHandler<ActionEvent>
     @Override
     public void handle(ActionEvent actionEvent){
         juego.usarAlgoritmoPersonalizado(nombre);
-        consola.display(nombre);
+        consola.display("Algoritmo personalizado.png");
     }
 }

@@ -15,7 +15,7 @@ public class RepetirPorDos extends Repetible {
     }
 
     public String devolverNombre(){
-        return " Repetir por 2";
+        return "Repetir por 2";
     }
 
 

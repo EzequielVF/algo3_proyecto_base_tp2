@@ -27,7 +27,7 @@ public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEve
     public void handle(ActionEvent actionEvent){
         try{
             juego.crearAlgoritmoPersonalizado(nombreAlgoritmo.getText());
-            consola.display(nombreAlgoritmo.getText());
+            //consola.display(nombreAlgoritmo.getText());
             MenuItem algoritmoPersonalizado = new MenuItem(nombreAlgoritmo.getText());
             BotonUsarAlgoritmoEventHandler botonUsardarHandler = new BotonUsarAlgoritmoEventHandler(juego, consola, nombreAlgoritmo.getText());
             algoritmoPersonalizado.setOnAction(botonUsardarHandler);

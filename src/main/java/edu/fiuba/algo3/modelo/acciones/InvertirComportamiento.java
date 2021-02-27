@@ -15,7 +15,7 @@ public class InvertirComportamiento extends Repetible {
     }
 
     public String devolverNombre(){
-        return " Invertir comportamiento";
+        return "Invertir comportamiento";
     }
 
     public Repetible copiar(){

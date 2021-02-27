@@ -20,7 +20,8 @@ public class BotonAlmacenarRepetibleEventhandler implements EventHandler<ActionE
 
     @Override
     public void handle(ActionEvent actionEvent){
-        this.juego.agregarAccion(repetible.copiar());//repetible.copiar();
-        consola.display(repetible.devolverNombre());
+        this.juego.agregarAccion(repetible.copiar());
+        consola.limpiarRepetible();
+        consola.display(repetible.devolverNombre()+".png");
     }
 }
