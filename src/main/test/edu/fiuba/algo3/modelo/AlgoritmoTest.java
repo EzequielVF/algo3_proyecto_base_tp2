@@ -2,10 +2,9 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.acciones.Algoritmo;
 import edu.fiuba.algo3.modelo.acciones.MoverALaDerecha;
-import edu.fiuba.algo3.modelo.acciones.MoverAbajo;
 import edu.fiuba.algo3.modelo.acciones.Repetible;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
-import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
+import edu.fiuba.algo3.modelo.excepciones.RepetibleNoTieneAccionesTodaviaExcepcion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,7 +15,7 @@ public class AlgoritmoTest {
     public void PruebaTransferirAccionesVaciasLanzaError(){
         Algoritmo algoritmo = new Algoritmo();
         Algoritmo aux = new Algoritmo();
-        assertThrows(AlgoritmoNoTieneAccionesTodaviaExcepcion.class, () -> {
+        assertThrows(RepetibleNoTieneAccionesTodaviaExcepcion.class, () -> {
             algoritmo.transferirAcciones(aux);
         });
     }
@@ -43,7 +42,7 @@ public class AlgoritmoTest {
         aux.aplicarAccion(personaje);
         posicion.sumarAColumna();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
-        assertThrows(AlgoritmoNoTieneAccionesTodaviaExcepcion.class, () -> {
+        assertThrows(RepetibleNoTieneAccionesTodaviaExcepcion.class, () -> {
             algoritmo.aplicarAccion(personaje);
         });
     }

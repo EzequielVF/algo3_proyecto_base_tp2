@@ -12,7 +12,11 @@ public class RepetirPorTres extends Repetible {
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
-        this.aplicarAccion(personaje);
+        for(Accion accion: accionesAEjecutar){
+            accion.aplicarAccionInversa(personaje);
+            accion.aplicarAccionInversa(personaje);
+            accion.aplicarAccionInversa(personaje);
+        }
     }
 
     public String devolverNombre(){

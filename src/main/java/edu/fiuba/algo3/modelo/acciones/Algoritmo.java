@@ -1,22 +1,25 @@
 package edu.fiuba.algo3.modelo.acciones;
 
 import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
+import edu.fiuba.algo3.modelo.excepciones.RepetibleNoTieneAccionesTodaviaExcepcion;
 
 public class Algoritmo extends Repetible {
 
     public void aplicarAccion(Personaje personaje){
-        if(accionesAEjecutar.isEmpty()){ throw new AlgoritmoNoTieneAccionesTodaviaExcepcion();}
+        if(accionesAEjecutar.isEmpty()){ throw new RepetibleNoTieneAccionesTodaviaExcepcion();}
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
-        this.aplicarAccion(personaje);
+        if(accionesAEjecutar.isEmpty()){ throw new RepetibleNoTieneAccionesTodaviaExcepcion();}
+        for(Accion accion: accionesAEjecutar){
+            accion.aplicarAccionInversa(personaje);
+        }
     }
 
     public void transferirAcciones(Algoritmo aux){
-        if(accionesAEjecutar.isEmpty()){ throw new AlgoritmoNoTieneAccionesTodaviaExcepcion();}
+        if(accionesAEjecutar.isEmpty()){ throw new RepetibleNoTieneAccionesTodaviaExcepcion();}
         for(Accion accion: accionesAEjecutar){
             aux.almacenarAccion(accion);
         }

@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.interfaz;
 
-import edu.fiuba.algo3.App;
 import edu.fiuba.algo3.interfaz.botones.BotonJugarEventHandler;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
@@ -10,30 +9,30 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class VentanaPresentacion extends VBox {
     private static final String RUTA_ICONO = "logo.png";
     private static final int ANCHO = 250;
     private static final int ALTO = 250;
-    private Stage stage; // si falla mirar acar
+    private Stage stage;
 
     public VentanaPresentacion(Stage stage){
-       this.stage = stage;
+        this.stage = stage;
         this.setAlignment(Pos.CENTER);
+        this.getStylesheets().add("style.css");
+        this.getStyleClass().add("fondo");
 
         Button botonJugar = new Button();
         Button botonSalir = new Button();
         botonSalir.setText("Salir");
         botonJugar.setText("Jugar");
 
-
        BotonJugarEventHandler botonJugarEventHandler  = new BotonJugarEventHandler(stage);
        botonJugar.setOnAction(botonJugarEventHandler);
+       botonJugar.getStyleClass().add("botonEjecutar");
 
-       botonSalir.setStyle(("-fx-background-color: rgb(252,3,3)"));
-       botonSalir.setTextFill(Color.WHITE);
+       botonSalir.getStyleClass().add("botonSalir");
        botonSalir.setOnAction(actionEvent -> Platform.exit());
 
         HBox botonera = new HBox(botonJugar, botonSalir);
@@ -46,6 +45,7 @@ public class VentanaPresentacion extends VBox {
         vistaDeImagen.setFitHeight(ALTO);
 
         Label etiqueta = new Label("Bienvenidos a AlgoBlocks!");
+        etiqueta.getStyleClass().add("tituloPrincipal");
         //etiqueta.getStyleClass().add("titulo");
 
         this.getChildren().addAll(etiqueta, vistaDeImagen, botonera);

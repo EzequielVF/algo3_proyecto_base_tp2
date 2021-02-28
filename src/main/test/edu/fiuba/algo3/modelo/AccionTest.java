@@ -180,8 +180,8 @@ public class AccionTest {
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
         invertirComportamiento.almacenarAccion(repetirPorDos);
         invertirComportamiento.aplicarAccion(personaje);
-        posicion.sumarAColumna();
-        posicion.sumarAColumna();
+        posicion.restarAColumna();
+        posicion.restarAColumna();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
 
@@ -195,9 +195,9 @@ public class AccionTest {
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
         invertirComportamiento.almacenarAccion(repetirPorTres);
         invertirComportamiento.aplicarAccion(personaje);
-        posicion.sumarAColumna();
-        posicion.sumarAColumna();
-        posicion.sumarAColumna();
+        posicion.restarAColumna();
+        posicion.restarAColumna();
+        posicion.restarAColumna();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
     }
 

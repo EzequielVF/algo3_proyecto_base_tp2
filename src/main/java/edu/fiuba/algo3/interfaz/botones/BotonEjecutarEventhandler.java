@@ -18,10 +18,8 @@ public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent){
-        this.juego.ejecutar();
+        juego.ejecutar();
         consola.limpiar();
-        consola.escribir("Algoritmo ejecutado");
-        System.out.println(this.juego.devolverCeldasPintadas());
-        this.juego.limpiar();
+        juego.limpiar();
     }
 }

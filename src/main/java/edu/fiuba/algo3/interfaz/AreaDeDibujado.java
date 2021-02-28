@@ -2,15 +2,20 @@ package edu.fiuba.algo3.interfaz;
 
 import edu.fiuba.algo3.Controlador.Observer;
 import edu.fiuba.algo3.modelo.Personaje;
+import javafx.geometry.Pos;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+
 import java.lang.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class AreaDeDibujado extends GridPane implements Observer {
+public class AreaDeDibujado extends VBox implements Observer {
 
     private final Personaje personaje;
 
@@ -21,7 +26,14 @@ public class AreaDeDibujado extends GridPane implements Observer {
     private LineChart lineChart = new LineChart(xAxis,yAxis);
 
     public AreaDeDibujado(Personaje personaje){
-        this.getStylesheets().add(getClass().getResource("/edu.fiuba.algo3/LineChart.css").toExternalForm());
+        this.getStylesheets().add("style.css");
+        this.getStyleClass().add("panel");
+
+        Label titulo = new Label("Tablero");
+        titulo.getStyleClass().add("titulo");
+        this.getChildren().add(titulo);
+
+        this.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         seriePosiciones.add(new XYChart.Series());
         this.getChildren().add(lineChart);
         this.personaje = personaje;
@@ -29,7 +41,6 @@ public class AreaDeDibujado extends GridPane implements Observer {
         personaje.addObserver(this);
 
         this.lineChart.getData().add(seriePosiciones.get(seriePosiciones.size()-1));
-        this.lineChart.setTitle("Tablero");
         this.lineChart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
         this.lineChart.setLegendVisible(false);
     }

@@ -22,41 +22,53 @@ public class BotonesDisponibles extends VBox {
         this.setSpacing(50);
         this.consola = consola;
         this.juego = juego;
-        this.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT, new CornerRadii(78), new Insets(-5.0))));
+        this.getChildren().add(consola);
+        this.getStylesheets().add("style.css");
+        this.getStyleClass().add("panel");
 
         Label titulo = new Label("Acciones Disponibles");
-        titulo.setMaxWidth(Double.MAX_VALUE);
-        titulo.setAlignment(Pos.CENTER);
-        titulo.setTextFill(Color.BLACK);
-        titulo.setStyle("-fx-background-color: rgb(252, 252, 3);");
-        titulo.setFont(Font.font("Times",14));
+        titulo.getStyleClass().add("titulo");
 
         ArrayList<Accion> AccionesDisponibles = juego.devolverAcciones();
 
+        //Seteo boton ejecutar
         Button botonEjecutar = new Button();
+        botonEjecutar.getStyleClass().add("botonEjecutar");
         botonEjecutar.setText("Ejecutar");
-
         BotonEjecutarEventhandler botonEjecutarHandler = new BotonEjecutarEventhandler(juego, consola);
         botonEjecutar.setOnAction(botonEjecutarHandler);
 
+        //Seteo boton salir
         Button botonSalir = new Button();
+        botonSalir.getStyleClass().add("botonSalir");
         botonSalir.setText("Salir");
         botonSalir.setOnAction(actionEvent -> Platform.exit());
 
+        //Agrego Salir y Ejecutar a una botonera
+        HBox botonera = new HBox(botonEjecutar, botonSalir);
+        botonera.setAlignment( Pos.CENTER );
+        botonera.setSpacing( 50 );
+
         //Configuracion Boton Algoritmo personalizado//
         Button botonGuardarAlgoritmo = new Button();
+        botonGuardarAlgoritmo.getStyleClass().add("botones");
         botonGuardarAlgoritmo.setText("Guardar este Algoritmo");
 
         TextField NombreAlgoritmo = new TextField();
+        NombreAlgoritmo.getStyleClass().add("botones");
         MenuButton AlgoritmosGuardados = new MenuButton("Algoritmos Guardados");
+        AlgoritmosGuardados.getStyleClass().add("botones");
 
         BotonGuardarAlgoritmoEventHandler botonGuardarHandler = new BotonGuardarAlgoritmoEventHandler(juego, consola, NombreAlgoritmo, AlgoritmosGuardados);
         botonGuardarAlgoritmo.setOnAction(botonGuardarHandler);
 
-        //-----------------------------------------------------------//
+        //Seteo los botones repetibles
         MenuButton repetirPorDos = new MenuButton("Repetir Por Dos");
+        repetirPorDos.getStyleClass().add("botones");
         MenuButton repetirPorTres = new MenuButton("Repetir Por Tres");
+        repetirPorTres.getStyleClass().add("botones");
         MenuButton invertirComportamiento = new MenuButton("Invertir Comportamiento");
+        invertirComportamiento.getStyleClass().add("botones");
 
         RepetirPorDos repetirPorDosBloque = new RepetirPorDos();
         RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
@@ -66,6 +78,7 @@ public class BotonesDisponibles extends VBox {
         crearBloquerepetible(AccionesDisponibles,repetirPorTresBloque,repetirPorTres);
         crearBloquerepetible(AccionesDisponibles,invertirComportamientoBloque,invertirComportamiento);
 
+        //Relleno los botones menu de los repetibles
         MenuItem guardarRepetiblePorDos = new MenuItem("Almacenar");
         BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetiblePorDosEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,repetirPorDosBloque);
         guardarRepetiblePorDos.setOnAction(botonAlmacenarRepetiblePorDosEventhandler);
@@ -81,22 +94,20 @@ public class BotonesDisponibles extends VBox {
         guardarRepetibleInvertir.setOnAction(botonAlmacenarRepetibleInvertirEventhandler);
         invertirComportamiento.getItems().add(guardarRepetibleInvertir);
 
-        HBox botonera = new HBox(botonEjecutar, botonSalir);
-        botonera.setAlignment( Pos.CENTER );
-        botonera.setSpacing( 50 );
+        //Agrego los botones a una VBox
         VBox botoneraAcciones = new VBox(titulo,AlgoritmosGuardados,NombreAlgoritmo,botonGuardarAlgoritmo,repetirPorDos,repetirPorTres,invertirComportamiento);
+        botoneraAcciones.setAlignment( Pos.CENTER );
+        botoneraAcciones.setSpacing( 10 );
 
-        //Agrega los bostones de acciones simples//
+        //Agrego los botones de acciones simples//
         for (Accion accion :AccionesDisponibles) {
             Button button = new Button();
             button.setText(accion.devolverNombre());
+            button.getStyleClass().add("botones");
             BotonAccionEventhandler eventHandler = new BotonAccionEventhandler(juego, accion, consola);
             button.setOnAction(eventHandler);
             botoneraAcciones.getChildren().add(button);
         }
-
-        botoneraAcciones.setAlignment( Pos.CENTER );
-        botoneraAcciones.setSpacing( 10 );
         this.getChildren().addAll(botonera, botoneraAcciones);
     }
 

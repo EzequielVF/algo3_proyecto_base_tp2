@@ -2,7 +2,7 @@ package edu.fiuba.algo3.interfaz.botones;
 
 import edu.fiuba.algo3.interfaz.Consola;
 import edu.fiuba.algo3.modelo.Juego;
-import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
+import edu.fiuba.algo3.modelo.excepciones.RepetibleNoTieneAccionesTodaviaExcepcion;
 import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -27,13 +27,12 @@ public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEve
     public void handle(ActionEvent actionEvent){
         try{
             juego.crearAlgoritmoPersonalizado(nombreAlgoritmo.getText());
-            //consola.display(nombreAlgoritmo.getText());
             MenuItem algoritmoPersonalizado = new MenuItem(nombreAlgoritmo.getText());
             BotonUsarAlgoritmoEventHandler botonUsardarHandler = new BotonUsarAlgoritmoEventHandler(juego, consola, nombreAlgoritmo.getText());
             algoritmoPersonalizado.setOnAction(botonUsardarHandler);
             algoritmosGuardados.getItems().add(algoritmoPersonalizado);
         }
-        catch ( NombreNoValidoParaAlgoritmoExcepcion | AlgoritmoNoTieneAccionesTodaviaExcepcion e){
+        catch ( NombreNoValidoParaAlgoritmoExcepcion | RepetibleNoTieneAccionesTodaviaExcepcion e){
             consola.escribir(e.getMessage());
         }
     }

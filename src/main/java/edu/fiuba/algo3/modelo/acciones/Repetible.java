@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.modelo.acciones;
 
 import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.acciones.Accion;
-import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepcion;
+import edu.fiuba.algo3.modelo.excepciones.RepetibleNoTieneAccionesTodaviaExcepcion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public abstract class Repetible implements Accion {
 
         public void transferirAcciones(Repetible repetible){
 
-            if(accionesAEjecutar.isEmpty()){ throw new AlgoritmoNoTieneAccionesTodaviaExcepcion();}//cambiar Excepcion
+            if(accionesAEjecutar.isEmpty()){ throw new RepetibleNoTieneAccionesTodaviaExcepcion();}//cambiar Excepcion
             for(Accion accion: accionesAEjecutar){
                 repetible.almacenarAccion(accion);
             }
