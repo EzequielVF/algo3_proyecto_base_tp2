@@ -18,7 +18,6 @@ public class RepetirPorDos extends Repetible {
         return "Repetir por 2";
     }
 
-
     public Repetible copiar(){
         RepetirPorDos copia = new RepetirPorDos();
         transferirAcciones(copia);

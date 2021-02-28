@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.excepciones.AlgoritmoNoTieneAccionesTodaviaExcepci
 public class Algoritmo extends Repetible {
 
     public void aplicarAccion(Personaje personaje){
+        if(accionesAEjecutar.isEmpty()){ throw new AlgoritmoNoTieneAccionesTodaviaExcepcion();}
         for(Accion accion: accionesAEjecutar){
             accion.aplicarAccion(personaje);
         }
@@ -15,7 +16,6 @@ public class Algoritmo extends Repetible {
     }
 
     public void transferirAcciones(Algoritmo aux){
-
         if(accionesAEjecutar.isEmpty()){ throw new AlgoritmoNoTieneAccionesTodaviaExcepcion();}
         for(Accion accion: accionesAEjecutar){
             aux.almacenarAccion(accion);
