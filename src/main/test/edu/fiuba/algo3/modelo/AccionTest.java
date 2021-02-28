@@ -245,60 +245,60 @@ public class AccionTest {
     @Test
     public void PruebaMoverALaDerechaDevuelveNombreCorrecto() {
         Accion accion = new MoverALaDerecha();
-        assertEquals(accion.devolverNombre()," Mover a la derecha");
+        assertEquals(accion.devolverNombre(),"Mover a la derecha");
     }
 
     @Test
     public void PruebaMoverALaIzquierdaDevuelveNombreCorrecto() {
         Accion accion = new MoverALaIzquierda();
-        assertEquals(accion.devolverNombre()," Mover a la izquierda");
+        assertEquals(accion.devolverNombre(),"Mover a la izquierda");
     }
 
     @Test
     public void PruebaMoverArribaDevuelveNombreCorrecto() {
         Accion accion = new MoverArriba();
-        assertEquals(accion.devolverNombre()," Mover arriba");
+        assertEquals(accion.devolverNombre(),"Mover arriba");
     }
 
     @Test
     public void PruebaMoverAbajoDevuelveNombreCorrecto() {
         Accion accion = new MoverAbajo();
-        assertEquals(accion.devolverNombre()," Mover abajo");
+        assertEquals(accion.devolverNombre(),"Mover abajo");
     }
 
     @Test
     public void PruebaInvertirComportamientoDevuelveNombreCorrecto() {
         Accion accion = new InvertirComportamiento();
-        assertEquals(accion.devolverNombre()," Invertir comportamiento");
+        assertEquals(accion.devolverNombre(),"Invertir comportamiento");
     }
 
     @Test
     public void PruebaAlgoritmoDevuelveNombreCorrecto() {
         Accion accion = new Algoritmo();
-        assertEquals(accion.devolverNombre()," Algoritmo personalizado");
+        assertEquals(accion.devolverNombre(),"Algoritmo personalizado");
     }
 
     @Test
     public void PruebaRepetirPorDosDevuelveNombreCorrecto() {
         Accion accion = new RepetirPorDos();
-        assertEquals(accion.devolverNombre()," Repetir por 2");
+        assertEquals(accion.devolverNombre(),"Repetir por 2");
     }
 
     @Test
     public void PruebaRepetirPorTresDevuelveNombreCorrecto() {
         Accion accion = new RepetirPorTres();
-        assertEquals(accion.devolverNombre()," Repetir por 3");
+        assertEquals(accion.devolverNombre(),"Repetir por 3");
     }
 
     @Test
     public void PruebaBajarPincelDevuelveNombreCorrecto() {
         Accion accion = new BajarPincel();
-        assertEquals(accion.devolverNombre()," Bajar pincel");
+        assertEquals(accion.devolverNombre(),"Bajar pincel");
     }
 
     @Test
     public void PruebaSubirPincelDevuelveNombreCorrecto() {
         Accion accion = new SubirPincel();
-        assertEquals(accion.devolverNombre()," Subir pincel");
+        assertEquals(accion.devolverNombre(),"Subir pincel");
     }
 }
