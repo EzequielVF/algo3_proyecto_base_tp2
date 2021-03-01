@@ -42,8 +42,5 @@ public class AlgoritmoTest {
         aux.aplicarAccion(personaje);
         posicion.sumarAColumna();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
-        assertThrows(RepetibleNoTieneAccionesTodaviaExcepcion.class, () -> {
-            algoritmo.aplicarAccion(personaje);
-        });
     }
 }
