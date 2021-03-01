@@ -6,20 +6,20 @@ import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
 import edu.fiuba.algo3.modelo.pincel.PincelArriba;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonajeTest {
     @Test
     public void personajeSeIniciaEnLaPosicionCorrecta() {
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
-        assertTrue(posicion.hashCode() == personaje.posicionActual());
+        assertEquals(personaje.posicionActual(), posicion.hashCode());
     }
     @Test
     public void personajeSeIniciaConPincelArriba() {
         EstadoPincel pincelArriba = new PincelArriba();
         Personaje personaje = new Personaje();
-        assertTrue(pincelArriba.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertSame(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
     }
     @Test
     public void personajeMoverAbajoModificaCorrectamentePosicion() {
@@ -27,7 +27,7 @@ public class PersonajeTest {
         personaje.moverAbajo();
         Posicion posicion = new Posicion();
         posicion.restarAFila();
-        assertTrue(posicion.hashCode() == personaje.posicionActual());
+        assertEquals(personaje.posicionActual(), posicion.hashCode());
     }
     @Test
     public void personajeMoverDerechaModificaCorrectamentePosicion() {
@@ -35,7 +35,7 @@ public class PersonajeTest {
         personaje.moverDerecha();
         Posicion posicion = new Posicion();
         posicion.sumarAColumna();
-        assertTrue(posicion.hashCode() == personaje.posicionActual());
+        assertEquals(personaje.posicionActual(), posicion.hashCode());
     }
     @Test
     public void personajeMoverIzquierdaModificaCorrectamentePosicion() {
@@ -43,7 +43,7 @@ public class PersonajeTest {
         personaje.moverIzquierda();
         Posicion posicion = new Posicion();
         posicion.restarAColumna();
-        assertTrue(posicion.hashCode() == personaje.posicionActual());
+        assertEquals(personaje.posicionActual(), posicion.hashCode());
     }
     @Test
     public void personajeMoverArribaModificaCorrectamentePosicion() {
@@ -51,14 +51,14 @@ public class PersonajeTest {
         personaje.moverArriba();
         Posicion posicion = new Posicion();
         posicion.sumarAFila();
-        assertTrue(posicion.hashCode() == personaje.posicionActual());
+        assertEquals(personaje.posicionActual(), posicion.hashCode());
     }
     @Test
     public void personajeBajaCorrectamenteElPincel() {
         EstadoPincel pincelAbajo = new PincelAbajo();
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
-        assertTrue(pincelAbajo.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertSame(pincelAbajo.getClass(), personaje.devolverEstadoPincel().getClass());
     }
     @Test
     public void personajeSubeCorrectamenteElPincel() {
@@ -66,6 +66,6 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
         personaje.subirPincel();
-        assertTrue(pincelArriba.getClass() == personaje.devolverEstadoPincel().getClass());
+        assertSame(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
     }
 }

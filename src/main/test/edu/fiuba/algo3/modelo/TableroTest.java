@@ -7,13 +7,19 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TableroTest {
+
+    @Test
+    public void TableroRecienCreadoNoTieneCeldasPintadas(){
+        Tablero tablero = new Tablero();
+        assertEquals(0, tablero.celdasPintadas());
+    }
+
     @Test
     public void TableroDibujarEfectivamenteDibuja() {
         Tablero tablero = new Tablero();
-        assertEquals(0, tablero.celdasPintadas());
         Pincel pincel = new Pincel();
         pincel.bajarPincel();
         Posicion posicion_a = new Posicion();
@@ -27,17 +33,23 @@ public class TableroTest {
     }
 
     @Test
-    public void pruebahash() {
+    public void TableroDibujarNoDibujaConPincelArriba() {
+        Tablero tablero = new Tablero();
+        Pincel pincel = new Pincel();
         Posicion posicion_a = new Posicion();
-        Posicion posicion_b = new Posicion();
-        Posicion posicion_c = new Posicion();
-        posicion_b.sumarAFila();
-        posicion_a.restarAFila();
-        posicion_c.restarAFila();
-        HashMap dictionary = new HashMap<Integer, Integer>();
-        dictionary.put(posicion_a.hashCode(), 1);
-        dictionary.put(posicion_b.hashCode(), 2);
-        System.out.println(posicion_a.hashCode());
-        assertEquals(1,dictionary.get(posicion_c.hashCode()));
+        tablero.dibujar(posicion_a, pincel);
+        assertEquals(0, tablero.celdasPintadas());
     }
+    @Test
+    public void TableroSabeDiferenciarEntrePosicionPintadaONo() {
+        Tablero tablero = new Tablero();
+        Pincel pincel = new Pincel();
+        Posicion posicion_a = new Posicion();
+        tablero.dibujar(posicion_a, pincel);
+        assertFalse(tablero.posicionPintada(posicion_a));
+        pincel.bajarPincel();
+        tablero.dibujar(posicion_a, pincel);
+        assertTrue(tablero.posicionPintada(posicion_a));
+    }
+
 }

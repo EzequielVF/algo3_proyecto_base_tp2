@@ -21,6 +21,8 @@ public class Tablero {
     }
 
     public boolean posicionPintada(Posicion posicion){
-        return ((terreno.get(posicion.hashCode())).devolverEstado());
+        terreno.putIfAbsent(posicion.hashCode(), new Celda());
+        Celda celda = terreno.get(posicion.hashCode());
+        return celda.devolverEstado();
     }
 }

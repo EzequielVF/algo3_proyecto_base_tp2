@@ -205,7 +205,6 @@ public class AccionTest {
     public void PruebaBajarPincelInversaCambiaCorrectamenteElEstadoDelPincel() {
         Personaje personaje = new Personaje();
         Accion accion = new BajarPincel();
-        EstadoPincel pincelAbajo = new PincelAbajo();
         EstadoPincel pincelArriba = new PincelArriba();
         assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
@@ -231,7 +230,6 @@ public class AccionTest {
     public void PruebaInvertirComportamientoInversaNoCambiaElEstadoDelPincel() {
         Personaje personaje = new Personaje();
         Accion accion = new SubirPincel();
-        EstadoPincel pincelAbajo = new PincelAbajo();
         EstadoPincel pincelArriba = new PincelArriba();
         assertEquals(pincelArriba.getClass(), personaje.devolverEstadoPincel().getClass());
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
@@ -300,5 +298,17 @@ public class AccionTest {
     public void PruebaSubirPincelDevuelveNombreCorrecto() {
         Accion accion = new SubirPincel();
         assertEquals(accion.devolverNombre(),"Subir pincel");
+    }
+
+    @Test
+    public void AlgoritmoDentroDeBloqueInvertirFuncionaCorrectamente() {
+        Algoritmo algoritmo = new Algoritmo();
+        Personaje personaje = new Personaje();
+        Posicion posicion = new Posicion();
+
+        algoritmo.almacenarAccion(new MoverALaDerecha());
+        algoritmo.aplicarAccionInversa(personaje);
+        posicion.restarAColumna();
+        assertEquals(posicion.hashCode(),personaje.posicionActual());
     }
 }
