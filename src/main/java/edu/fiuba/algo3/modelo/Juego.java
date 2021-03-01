@@ -9,9 +9,9 @@ import edu.fiuba.algo3.modelo.excepciones.NombreNoValidoParaAlgoritmoExcepcion;
 import java.util.*;
 
 public class Juego {
-    public Personaje personaje = new Personaje();
-    public Algoritmo algoritmo = new Algoritmo();
-    public HashMap<String, Algoritmo> algoritmosGuardados = new HashMap<>();
+    private Personaje personaje = new Personaje();
+    private Algoritmo algoritmo = new Algoritmo();
+    private HashMap<String, Algoritmo> algoritmosGuardados = new HashMap<>();
 
     public ArrayList<Accion> posiblesAcciones = new ArrayList<>();
     {
@@ -26,6 +26,7 @@ public class Juego {
     public ArrayList<Accion> devolverAcciones(){
         return posiblesAcciones;
     }
+
     public void agregarAccion(Accion accion){algoritmo.almacenarAccion(accion); }
 
     public void crearAlgoritmoPersonalizado(String nombre){

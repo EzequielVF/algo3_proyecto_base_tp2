@@ -3,8 +3,8 @@ package edu.fiuba.algo3.modelo.campodejuego;
 import java.util.Objects;
 
 public class Posicion {
-    public int fila = 0;
-    public int columna = 0;
+    private int fila = 0;
+    private int columna = 0;
 
     public int devolverColumna(){
         return columna;

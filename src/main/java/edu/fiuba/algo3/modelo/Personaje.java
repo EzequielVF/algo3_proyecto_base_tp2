@@ -9,9 +9,9 @@ import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
 
 public class Personaje extends Observable {
 
-    public Pincel pincel = new Pincel();
-    public Posicion posicion = new Posicion();
-    public Tablero tablero = new Tablero();
+    private Pincel pincel = new Pincel();
+    private Posicion posicion = new Posicion();
+    private Tablero tablero = new Tablero();
 
     public int devolverCantidadCeldasPintadas(){
         return (tablero.celdasPintadas());
