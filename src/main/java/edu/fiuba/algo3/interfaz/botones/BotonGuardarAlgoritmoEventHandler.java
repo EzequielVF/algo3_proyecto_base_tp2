@@ -9,6 +9,10 @@ import javafx.event.EventHandler;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEvent> {
     private Juego juego;
@@ -30,10 +34,17 @@ public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEve
             MenuItem algoritmoPersonalizado = new MenuItem(nombreAlgoritmo.getText());
             BotonUsarAlgoritmoEventHandler botonUsardarHandler = new BotonUsarAlgoritmoEventHandler(juego, consola, nombreAlgoritmo.getText());
             algoritmoPersonalizado.setOnAction(botonUsardarHandler);
+            this.reproducirSonido();
             algoritmosGuardados.getItems().add(algoritmoPersonalizado);
         }
         catch ( NombreNoValidoParaAlgoritmoExcepcion | RepetibleNoTieneAccionesTodaviaExcepcion e){
             consola.escribir(e.getMessage());
         }
+    }
+    private void reproducirSonido() {
+        String musicFile = "src/main/resources/sonidobotonnormal.mp3";
+        Media musica = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(musica);
+        mediaPlayer.play();
     }
 }

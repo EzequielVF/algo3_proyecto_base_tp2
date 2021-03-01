@@ -5,6 +5,10 @@ import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.acciones.Accion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 public class BotonAccionEventhandler implements EventHandler<ActionEvent> {
 
@@ -21,6 +25,14 @@ public class BotonAccionEventhandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         this.juego.agregarAccion(accion);
+        this.reproducirSonido();
         consola.display(accion.devolverNombre()+".png");
+    }
+
+    private void reproducirSonido() {
+        String musicFile = "src/main/resources/sonidobotonnormal.mp3";
+        Media musica = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(musica);
+        mediaPlayer.play();
     }
 }

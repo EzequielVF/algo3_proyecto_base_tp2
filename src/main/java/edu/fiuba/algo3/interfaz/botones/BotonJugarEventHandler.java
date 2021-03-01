@@ -6,7 +6,11 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
     private App app;
@@ -25,5 +29,4 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
         stage.setMinHeight(600);
         stage.setMinWidth(1200);
     }
-
 }
