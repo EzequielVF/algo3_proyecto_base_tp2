@@ -3,7 +3,9 @@ package edu.fiuba.algo3.modelo;
 import java.util.*;
 
 public class ArrayListTest<Accion> extends ArrayList<Accion> {
-
+    // Esta implementacion de arraylist se usa en
+    // PruebaJuegoDevolverPosiblesAccionesDevuelveAccionesCorrectamente en JuegoTest
+    // Para comparar que efectivamente Juego tenga las Acciones Disponibles correctas
     @Override
     public boolean equals(Object o){
         if (o == this) // Not the same list so no return
