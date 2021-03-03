@@ -45,6 +45,10 @@ public class Juego {
 
     public void ejecutar(){
         algoritmo.aplicarAccion(personaje);
+        this.limpiar();
+    }
+
+    public void limpiar(){
         algoritmo = new Algoritmo();
     }
 

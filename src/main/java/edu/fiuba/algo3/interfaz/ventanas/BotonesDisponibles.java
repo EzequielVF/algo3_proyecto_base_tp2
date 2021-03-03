@@ -17,9 +17,9 @@ public class BotonesDisponibles extends VBox {
     private Juego juego;
 
     public BotonesDisponibles(Consola consola, Juego juego) {
-        this.setSpacing(50);
         this.consola = consola;
         this.juego = juego;
+        this.setSpacing(30);
         this.getChildren().add(consola);
         this.getStylesheets().add("style.css");
         this.getStyleClass().add("panel");
@@ -41,6 +41,13 @@ public class BotonesDisponibles extends VBox {
         botonSalir.getStyleClass().add("botonSalir");
         botonSalir.setText("Salir");
         botonSalir.setOnAction(actionEvent -> Platform.exit());
+
+        //Seteo boton limpiar
+        Button botonlimpiar = new Button();
+        botonlimpiar.getStyleClass().add("botonLimpiar");
+        botonlimpiar.setText("Limpiar algoritmo");
+        BotonLimpiarEventhandler botonLimpiarHanlder = new BotonLimpiarEventhandler(juego, consola);
+        botonlimpiar.setOnAction(botonLimpiarHanlder);
 
         //Agrego Salir y Ejecutar a una botonera
         HBox botonera = new HBox(botonEjecutar, botonSalir);
@@ -106,7 +113,7 @@ public class BotonesDisponibles extends VBox {
             button.setOnAction(eventHandler);
             botoneraAcciones.getChildren().add(button);
         }
-        this.getChildren().addAll(botonera, botoneraAcciones);
+        this.getChildren().addAll(botonera,botonlimpiar,botoneraAcciones);
     }
 
     private void crearBloquerepetible(ArrayList<Accion> AccionesDisponibles, Repetible repetible, MenuButton repetibleButton) {
