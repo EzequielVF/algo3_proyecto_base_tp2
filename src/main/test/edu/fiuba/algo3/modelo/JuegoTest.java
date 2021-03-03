@@ -177,14 +177,4 @@ public class JuegoTest {
         posiblesAcciones.add(new BajarPincel());
         assertTrue(posiblesAcciones.equals(juego.devolverAcciones()));
     }
-
-    @Test
-    public void PruebaJuegoLimpiarVaciaElAlgoritmo(){
-        Juego juego = new Juego();
-        Posicion posicion = new Posicion();
-        juego.agregarAccion(new BajarPincel());
-        juego.limpiar();
-        juego.ejecutar();
-        assertFalse(juego.posicionPintada(posicion));
-    }
 }

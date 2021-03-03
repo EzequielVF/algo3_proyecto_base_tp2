@@ -42,12 +42,9 @@ public class Juego {
         algoritmo.almacenarAccion(aux);
     }
 
-    public void limpiar(){
-        algoritmo = new Algoritmo();
-    }
-
     public void ejecutar(){
         algoritmo.aplicarAccion(personaje);
+        algoritmo = new Algoritmo();
     }
 
     public Personaje devolverPersonaje(){

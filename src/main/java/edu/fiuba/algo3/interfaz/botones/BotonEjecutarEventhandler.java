@@ -25,7 +25,6 @@ public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
         juego.ejecutar();
         this.reproducirSonido();
         consola.limpiar();
-        juego.limpiar();
     }
     private void reproducirSonido() {
         String musicFile = "src/main/resources/sonidobotonplay.mp3";
