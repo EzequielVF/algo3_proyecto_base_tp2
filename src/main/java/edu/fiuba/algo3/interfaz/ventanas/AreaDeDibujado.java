@@ -1,15 +1,12 @@
-package edu.fiuba.algo3.interfaz;
+package edu.fiuba.algo3.interfaz.ventanas;
 
-import edu.fiuba.algo3.Controlador.Observer;
-import edu.fiuba.algo3.modelo.Personaje;
-import javafx.geometry.Pos;
+import edu.fiuba.algo3.Controlador.observables.Observer;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Personaje;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 import java.lang.*;
 import java.util.ArrayList;

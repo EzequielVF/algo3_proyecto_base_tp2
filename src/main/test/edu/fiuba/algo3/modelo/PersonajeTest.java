@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.actoresPrincipales.Personaje;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
 import edu.fiuba.algo3.modelo.pincel.PincelAbajo;

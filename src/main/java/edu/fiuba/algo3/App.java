@@ -1,7 +1,6 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.interfaz.CampoDeJuego;
-import edu.fiuba.algo3.interfaz.VentanaPresentacion;
+import edu.fiuba.algo3.interfaz.ventanas.VentanaPresentacion;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -10,8 +9,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 
 /**
  * JavaFX App

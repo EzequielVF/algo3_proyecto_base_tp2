@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.acciones.*;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Personaje;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.excepciones.RepetibleNoTieneAccionesTodaviaExcepcion;
 import org.junit.jupiter.api.Test;

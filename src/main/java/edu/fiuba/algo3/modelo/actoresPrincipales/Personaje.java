@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.actoresPrincipales;
 
-import edu.fiuba.algo3.Controlador.Observable;
+import edu.fiuba.algo3.Controlador.observables.Observable;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.campodejuego.Tablero;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;

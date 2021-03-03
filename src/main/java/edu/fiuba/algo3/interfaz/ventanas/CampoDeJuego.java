@@ -1,17 +1,11 @@
-package edu.fiuba.algo3.interfaz;
+package edu.fiuba.algo3.interfaz.ventanas;
 
-import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import javafx.geometry.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-
-import java.io.File;
 
 public class CampoDeJuego extends BorderPane {
 

@@ -1,16 +1,14 @@
-package edu.fiuba.algo3.interfaz;
+package edu.fiuba.algo3.interfaz.ventanas;
 
-import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.interfaz.ventanas.Consola;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import edu.fiuba.algo3.modelo.acciones.*;
 import edu.fiuba.algo3.interfaz.botones.*;
 import javafx.application.Platform;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 import java.util.ArrayList;
 

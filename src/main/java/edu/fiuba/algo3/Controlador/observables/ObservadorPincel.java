@@ -1,8 +1,7 @@
-package edu.fiuba.algo3.Controlador;
+package edu.fiuba.algo3.Controlador.observables;
 
-import edu.fiuba.algo3.interfaz.AreaDeDibujado;
-import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
+import edu.fiuba.algo3.interfaz.ventanas.AreaDeDibujado;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import edu.fiuba.algo3.modelo.pincel.Pincel;
 
 public class ObservadorPincel implements Observer {

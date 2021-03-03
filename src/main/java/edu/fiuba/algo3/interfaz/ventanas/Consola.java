@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfaz;
+package edu.fiuba.algo3.interfaz.ventanas;
 
 import edu.fiuba.algo3.modelo.acciones.Repetible;
 import javafx.geometry.Insets;

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Controlador;
+package edu.fiuba.algo3.Controlador.observables;
 
 public interface Observer {
     public void change();

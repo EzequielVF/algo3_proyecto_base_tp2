@@ -1,10 +1,9 @@
 package edu.fiuba.algo3.interfaz.botones;
 
-import edu.fiuba.algo3.interfaz.*;
-import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.interfaz.ventanas.Consola;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.chart.XYChart;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
