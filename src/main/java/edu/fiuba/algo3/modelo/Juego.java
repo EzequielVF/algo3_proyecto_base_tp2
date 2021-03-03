@@ -31,6 +31,7 @@ public class Juego {
 
     public void crearAlgoritmoPersonalizado(String nombre){
         Algoritmo AlgoritmoPersonalizado = new Algoritmo();
+        if(algoritmosGuardados.get(nombre) != null) {throw new NombreNoValidoParaAlgoritmoExcepcion();}
         if(nombre.equals("")) {throw new NombreNoValidoParaAlgoritmoExcepcion();}
         algoritmo.transferirAcciones(AlgoritmoPersonalizado);
         algoritmosGuardados.put(nombre, AlgoritmoPersonalizado);
