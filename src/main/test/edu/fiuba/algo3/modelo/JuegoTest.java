@@ -163,7 +163,8 @@ public class JuegoTest {
     @Test
     public void PruebaCrearAlgoritmoPersonalizadoTextoVacio(){
         Juego juego = new Juego();
-        assertThrows(NombreNoValidoParaAlgoritmoExcepcion.class, () -> juego.crearAlgoritmoPersonalizado(""));
+        Throwable NombreNoValidoParaAlgoritmoExcepcion = assertThrows(NombreNoValidoParaAlgoritmoExcepcion.class, () -> juego.crearAlgoritmoPersonalizado(""));
+        assertEquals("El nombre ingresado no es valido", NombreNoValidoParaAlgoritmoExcepcion.getMessage());
     }
 
     @Test

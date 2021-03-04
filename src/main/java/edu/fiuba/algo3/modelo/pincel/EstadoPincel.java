@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.pincel;
 
 import edu.fiuba.algo3.modelo.campodejuego.Celda;
 
-public abstract class EstadoPincel {
+public interface EstadoPincel {
 
-    abstract void aplicarA(Celda celda);
+    void aplicarA(Celda celda);
 }

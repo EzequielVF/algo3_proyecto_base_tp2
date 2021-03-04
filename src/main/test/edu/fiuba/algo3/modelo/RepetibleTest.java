@@ -14,9 +14,10 @@ public class RepetibleTest {
     public void PruebaTransferirAccionesVaciasLanzaError(){
         Algoritmo algoritmo = new Algoritmo();
         Algoritmo aux = new Algoritmo();
-        assertThrows(RepetibleNoTieneAccionesTodaviaExcepcion.class, () -> {
+        Throwable RepetibleNoTieneAccionesTodaviaExcepcion = assertThrows(RepetibleNoTieneAccionesTodaviaExcepcion.class, () -> {
             algoritmo.transferirAcciones(aux);
         });
+        assertEquals("El Algoritmo esta vacio",RepetibleNoTieneAccionesTodaviaExcepcion.getMessage());
     }
     @Test
     public void PruebaTransferirAccionesTransfiereLasAcciones(){

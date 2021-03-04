@@ -60,6 +60,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         personaje.bajarPincel();
         assertSame(pincelAbajo.getClass(), personaje.devolverEstadoPincel().getClass());
+        assertTrue(personaje.pincelAbajo());
     }
     @Test
     public void personajeSubeCorrectamenteElPincel() {

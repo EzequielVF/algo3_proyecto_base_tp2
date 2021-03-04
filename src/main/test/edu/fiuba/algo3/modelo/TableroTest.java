@@ -18,7 +18,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TableroDibujarEfectivamenteDibuja() {
+    public void TableroDibujarEfectivamenteDibujaConPincelAbajo() {
         Tablero tablero = new Tablero();
         Pincel pincel = new Pincel();
         pincel.bajarPincel();

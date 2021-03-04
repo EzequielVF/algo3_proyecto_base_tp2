@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PosicionTest {
     @Test
@@ -35,5 +35,23 @@ public class PosicionTest {
         Posicion posicion = new Posicion();
         posicion.restarAFila();
         assertEquals(-1,posicion.devolverFila());
+    }
+
+    @Test
+    public void SeComparanCorrectamenteDosPosicionesIguales(){
+        Posicion posicion1 = new Posicion();
+        Posicion posicion2 = new Posicion();
+        posicion1.sumarAColumna();
+        posicion2.sumarAColumna();
+        assertTrue(posicion1.equals(posicion2));
+    }
+
+    @Test
+    public void SeComparanCorrectamenteDosPosicionesDiferentes(){
+        Posicion posicion1 = new Posicion();
+        Posicion posicion2 = new Posicion();
+        posicion1.sumarAColumna();
+        posicion2.sumarAFila();
+        assertFalse(posicion1.equals(posicion2));
     }
 }
