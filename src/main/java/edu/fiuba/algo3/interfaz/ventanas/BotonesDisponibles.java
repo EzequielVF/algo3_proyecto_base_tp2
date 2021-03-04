@@ -83,22 +83,6 @@ public class BotonesDisponibles extends VBox {
         crearBloquerepetible(AccionesDisponibles,repetirPorTresBloque,repetirPorTres);
         crearBloquerepetible(AccionesDisponibles,invertirComportamientoBloque,invertirComportamiento);
 
-        //Relleno los botones menu de los repetibles
-        MenuItem guardarRepetiblePorDos = new MenuItem("Almacenar");
-        BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetiblePorDosEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,repetirPorDosBloque);
-        guardarRepetiblePorDos.setOnAction(botonAlmacenarRepetiblePorDosEventhandler);
-        repetirPorDos.getItems().add(guardarRepetiblePorDos);
-
-        MenuItem guardarRepetibleTres = new MenuItem("Almacenar");
-        BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetiblePorTresEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,repetirPorTresBloque);
-        guardarRepetibleTres.setOnAction(botonAlmacenarRepetiblePorTresEventhandler);
-        repetirPorTres.getItems().add(guardarRepetibleTres);
-
-        MenuItem guardarRepetibleInvertir = new MenuItem("Almacenar");
-        BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetibleInvertirEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,invertirComportamientoBloque);
-        guardarRepetibleInvertir.setOnAction(botonAlmacenarRepetibleInvertirEventhandler);
-        invertirComportamiento.getItems().add(guardarRepetibleInvertir);
-
         //Agrego los botones a una VBox
         VBox botoneraAcciones = new VBox(titulo,AlgoritmosGuardados,NombreAlgoritmo,botonGuardarAlgoritmo,repetirPorDos,repetirPorTres,invertirComportamiento);
         botoneraAcciones.setAlignment( Pos.CENTER );
@@ -117,6 +101,7 @@ public class BotonesDisponibles extends VBox {
     }
 
     private void crearBloquerepetible(ArrayList<Accion> AccionesDisponibles, Repetible repetible, MenuButton repetibleButton) {
+
         //Meto los items dentro del Boton menu//
         for (Accion accion :AccionesDisponibles) {
             MenuItem acciones = new MenuItem(accion.devolverNombre());
@@ -125,5 +110,10 @@ public class BotonesDisponibles extends VBox {
 
             repetibleButton.getItems().add(acciones);
         }
+
+        MenuItem guardarRepetible = new MenuItem("Almacenar");
+        BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetibleEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,repetible);
+        guardarRepetible.setOnAction(botonAlmacenarRepetibleEventhandler);
+        repetibleButton.getItems().add(guardarRepetible);
     }
 }
