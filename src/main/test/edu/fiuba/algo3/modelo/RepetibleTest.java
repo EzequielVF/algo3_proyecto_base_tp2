@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class RepetibleTest {
     @Test
     public void PruebaTransferirAccionesVaciasLanzaError(){
-        Algoritmo algoritmo = new Algoritmo();
-        Algoritmo aux = new Algoritmo();
+        Algoritmo algoritmo = new Algoritmo(1);
+        Algoritmo aux = new Algoritmo(1);
         Throwable RepetibleNoTieneAccionesTodaviaExcepcion = assertThrows(RepetibleNoTieneAccionesTodaviaExcepcion.class, () -> {
             algoritmo.transferirAcciones(aux);
         });
@@ -23,9 +23,9 @@ public class RepetibleTest {
     public void PruebaTransferirAccionesTransfiereLasAcciones(){
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
-        Algoritmo algoritmo = new Algoritmo();
+        Algoritmo algoritmo = new Algoritmo(1);
         algoritmo.almacenarAccion(new MoverALaDerecha());
-        Algoritmo aux = new Algoritmo();
+        Algoritmo aux = new Algoritmo(1);
         algoritmo.transferirAcciones(aux);
         aux.aplicarAccion(personaje);
         posicion.sumarAColumna();
@@ -36,7 +36,7 @@ public class RepetibleTest {
     public void PruebaCopiarGeneraUnNuevorepetibleYEliminaLasAccionesEnElAnterior(){
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
-        Algoritmo algoritmo = new Algoritmo();
+        Algoritmo algoritmo = new Algoritmo(1);
         algoritmo.almacenarAccion(new MoverALaDerecha());
         Repetible aux = algoritmo.copiar();
         aux.aplicarAccion(personaje);
@@ -49,7 +49,7 @@ public class RepetibleTest {
     public void PruebaCopiarEnRepetirPorDosGeneraUnNuevorepetibleYEliminaLasAccionesEnElAnterior(){
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
-        RepetirPorDos algoritmo = new RepetirPorDos();
+        Algoritmo algoritmo = new Algoritmo(2);
         algoritmo.almacenarAccion(new MoverALaDerecha());
         Repetible aux = algoritmo.copiar();
         aux.aplicarAccion(personaje);
@@ -63,7 +63,7 @@ public class RepetibleTest {
     public void PruebaCopiarEnRepetirPorTresGeneraUnNuevorepetibleYEliminaLasAccionesEnElAnterior(){
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
-        RepetirPorTres algoritmo = new RepetirPorTres();
+        Algoritmo algoritmo = new Algoritmo(3);
         algoritmo.almacenarAccion(new MoverALaDerecha());
         Repetible aux = algoritmo.copiar();
         aux.aplicarAccion(personaje);

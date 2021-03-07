@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.interfaz.ventanas;
 
-import edu.fiuba.algo3.interfaz.ventanas.Consola;
+import edu.fiuba.algo3.Controlador.handlers.*;
 import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import edu.fiuba.algo3.modelo.acciones.*;
-import edu.fiuba.algo3.interfaz.botones.*;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -33,7 +32,7 @@ public class BotonesDisponibles extends VBox {
         Button botonEjecutar = new Button();
         botonEjecutar.getStyleClass().add("botonEjecutar");
         botonEjecutar.setText("Ejecutar");
-        BotonEjecutarEventhandler botonEjecutarHandler = new BotonEjecutarEventhandler(juego, consola);
+        EjecutarEventhandler botonEjecutarHandler = new EjecutarEventhandler(juego, consola);
         botonEjecutar.setOnAction(botonEjecutarHandler);
 
         //Seteo boton salir
@@ -46,7 +45,7 @@ public class BotonesDisponibles extends VBox {
         Button botonlimpiar = new Button();
         botonlimpiar.getStyleClass().add("botonLimpiar");
         botonlimpiar.setText("Limpiar algoritmo");
-        BotonLimpiarEventhandler botonLimpiarHanlder = new BotonLimpiarEventhandler(juego, consola);
+        LimpiarEventhandler botonLimpiarHanlder = new LimpiarEventhandler(juego, consola);
         botonlimpiar.setOnAction(botonLimpiarHanlder);
 
         //Agrego Salir y Ejecutar a una botonera
@@ -64,7 +63,7 @@ public class BotonesDisponibles extends VBox {
         MenuButton AlgoritmosGuardados = new MenuButton("Algoritmos Guardados");
         AlgoritmosGuardados.getStyleClass().add("botones");
 
-        BotonGuardarAlgoritmoEventHandler botonGuardarHandler = new BotonGuardarAlgoritmoEventHandler(juego, consola, NombreAlgoritmo, AlgoritmosGuardados);
+        GuardarAlgoritmoEventHandler botonGuardarHandler = new GuardarAlgoritmoEventHandler(juego, consola, NombreAlgoritmo, AlgoritmosGuardados);
         botonGuardarAlgoritmo.setOnAction(botonGuardarHandler);
 
         //Seteo los botones repetibles
@@ -75,8 +74,8 @@ public class BotonesDisponibles extends VBox {
         MenuButton invertirComportamiento = new MenuButton("Invertir Comportamiento");
         invertirComportamiento.getStyleClass().add("botones");
 
-        RepetirPorDos repetirPorDosBloque = new RepetirPorDos();
-        RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
+        Algoritmo repetirPorDosBloque = new Algoritmo(2);
+        Algoritmo repetirPorTresBloque = new Algoritmo(3);
         InvertirComportamiento invertirComportamientoBloque = new InvertirComportamiento();
 
         consola.agregarObservable(repetirPorDosBloque);
@@ -97,7 +96,7 @@ public class BotonesDisponibles extends VBox {
             Button button = new Button();
             button.setText(accion.devolverNombre());
             button.getStyleClass().add("botones");
-            BotonAccionEventhandler eventHandler = new BotonAccionEventhandler(juego, accion, consola);
+            AccionEventhandler eventHandler = new AccionEventhandler(juego, accion, consola);
             button.setOnAction(eventHandler);
             botoneraAcciones.getChildren().add(button);
         }
@@ -109,14 +108,14 @@ public class BotonesDisponibles extends VBox {
         //Meto los items dentro del Boton menu//
         for (Accion accion :AccionesDisponibles) {
             MenuItem acciones = new MenuItem(accion.devolverNombre());
-            BotonRepetibleEventhandler botonUsardarHandler = new BotonRepetibleEventhandler(accion, consola,repetible,juego);
+            RepetibleEventhandler botonUsardarHandler = new RepetibleEventhandler(accion, consola,repetible,juego);
             acciones.setOnAction(botonUsardarHandler);
 
             repetibleButton.getItems().add(acciones);
         }
 
         MenuItem guardarRepetible = new MenuItem("Almacenar");
-        BotonAlmacenarRepetibleEventhandler botonAlmacenarRepetibleEventhandler = new BotonAlmacenarRepetibleEventhandler(juego,consola,repetible);
+        AlmacenarRepetibleEventhandler botonAlmacenarRepetibleEventhandler = new AlmacenarRepetibleEventhandler(juego,consola,repetible);
         guardarRepetible.setOnAction(botonAlmacenarRepetibleEventhandler);
         repetibleButton.getItems().add(guardarRepetible);
     }

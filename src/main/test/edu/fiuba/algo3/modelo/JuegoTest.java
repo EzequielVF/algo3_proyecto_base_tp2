@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*public class JuegoTest {
+public class JuegoTest {
     @Test
     public void PruebaMoverALaderecha() {
         Juego juego = new Juego();
@@ -89,7 +89,7 @@ import static org.junit.jupiter.api.Assertions.*;
     public void PruebaRepetirPorDos() {
         Juego juego = new Juego();
         Posicion posicion = new Posicion();
-        RepetirPorDos repetirPorDos = new RepetirPorDos();
+        Algoritmo repetirPorDos = new Algoritmo(2);
         repetirPorDos.almacenarAccion(new MoverALaDerecha());
         juego.agregarAccion(repetirPorDos);
         juego.ejecutar();
@@ -102,7 +102,7 @@ import static org.junit.jupiter.api.Assertions.*;
     public void PruebaRepetirPorTres() {
         Juego juego = new Juego();
         Posicion posicion = new Posicion();
-        RepetirPorTres repetirPorTres = new RepetirPorTres();
+        Algoritmo repetirPorTres = new Algoritmo(3);
         repetirPorTres.almacenarAccion(new MoverALaDerecha());
         juego.agregarAccion(repetirPorTres);
         juego.ejecutar();
@@ -179,4 +179,4 @@ import static org.junit.jupiter.api.Assertions.*;
         posiblesAcciones.add(new BajarPincel());
         assertTrue(posiblesAcciones.equals(juego.devolverAcciones()));
     }
-}*/
+}

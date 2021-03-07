@@ -7,11 +7,12 @@ import java.util.ArrayList;
 
 public class Algoritmo extends Repetible {
 
+    private int cantidadRepeticiones;
     //private ArrayList<Observer> observers;
 
-    /*public Algoritmo(){
-        observers = new ArrayList<>();
-    }*/
+    public Algoritmo(int cantidad){
+       this.cantidadRepeticiones = cantidad;
+    }
 
     @Override
     public void almacenarAccion(Accion accion){
@@ -21,12 +22,16 @@ public class Algoritmo extends Repetible {
 
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
-            accion.aplicarAccion(personaje);
+            for(int i = 0; i < cantidadRepeticiones;i++) {
+                accion.aplicarAccion(personaje);
+            }
         }
     }
     public void aplicarAccionInversa(Personaje personaje) {
         for(Accion accion: accionesAEjecutar){
-            accion.aplicarAccionInversa(personaje);
+            for(int i = 0; i < cantidadRepeticiones;i++) {
+                accion.aplicarAccionInversa(personaje);
+            }
         }
     }
 
@@ -38,13 +43,13 @@ public class Algoritmo extends Repetible {
     }
 
     public Repetible copiar(){
-        Algoritmo copia = new Algoritmo();
+        Algoritmo copia = new Algoritmo(cantidadRepeticiones);
         transferirAcciones(copia);
         accionesAEjecutar.clear();
         return copia;
     }
 
     public String devolverNombre(){
-        return "Algoritmo personalizado";
+        return "Algoritmo "+cantidadRepeticiones;
     }
 }

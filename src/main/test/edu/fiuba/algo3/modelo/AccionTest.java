@@ -85,7 +85,7 @@ public class AccionTest {
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
-        RepetirPorDos repetirPorDos = new RepetirPorDos();
+        Algoritmo repetirPorDos = new Algoritmo(2);
         repetirPorDos.almacenarAccion(new MoverALaDerecha());
         repetirPorDos.aplicarAccion(personaje);
         posicion.sumarAColumna();
@@ -98,7 +98,7 @@ public class AccionTest {
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
-        RepetirPorTres repetirPorTres = new RepetirPorTres();
+        Algoritmo repetirPorTres = new Algoritmo(3);
         repetirPorTres.almacenarAccion(new MoverALaDerecha());
         repetirPorTres.aplicarAccion(personaje);
         posicion.sumarAColumna();
@@ -176,7 +176,7 @@ public class AccionTest {
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
-        RepetirPorDos repetirPorDos = new RepetirPorDos();
+        Algoritmo repetirPorDos = new Algoritmo(2);
         repetirPorDos.almacenarAccion(new MoverALaDerecha());
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
         invertirComportamiento.almacenarAccion(repetirPorDos);
@@ -191,7 +191,7 @@ public class AccionTest {
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
         assertEquals(posicion.hashCode(), personaje.posicionActual());
-        RepetirPorTres repetirPorTres = new RepetirPorTres();
+        Algoritmo repetirPorTres = new Algoritmo(3);
         repetirPorTres.almacenarAccion(new MoverALaDerecha());
         InvertirComportamiento invertirComportamiento = new InvertirComportamiento();
         invertirComportamiento.almacenarAccion(repetirPorTres);
@@ -273,20 +273,20 @@ public class AccionTest {
 
     @Test
     public void PruebaAlgoritmoDevuelveNombreCorrecto() {
-        Accion accion = new Algoritmo();
-        assertEquals(accion.devolverNombre(),"Algoritmo personalizado");
+        Accion accion = new Algoritmo(1);
+        assertEquals(accion.devolverNombre(),"Algoritmo 1");
     }
 
     @Test
     public void PruebaRepetirPorDosDevuelveNombreCorrecto() {
-        Accion accion = new RepetirPorDos();
-        assertEquals(accion.devolverNombre(),"Repetir por 2");
+        Accion accion = new Algoritmo(2);
+        assertEquals(accion.devolverNombre(),"Algoritmo 2");
     }
 
     @Test
     public void PruebaRepetirPorTresDevuelveNombreCorrecto() {
-        Accion accion = new RepetirPorTres();
-        assertEquals(accion.devolverNombre(),"Repetir por 3");
+        Accion accion = new Algoritmo(3);
+        assertEquals(accion.devolverNombre(),"Algoritmo 3");
     }
 
     @Test
@@ -303,7 +303,7 @@ public class AccionTest {
 
     @Test
     public void AlgoritmoDentroDeBloqueInvertirFuncionaCorrectamente() {
-        Algoritmo algoritmo = new Algoritmo();
+        Algoritmo algoritmo = new Algoritmo(1);
         Personaje personaje = new Personaje();
         Posicion posicion = new Posicion();
 

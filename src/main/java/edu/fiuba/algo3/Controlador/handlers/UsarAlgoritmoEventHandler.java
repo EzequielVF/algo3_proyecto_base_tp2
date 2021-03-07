@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfaz.botones;
+package edu.fiuba.algo3.Controlador.handlers;
 
 import edu.fiuba.algo3.interfaz.ventanas.Consola;
 import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
@@ -9,12 +9,12 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-public class BotonUsarAlgoritmoEventHandler implements EventHandler<ActionEvent> {
+public class UsarAlgoritmoEventHandler implements EventHandler<ActionEvent> {
     private Juego juego;
     private Consola consola;
     private String nombre;
 
-    public BotonUsarAlgoritmoEventHandler(Juego juego, Consola consola, String nombre){
+    public UsarAlgoritmoEventHandler(Juego juego, Consola consola, String nombre){
         this.juego = juego;
         this.consola = consola;
         this.nombre = nombre;
@@ -24,7 +24,7 @@ public class BotonUsarAlgoritmoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent){
         juego.usarAlgoritmoPersonalizado(nombre);
         this.reproducirSonido();
-        //consola.display("Algoritmo personalizado.png");
+        //consola.display("Algoritmo 1.png");
     }
     private void reproducirSonido() {
         String musicFile = "src/main/resources/sonidobotonnormal.mp3";

@@ -5,8 +5,8 @@
     -fx-legend-visible: false;
     -fx-max-height:1000;
     -fx-max-width: 1000;
-    -fx-min-height: 500;
-    -fx-min-width: 500;
+    -fx-min-height: 1000;
+    -fx-min-width: 1000;
 }
 
 .chart-content {

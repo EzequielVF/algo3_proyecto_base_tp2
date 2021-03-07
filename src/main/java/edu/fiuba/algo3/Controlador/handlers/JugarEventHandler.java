@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfaz.botones;
+package edu.fiuba.algo3.Controlador.handlers;
 
 import edu.fiuba.algo3.App;
 import edu.fiuba.algo3.interfaz.ventanas.CampoDeJuego;
@@ -7,11 +7,11 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
+public class JugarEventHandler implements EventHandler<ActionEvent> {
     private App app;
     private Stage stage;
 
-    public BotonJugarEventHandler(Stage stage){
+    public JugarEventHandler(Stage stage){
         this.stage = stage;
     }
     @Override

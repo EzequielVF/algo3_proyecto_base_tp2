@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfaz.botones;
+package edu.fiuba.algo3.Controlador.handlers;
 
 import edu.fiuba.algo3.interfaz.ventanas.Consola;
 import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
@@ -14,13 +14,13 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEvent> {
+public class GuardarAlgoritmoEventHandler implements EventHandler<ActionEvent> {
     private Juego juego;
     private Consola consola;
     private TextField nombreAlgoritmo;
     private MenuButton algoritmosGuardados;
 
-    public BotonGuardarAlgoritmoEventHandler(Juego juego, Consola consola, TextField textField, MenuButton algoritmosGuardados){
+    public GuardarAlgoritmoEventHandler(Juego juego, Consola consola, TextField textField, MenuButton algoritmosGuardados){
         this.juego = juego;
         this.consola = consola;
         this.nombreAlgoritmo = textField;
@@ -32,7 +32,7 @@ public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEve
         try{
             juego.crearAlgoritmoPersonalizado(nombreAlgoritmo.getText());
             MenuItem algoritmoPersonalizado = new MenuItem(nombreAlgoritmo.getText());
-            BotonUsarAlgoritmoEventHandler botonUsardarHandler = new BotonUsarAlgoritmoEventHandler(juego, consola, nombreAlgoritmo.getText());
+            UsarAlgoritmoEventHandler botonUsardarHandler = new UsarAlgoritmoEventHandler(juego, consola, nombreAlgoritmo.getText());
             algoritmoPersonalizado.setOnAction(botonUsardarHandler);
             this.reproducirSonido();
             algoritmosGuardados.getItems().add(algoritmoPersonalizado);

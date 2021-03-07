@@ -10,9 +10,8 @@ import javafx.scene.layout.VBox;
 
 public class CampoDeJuego extends BorderPane {
 
-        Algoritmo algoritmo = new Algoritmo();
-        Juego juego = new Juego(algoritmo);
-        Consola consola = new Consola(algoritmo);
+        Juego juego = new Juego();
+        Consola consola = new Consola(juego.devolverAlgoritmo());
         VBox panel = new VBox();
         private ScrollPane scroll = new ScrollPane(consola);
 

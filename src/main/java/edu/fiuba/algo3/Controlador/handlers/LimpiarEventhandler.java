@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfaz.botones;
+package edu.fiuba.algo3.Controlador.handlers;
 
 import edu.fiuba.algo3.interfaz.ventanas.Consola;
 import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
@@ -9,24 +9,24 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-public class BotonEjecutarEventhandler implements EventHandler<ActionEvent> {
-
+public class LimpiarEventhandler implements EventHandler<ActionEvent> {
     private Juego juego;
     private Consola consola;
 
-    public BotonEjecutarEventhandler(Juego juego, Consola consola){
+    public LimpiarEventhandler(Juego juego, Consola consola){
         this.juego = juego;
         this.consola = consola;
     }
 
     @Override
     public void handle(ActionEvent actionEvent){
-        juego.ejecutar();
+        this.juego.limpiar();
+        this.consola.limpiar();
         this.reproducirSonido();
-        consola.limpiar();
     }
+
     private void reproducirSonido() {
-        String musicFile = "src/main/resources/sonidobotonplay.mp3";
+        String musicFile = "src/main/resources/sonidobotonnormal.mp3";
         Media musica = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(musica);
         mediaPlayer.play();

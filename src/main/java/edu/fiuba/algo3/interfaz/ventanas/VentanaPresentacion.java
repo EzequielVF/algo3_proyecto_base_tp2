@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.interfaz.ventanas;
 
-import edu.fiuba.algo3.interfaz.botones.BotonJugarEventHandler;
+import edu.fiuba.algo3.Controlador.handlers.JugarEventHandler;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -28,8 +28,8 @@ public class VentanaPresentacion extends VBox {
         botonSalir.setText("Salir");
         botonJugar.setText("Jugar");
 
-       BotonJugarEventHandler botonJugarEventHandler  = new BotonJugarEventHandler(stage);
-       botonJugar.setOnAction(botonJugarEventHandler);
+       JugarEventHandler jugarEventHandler = new JugarEventHandler(stage);
+       botonJugar.setOnAction(jugarEventHandler);
        botonJugar.getStyleClass().add("botonEjecutar");
 
        botonSalir.getStyleClass().add("botonSalir");
@@ -46,7 +46,6 @@ public class VentanaPresentacion extends VBox {
 
         Label etiqueta = new Label("Bienvenidos a AlgoBlocks!");
         etiqueta.getStyleClass().add("tituloPrincipal");
-        //etiqueta.getStyleClass().add("titulo");
 
         this.getChildren().addAll(etiqueta, vistaDeImagen, botonera);
     }
