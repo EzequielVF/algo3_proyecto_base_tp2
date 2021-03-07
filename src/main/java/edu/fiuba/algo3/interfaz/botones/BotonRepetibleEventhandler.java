@@ -30,7 +30,7 @@ public class BotonRepetibleEventhandler implements EventHandler<ActionEvent> {
 
         this.reproducirSonido();
         this.repetible.almacenarAccion(accion);
-        this.juego.agregarRepetible(repetible);
+        //this.juego.agregarRepetible(repetible);
 
         //consola.displayRepetible(repetible,accion.devolverNombre()+".png");
     }

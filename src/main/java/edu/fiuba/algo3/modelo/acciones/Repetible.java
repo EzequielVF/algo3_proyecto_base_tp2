@@ -19,7 +19,7 @@ public abstract class Repetible implements Accion, Observable {
 
         public void almacenarAccion(Accion accion){
             accionesAEjecutar.add(accion);
-            //notifyObservers();
+            notifyObservers();
         }
 
         public void almacenarRepetible(Repetible repetible){

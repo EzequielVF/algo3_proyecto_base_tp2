@@ -78,6 +78,7 @@ public class BotonesDisponibles extends VBox {
         RepetirPorDos repetirPorDosBloque = new RepetirPorDos();
         RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
         InvertirComportamiento invertirComportamientoBloque = new InvertirComportamiento();
+
         consola.agregarObservable(repetirPorDosBloque);
         consola.agregarObservable(repetirPorTresBloque);
         consola.agregarObservable(invertirComportamientoBloque);

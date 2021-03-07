@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.interfaz.ventanas;
 
 import edu.fiuba.algo3.Controlador.observables.Observable;
+import edu.fiuba.algo3.Controlador.observables.ObservadorRepetible;
 import edu.fiuba.algo3.Controlador.observables.Observer;
 import edu.fiuba.algo3.modelo.acciones.Algoritmo;
 import edu.fiuba.algo3.modelo.acciones.Repetible;
@@ -56,7 +57,7 @@ public class Consola extends VBox implements Observer {
         getChildren().add(log);
     }
 
-    public void displayRepetible(Repetible repetible, String rutaBloque) {
+    public void displayRepetible(Repetible repetible) {
         HBox repetibleBox = new HBox();
         Image imagenRepetible = new Image(repetible.devolverNombre()+".png");
         ImageView vistaDeImagen = new ImageView(imagenRepetible);
@@ -64,7 +65,7 @@ public class Consola extends VBox implements Observer {
         vistaDeImagen.setFitWidth(ANCHO);
         repetibleBox.getChildren().add(vistaDeImagen);
 
-        Image imagenBloque = new Image(rutaBloque);
+        Image imagenBloque = new Image(repetible.accionesAEjecutar.get(repetible.accionesAEjecutar.size() - 1).devolverNombre()+".png");
         ImageView vistaDeImagenBloque = new ImageView(imagenBloque);
         vistaDeImagenBloque.setFitHeight(ALTO);
         vistaDeImagenBloque.setFitWidth(ANCHO);
@@ -74,8 +75,13 @@ public class Consola extends VBox implements Observer {
     }
 
     public void agregarObservable(Repetible repetible){
-        this.observables.add(repetible);
-        this.observables.get(this.observables.size()-1).addObserver(this);
+        //this.observables.add(repetible);
+        //this.observables.get(this.observables.size()-1).addObserver(this);
+
+
+        ObservadorRepetible observadorRepetible = new ObservadorRepetible(this,repetible);
+
+        repetible.addObserver(observadorRepetible);
     }
 
     public void change(){
@@ -84,7 +90,7 @@ public class Consola extends VBox implements Observer {
                 display(repetible.accionesAEjecutar.get(repetible.accionesAEjecutar.size() - 1).devolverNombre() + ".png");
             }
         }*/
-        if(algoritmo.accionesAEjecutar.get(algoritmo.accionesAEjecutar.size() - 1) == algoritmo.getBloqueRepetible()){
+        /*if(algoritmo.accionesAEjecutar.get(algoritmo.accionesAEjecutar.size() - 1) == algoritmo.getBloqueRepetible()){
             HBox repetibleBox = new HBox();
             Image imagenRepetible = new Image(algoritmo.getBloqueRepetible().devolverNombre()+".png");
             ImageView vistaDeImagen = new ImageView(imagenRepetible);
@@ -99,7 +105,7 @@ public class Consola extends VBox implements Observer {
             repetibleBox.getChildren().add(vistaDeImagenBloque);
 
             this.getChildren().add(repetibleBox);
-        }
+        }*/
         display(algoritmo.accionesAEjecutar.get(algoritmo.accionesAEjecutar.size()-1).devolverNombre()+".png");
         //display(observables.get(observables.size()-1).accionesAEjecutar.get(observables.get(observables.size()-1).accionesAEjecutar.size()-1).devolverNombre()+".png");
 
