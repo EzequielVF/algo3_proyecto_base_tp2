@@ -78,6 +78,9 @@ public class BotonesDisponibles extends VBox {
         RepetirPorDos repetirPorDosBloque = new RepetirPorDos();
         RepetirPorTres repetirPorTresBloque = new RepetirPorTres();
         InvertirComportamiento invertirComportamientoBloque = new InvertirComportamiento();
+        consola.agregarObservable(repetirPorDosBloque);
+        consola.agregarObservable(repetirPorTresBloque);
+        consola.agregarObservable(invertirComportamientoBloque);
 
         crearBloquerepetible(AccionesDisponibles,repetirPorDosBloque,repetirPorDos);
         crearBloquerepetible(AccionesDisponibles,repetirPorTresBloque,repetirPorTres);
@@ -105,7 +108,7 @@ public class BotonesDisponibles extends VBox {
         //Meto los items dentro del Boton menu//
         for (Accion accion :AccionesDisponibles) {
             MenuItem acciones = new MenuItem(accion.devolverNombre());
-            BotonRepetibleEventhandler botonUsardarHandler = new BotonRepetibleEventhandler(accion, consola,repetible);
+            BotonRepetibleEventhandler botonUsardarHandler = new BotonRepetibleEventhandler(accion, consola,repetible,juego);
             acciones.setOnAction(botonUsardarHandler);
 
             repetibleButton.getItems().add(acciones);

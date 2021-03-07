@@ -11,7 +11,8 @@ import java.util.*;
 
 public class Juego {
     private Personaje personaje = new Personaje();
-    private Algoritmo algoritmo = new Algoritmo();
+    private Algoritmo algoritmo;
+
     private HashMap<String, Algoritmo> algoritmosGuardados = new HashMap<>();
 
     public ArrayList<Accion> posiblesAcciones = new ArrayList<>();
@@ -24,11 +25,17 @@ public class Juego {
         posiblesAcciones.add(new BajarPincel());
     }
 
+    public Juego(Algoritmo algoritmo){
+        this.algoritmo = algoritmo;
+    }
+
     public ArrayList<Accion> devolverAcciones(){
         return posiblesAcciones;
     }
 
     public void agregarAccion(Accion accion){algoritmo.almacenarAccion(accion); }
+
+    public void agregarRepetible(Repetible repetible){algoritmo.almacenarRepetible(repetible); }
 
     public void crearAlgoritmoPersonalizado(String nombre){
         Algoritmo AlgoritmoPersonalizado = new Algoritmo();
@@ -49,7 +56,7 @@ public class Juego {
     }
 
     public void limpiar(){
-        algoritmo = new Algoritmo();
+        algoritmo.accionesAEjecutar.clear();
     }
 
     public Personaje devolverPersonaje(){

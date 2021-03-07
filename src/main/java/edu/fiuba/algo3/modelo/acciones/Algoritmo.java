@@ -3,7 +3,21 @@ package edu.fiuba.algo3.modelo.acciones;
 import edu.fiuba.algo3.modelo.actoresPrincipales.Personaje;
 import edu.fiuba.algo3.modelo.excepciones.RepetibleNoTieneAccionesTodaviaExcepcion;
 
+import java.util.ArrayList;
+
 public class Algoritmo extends Repetible {
+
+    //private ArrayList<Observer> observers;
+
+    /*public Algoritmo(){
+        observers = new ArrayList<>();
+    }*/
+
+    @Override
+    public void almacenarAccion(Accion accion){
+        accionesAEjecutar.add(accion);
+        notifyObservers();
+    }
 
     public void aplicarAccion(Personaje personaje){
         for(Accion accion: accionesAEjecutar){
@@ -16,10 +30,10 @@ public class Algoritmo extends Repetible {
         }
     }
 
-    public void transferirAcciones(Algoritmo aux){
+    public void transferirAcciones(Algoritmo algoritmoPersonalizado){
         if(accionesAEjecutar.isEmpty()){ throw new RepetibleNoTieneAccionesTodaviaExcepcion();}
         for(Accion accion: accionesAEjecutar){
-            aux.almacenarAccion(accion);
+            algoritmoPersonalizado.almacenarAccion(accion);
         }
     }
 

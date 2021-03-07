@@ -24,7 +24,7 @@ public class BotonUsarAlgoritmoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent){
         juego.usarAlgoritmoPersonalizado(nombre);
         this.reproducirSonido();
-        consola.display("Algoritmo personalizado.png");
+        //consola.display("Algoritmo personalizado.png");
     }
     private void reproducirSonido() {
         String musicFile = "src/main/resources/sonidobotonnormal.mp3";

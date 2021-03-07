@@ -1,17 +1,25 @@
 package edu.fiuba.algo3.modelo.actoresPrincipales;
 
 import edu.fiuba.algo3.Controlador.observables.Observable;
+import edu.fiuba.algo3.Controlador.observables.Observer;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.campodejuego.Tablero;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
 import edu.fiuba.algo3.modelo.pincel.Pincel;
 import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
 
-public class Personaje extends Observable {
+import java.util.ArrayList;
 
+public class Personaje implements Observable {
+
+    private ArrayList<Observer> observers;
     private Pincel pincel = new Pincel();
     private Posicion posicion = new Posicion();
     private Tablero tablero = new Tablero();
+
+    public Personaje(){
+        observers = new ArrayList<>();
+    }
 
     public int devolverCantidadCeldasPintadas(){
         return (tablero.celdasPintadas());
@@ -70,5 +78,13 @@ public class Personaje extends Observable {
 
     public boolean pincelAbajo(){
         return pincel.devolverEstadoPincel().getClass() == PincelAbajo.class;
+    }
+
+    @Override
+    public void addObserver(Observer observer) {observers.add(observer);}
+
+    @Override
+    public void notifyObservers() {
+        observers.stream().forEach(observer -> observer.change());
     }
 }

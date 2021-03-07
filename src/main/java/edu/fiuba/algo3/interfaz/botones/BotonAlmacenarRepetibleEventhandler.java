@@ -26,7 +26,7 @@ public class BotonAlmacenarRepetibleEventhandler implements EventHandler<ActionE
     public void handle(ActionEvent actionEvent){
         this.juego.agregarAccion(repetible.copiar());
         this.reproducirSonido();
-        consola.display(repetible.devolverNombre()+".png");
+        //consola.display(repetible.devolverNombre()+".png");
     }
 
     private void reproducirSonido() {

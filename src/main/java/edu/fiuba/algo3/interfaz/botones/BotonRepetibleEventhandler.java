@@ -3,6 +3,7 @@ package edu.fiuba.algo3.interfaz.botones;
 import edu.fiuba.algo3.interfaz.ventanas.Consola;
 import edu.fiuba.algo3.modelo.acciones.Accion;
 import edu.fiuba.algo3.modelo.acciones.Repetible;
+import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.media.Media;
@@ -15,18 +16,23 @@ public class BotonRepetibleEventhandler implements EventHandler<ActionEvent> {
     private Accion accion;
     private Consola consola;
     private Repetible repetible;
+    private Juego juego;
 
-    public BotonRepetibleEventhandler(Accion accion, Consola consola,Repetible repetible){
+    public BotonRepetibleEventhandler(Accion accion, Consola consola,Repetible repetible,Juego juego){
         this.accion = accion;
         this.consola = consola;
         this.repetible = repetible;
+        this.juego = juego;
     }
 
     @Override
     public void handle(ActionEvent actionEvent){
-        this.repetible.almacenarAccion(accion);
+
         this.reproducirSonido();
-        consola.displayRepetible(repetible,accion.devolverNombre()+".png");
+        this.repetible.almacenarAccion(accion);
+        this.juego.agregarRepetible(repetible);
+
+        //consola.displayRepetible(repetible,accion.devolverNombre()+".png");
     }
     private void reproducirSonido() {
         String musicFile = "src/main/resources/sonidobotonnormal.mp3";

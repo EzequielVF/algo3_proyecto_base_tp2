@@ -2,8 +2,8 @@ package edu.fiuba.algo3.Controlador.observables;
 
 import java.util.ArrayList;
 
-public class Observable {
-    private ArrayList<Observer> observers;
+public interface Observable {
+    /*private ArrayList<Observer> observers;
 
     public Observable() { observers = new ArrayList<>();}
 
@@ -11,5 +11,7 @@ public class Observable {
 
     public void notifyObservers() {
         observers.stream().forEach(observer -> observer.change());
-    }
+    }*/
+    void addObserver(Observer observer);
+    void notifyObservers();
 }

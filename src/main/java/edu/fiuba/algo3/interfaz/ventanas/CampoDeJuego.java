@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.interfaz.ventanas;
 
+import edu.fiuba.algo3.modelo.acciones.Algoritmo;
 import edu.fiuba.algo3.modelo.actoresPrincipales.Juego;
 import javafx.geometry.*;
 import javafx.scene.control.Label;
@@ -9,8 +10,9 @@ import javafx.scene.layout.VBox;
 
 public class CampoDeJuego extends BorderPane {
 
-        Consola consola = new Consola();
-        Juego juego = new Juego();
+        Algoritmo algoritmo = new Algoritmo();
+        Juego juego = new Juego(algoritmo);
+        Consola consola = new Consola(algoritmo);
         VBox panel = new VBox();
         private ScrollPane scroll = new ScrollPane(consola);
 
@@ -31,7 +33,7 @@ public class CampoDeJuego extends BorderPane {
             panel.setMaxWidth(300);
 
             posicionarSectores();
-            BorderPane.setMargin(areaDeDibujado, new Insets(20,50,300,30));
+            BorderPane.setMargin(areaDeDibujado, new Insets(20,50,50,30));
             BorderPane.setMargin(botonesDisponibles, new Insets(20,50,50,30));
             BorderPane.setMargin(consola, new Insets(75,75,75,8));
         }

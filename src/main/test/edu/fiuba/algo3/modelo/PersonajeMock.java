@@ -1,18 +1,22 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.Controlador.observables.Observable;
+import edu.fiuba.algo3.Controlador.observables.Observer;
 import edu.fiuba.algo3.modelo.campodejuego.Posicion;
 import edu.fiuba.algo3.modelo.campodejuego.Tablero;
 import edu.fiuba.algo3.modelo.pincel.EstadoPincel;
 import edu.fiuba.algo3.modelo.pincel.Pincel;
 import edu.fiuba.algo3.modelo.pincel.PincelAbajo;
 
+import java.util.ArrayList;
+
 
 //Se comporta igual que la clase personaje
 //la unica diferencia radica en que recibe un objeto posicion en su creacion,
 //necesario para poder instanciar la posicionMock
-public class PersonajeMock extends Observable {
+public class PersonajeMock implements Observable {
 
+    private ArrayList<Observer> observers;
     private Pincel pincel = new Pincel();
     private Posicion posicion;
     private Tablero tablero = new Tablero();
@@ -78,5 +82,13 @@ public class PersonajeMock extends Observable {
 
     public boolean pincelAbajo(){
         return pincel.devolverEstadoPincel().getClass() == PincelAbajo.class;
+    }
+
+    @Override
+    public void addObserver(Observer observer) {observers.add(observer);}
+
+    @Override
+    public void notifyObservers() {
+        observers.stream().forEach(observer -> observer.change());
     }
 }
