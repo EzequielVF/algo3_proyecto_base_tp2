@@ -48,25 +48,25 @@ public class PersonajeMock implements Observable {
     public void moverAbajo(){
         posicion.restarAFila();
         //tablero.dibujar(posicion, pincel);
-        notifyObservers();
+        //notifyObservers();
     }
 
     public void moverArriba(){
         posicion.sumarAFila();
         tablero.dibujar(posicion, pincel);
-        notifyObservers();
+        //notifyObservers();
     }
 
     public void moverDerecha(){
         posicion.sumarAColumna();
         //tablero.dibujar(posicion, pincel);
-        notifyObservers();
+        //notifyObservers();
     }
 
     public void moverIzquierda(){
         posicion.restarAColumna();
         tablero.dibujar(posicion, pincel);
-        notifyObservers();
+        //notifyObservers();
     }
 
     public void bajarPincel(){
