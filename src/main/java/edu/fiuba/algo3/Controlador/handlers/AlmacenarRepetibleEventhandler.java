@@ -32,7 +32,6 @@ public class AlmacenarRepetibleEventhandler implements EventHandler<ActionEvent>
             consola.escribir(e.getMessage());
         }
         this.reproducirSonido();
-        //consola.display(repetible.devolverNombre()+".png");
     }
 
     private void reproducirSonido() {

@@ -30,8 +30,6 @@ public class RepetibleEventhandler implements EventHandler<ActionEvent> {
 
         this.reproducirSonido();
         this.repetible.almacenarAccion(accion);
-
-        //consola.displayRepetible(repetible,accion.devolverNombre()+".png");
     }
     private void reproducirSonido() {
         String musicFile = "src/main/resources/sonidobotonnormal.mp3";

@@ -11,7 +11,6 @@ import java.util.List;
 public abstract class Repetible implements Accion, Observable {
         public List<Accion> accionesAEjecutar = new ArrayList();
         private ArrayList<Observer> observers = new ArrayList<>();
-        private Repetible repetible2;
 
         public abstract void aplicarAccion(Personaje personaje);
 
@@ -20,16 +19,6 @@ public abstract class Repetible implements Accion, Observable {
         public void almacenarAccion(Accion accion){
             accionesAEjecutar.add(accion);
             notifyObservers();
-        }
-
-        public void almacenarRepetible(Repetible repetible){
-            accionesAEjecutar.add(repetible);
-            repetible2 = repetible;
-            notifyObservers();
-        }
-
-        public Repetible getBloqueRepetible(){
-            return repetible2;
         }
 
         public void transferirAcciones(Repetible repetible){

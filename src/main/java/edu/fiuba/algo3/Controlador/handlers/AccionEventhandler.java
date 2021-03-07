@@ -26,7 +26,6 @@ public class AccionEventhandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent){
         this.juego.agregarAccion(accion);
         this.reproducirSonido();
-        //consola.display(accion.devolverNombre()+".png");
     }
 
     private void reproducirSonido() {
